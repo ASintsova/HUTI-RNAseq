@@ -30,7 +30,7 @@ def blastFileandEdittoDF (filename , newbedfile):
             h1 = word[1]
             h2 = word[2]
         print (word[0]+"\t"+h1+"\t"+h2+"\t"+str(strand)+'\t'+ 'gene_'+str(count) + ';'+ word[4]) 
-        newbedfile.write(word[0]+"\t"+h1+"\t"+h2+"\t"+str(strand)+'\t'+ 'gene_'+str(count) + ';'+ word[4]+ "\n")
+        newbedfile.write(word[0]+"\t"+h1+"\t"+h2+"\t"+str(strand)+'\t'+ word[4]+ "\n")
         count += 1
 filename = str(sys.argv[1])
 fh = filename + ".df"
