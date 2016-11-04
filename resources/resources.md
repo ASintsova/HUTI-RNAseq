@@ -1,5 +1,9 @@
 # Computational Resources, Tutorials and Workshops
 
+- Python
+ * [How to move beyond beginner](http://stackoverflow.com/questions/2573135/python-progression-path-from-apprentice-to-guru)
+ 
+
 - Perl  
   * [Learning Perl Blog] (http://sofiarobb.com/learning-perl-toc/)
   
