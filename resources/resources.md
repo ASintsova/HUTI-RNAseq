@@ -16,3 +16,7 @@
 - RNASeq
   * <https://github.com/mistrm82/msu_ngs2015>
   
+- R
+  * [Strip Plots with ggplot](http://www.sthda.com/english/wiki/ggplot2-stripchart-jitter-quick-start-guide-r-software-and-data-visualization)
+  
+  
