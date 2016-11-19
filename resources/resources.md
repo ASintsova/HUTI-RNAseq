@@ -6,6 +6,7 @@
 
 - Perl  
   * [Learning Perl Blog] (http://sofiarobb.com/learning-perl-toc/)
+  * [CSH Course: Programming for Biologists](http://programmingforbiology.org)
   
 - [Ensembl API Workshop](http://www.ebi.ac.uk/training/online/course/ensembl-filmed-api-workshop/installing-api)
 
@@ -19,4 +20,6 @@
 - R
   * [Strip Plots with ggplot](http://www.sthda.com/english/wiki/ggplot2-stripchart-jitter-quick-start-guide-r-software-and-data-visualization)
   
+- Phylogenetics
+ * [List of must read papers](http://treethinkers.org/update-must-read-papers-for-graduate-students/)
   
