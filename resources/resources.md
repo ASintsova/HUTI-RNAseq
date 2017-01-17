@@ -26,3 +26,6 @@
 - eQTL tutorial:
  * http://www.ebi.ac.uk/training/online/course/embo-practical-course-analysis-high-throughput-seq/allele-specific-expression-and-eqtl
  * see bioconductor
+
+- Shell:
+ * [explainshell](http://explainshell.com)
