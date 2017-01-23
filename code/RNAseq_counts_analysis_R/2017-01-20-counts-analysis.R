@@ -3,6 +3,7 @@ library(DESeq2)
 library (pheatmap)
 library(RColorBrewer)
 library (ggplot2)
+source("~/git_repos/HUTI-RNAseq/code/RNAseq_counts_analysis_R/RNAseq_analysis_utilities.R")
 #Importing the counts
 combined_counts <- read.csv("~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/combined_counts.csv", header = TRUE, row.names = 1)
 
@@ -23,6 +24,13 @@ core_urine <- core_genes[,odd]
 core_uti <- core_genes[,even]
 urine_info <- experiment_info[odd, ]
 uti_info <- experiment_info[even,]
+write.csv(core_genes, "~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/core_gene_counts.csv", row.names=TRUE)
+write.csv(core_urine, "~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/core_counts_urine.csv", row.names=TRUE)
+write.csv(core_uti, "~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/core_counts_uti.csv", row.names=TRUE)
+write.csv(urine_info, "~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/urine_info.csv", row.names=TRUE)
+write.csv(uti_info, "~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/uti_info.csv", row.names=TRUE)
+
+
 
 # Construct DESeqDataSet object from the matrix of counts and the experiment_info
 (core_dds <- DESeqDataSetFromMatrix(countData = as.matrix(core_genes), colData = experiment_info,
@@ -110,3 +118,16 @@ for (i in 1:14){
         print (rownames(top)[i])
         plotCounts(core_dds, gene = rownames(top)[i], intgroup = c("MEDIA"))
 }
+
+gene_names <- rownames(core_DE_genes_final)
+
+gene_names_edited <- list()
+for (name in gene_names){
+        print (name)
+        new_name <- unlist(strsplit(name, "_"))[2
+        print(new_name)
+        gene_names_edited <- append(new_name, gene_names_edited)
+}
+
+gene_names_edited <- unlist(gene_names_edited)
+

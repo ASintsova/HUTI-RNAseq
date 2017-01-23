@@ -1,0 +1,111 @@
+"","p.geomean","stat.mean","p.val","q.val","set.size","exp1"
+"eco01230 Biosynthesis of amino acids",0.000694273287004293,-3.4479888771899,0.000694273287004293,0.0104140993050644,28,0.000694273287004293
+"eco00040 Pentose and glucuronate interconversions",0.00342659597339821,-3.39159960238794,0.00342659597339822,0.0201010831369342,10,0.00342659597339821
+"eco01130 Biosynthesis of antibiotics",0.00403579129507803,-2.71246438810295,0.00403579129507804,0.0201010831369342,48,0.00403579129507803
+"eco01110 Biosynthesis of secondary metabolites",0.00709546623985334,-2.49124600985157,0.00709546623985335,0.0201010831369342,60,0.00709546623985335
+"eco01120 Microbial metabolism in diverse environments",0.00720444015123268,-2.50196525656929,0.00720444015123267,0.0201010831369342,44,0.00720444015123268
+"eco01210 2-Oxocarboxylic acid metabolism",0.00804043325477369,-2.77368228252428,0.00804043325477369,0.0201010831369342,12,0.00804043325477369
+"eco01200 Carbon metabolism",0.0140973460008866,-2.26312088846026,0.0140973460008866,0.0264923160068024,29,0.0140973460008866
+"eco00650 Butanoate metabolism",0.014129235203628,-2.508589891719,0.0141292352036279,0.0264923160068024,11,0.014129235203628
+"eco00260 Glycine, serine and threonine metabolism",0.0176131773900925,-2.34748552633693,0.0176131773900925,0.0293552956501541,13,0.0176131773900925
+"eco01100 Metabolic pathways",0.0261617430689608,-1.9512975759301,0.0261617430689608,0.0392426146034411,109,0.0261617430689607
+"eco00020 Citrate cycle (TCA cycle)",0.0326259293004117,-2.07848948677007,0.0326259293004117,0.0444899035914704,10,0.0326259293004117
+"eco00620 Pyruvate metabolism",0.0764247273324732,-1.49406837142712,0.0764247273324732,0.0955309091655915,12,0.0764247273324732
+"eco02010 ABC transporters",0.0829389309155281,-1.40561334906763,0.0829389309155281,0.095698766440994,27,0.0829389309155281
+"eco00230 Purine metabolism",0.958287308691516,1.80811552420757,0.958287308691516,0.999999881790154,13,0.958287308691516
+"eco03010 Ribosome",0.999999881790154,6.5256812177933,0.999999881790154,0.999999881790154,32,0.999999881790154
+"eco00970 Aminoacyl-tRNA biosynthesis",NA,NA,NA,NA,1,NA
+"eco02020 Two-component system",NA,NA,NA,NA,6,NA
+"eco02030 Bacterial chemotaxis",NA,NA,NA,NA,3,NA
+"eco02040 Flagellar assembly",NA,NA,NA,NA,0,NA
+"eco02060 Phosphotransferase system (PTS)",NA,NA,NA,NA,4,NA
+"eco03018 RNA degradation",NA,NA,NA,NA,2,NA
+"eco03020 RNA polymerase",NA,NA,NA,NA,1,NA
+"eco03030 DNA replication",NA,NA,NA,NA,1,NA
+"eco03060 Protein export",NA,NA,NA,NA,1,NA
+"eco03070 Bacterial secretion system",NA,NA,NA,NA,1,NA
+"eco03410 Base excision repair",NA,NA,NA,NA,2,NA
+"eco03420 Nucleotide excision repair",NA,NA,NA,NA,0,NA
+"eco03430 Mismatch repair",NA,NA,NA,NA,2,NA
+"eco03440 Homologous recombination",NA,NA,NA,NA,2,NA
+"eco04122 Sulfur relay system",NA,NA,NA,NA,0,NA
+"eco00010 Glycolysis / Gluconeogenesis",NA,NA,NA,NA,8,NA
+"eco00030 Pentose phosphate pathway",NA,NA,NA,NA,6,NA
+"eco00051 Fructose and mannose metabolism",NA,NA,NA,NA,6,NA
+"eco00052 Galactose metabolism",NA,NA,NA,NA,6,NA
+"eco00053 Ascorbate and aldarate metabolism",NA,NA,NA,NA,1,NA
+"eco00061 Fatty acid biosynthesis",NA,NA,NA,NA,2,NA
+"eco00071 Fatty acid degradation",NA,NA,NA,NA,2,NA
+"eco00130 Ubiquinone and other terpenoid-quinone biosynthesis",NA,NA,NA,NA,1,NA
+"eco00190 Oxidative phosphorylation",NA,NA,NA,NA,6,NA
+"eco00240 Pyrimidine metabolism",NA,NA,NA,NA,9,NA
+"eco00250 Alanine, aspartate and glutamate metabolism",NA,NA,NA,NA,6,NA
+"eco00270 Cysteine and methionine metabolism",NA,NA,NA,NA,8,NA
+"eco00280 Valine, leucine and isoleucine degradation",NA,NA,NA,NA,4,NA
+"eco00281 Geraniol degradation",NA,NA,NA,NA,2,NA
+"eco00290 Valine, leucine and isoleucine biosynthesis",NA,NA,NA,NA,7,NA
+"eco00300 Lysine biosynthesis",NA,NA,NA,NA,4,NA
+"eco00310 Lysine degradation",NA,NA,NA,NA,3,NA
+"eco00330 Arginine and proline metabolism",NA,NA,NA,NA,2,NA
+"eco00332 Carbapenem biosynthesis",NA,NA,NA,NA,0,NA
+"eco00340 Histidine metabolism",NA,NA,NA,NA,0,NA
+"eco00350 Tyrosine metabolism",NA,NA,NA,NA,0,NA
+"eco00360 Phenylalanine metabolism",NA,NA,NA,NA,1,NA
+"eco00361 Chlorocyclohexane and chlorobenzene degradation",NA,NA,NA,NA,0,NA
+"eco00362 Benzoate degradation",NA,NA,NA,NA,2,NA
+"eco00364 Fluorobenzoate degradation",NA,NA,NA,NA,0,NA
+"eco00380 Tryptophan metabolism",NA,NA,NA,NA,2,NA
+"eco00400 Phenylalanine, tyrosine and tryptophan biosynthesis",NA,NA,NA,NA,1,NA
+"eco00401 Novobiocin biosynthesis",NA,NA,NA,NA,0,NA
+"eco00410 beta-Alanine metabolism",NA,NA,NA,NA,4,NA
+"eco00430 Taurine and hypotaurine metabolism",NA,NA,NA,NA,0,NA
+"eco00440 Phosphonate and phosphinate metabolism",NA,NA,NA,NA,0,NA
+"eco00450 Selenocompound metabolism",NA,NA,NA,NA,2,NA
+"eco00460 Cyanoamino acid metabolism",NA,NA,NA,NA,2,NA
+"eco00471 D-Glutamine and D-glutamate metabolism",NA,NA,NA,NA,0,NA
+"eco00473 D-Alanine metabolism",NA,NA,NA,NA,1,NA
+"eco00480 Glutathione metabolism",NA,NA,NA,NA,3,NA
+"eco00500 Starch and sucrose metabolism",NA,NA,NA,NA,8,NA
+"eco00511 Other glycan degradation",NA,NA,NA,NA,2,NA
+"eco00520 Amino sugar and nucleotide sugar metabolism",NA,NA,NA,NA,5,NA
+"eco00521 Streptomycin biosynthesis",NA,NA,NA,NA,1,NA
+"eco00523 Polyketide sugar unit biosynthesis",NA,NA,NA,NA,0,NA
+"eco00540 Lipopolysaccharide biosynthesis",NA,NA,NA,NA,0,NA
+"eco00550 Peptidoglycan biosynthesis",NA,NA,NA,NA,1,NA
+"eco00561 Glycerolipid metabolism",NA,NA,NA,NA,3,NA
+"eco00562 Inositol phosphate metabolism",NA,NA,NA,NA,1,NA
+"eco00564 Glycerophospholipid metabolism",NA,NA,NA,NA,6,NA
+"eco00565 Ether lipid metabolism",NA,NA,NA,NA,0,NA
+"eco00590 Arachidonic acid metabolism",NA,NA,NA,NA,0,NA
+"eco00592 alpha-Linolenic acid metabolism",NA,NA,NA,NA,1,NA
+"eco00600 Sphingolipid metabolism",NA,NA,NA,NA,0,NA
+"eco00621 Dioxin degradation",NA,NA,NA,NA,0,NA
+"eco00622 Xylene degradation",NA,NA,NA,NA,0,NA
+"eco00623 Toluene degradation",NA,NA,NA,NA,0,NA
+"eco00625 Chloroalkane and chloroalkene degradation",NA,NA,NA,NA,0,NA
+"eco00626 Naphthalene degradation",NA,NA,NA,NA,0,NA
+"eco00627 Aminobenzoate degradation",NA,NA,NA,NA,2,NA
+"eco00630 Glyoxylate and dicarboxylate metabolism",NA,NA,NA,NA,8,NA
+"eco00633 Nitrotoluene degradation",NA,NA,NA,NA,0,NA
+"eco00640 Propanoate metabolism",NA,NA,NA,NA,7,NA
+"eco00660 C5-Branched dibasic acid metabolism",NA,NA,NA,NA,5,NA
+"eco00670 One carbon pool by folate",NA,NA,NA,NA,4,NA
+"eco00680 Methane metabolism",NA,NA,NA,NA,7,NA
+"eco00730 Thiamine metabolism",NA,NA,NA,NA,0,NA
+"eco00740 Riboflavin metabolism",NA,NA,NA,NA,0,NA
+"eco00750 Vitamin B6 metabolism",NA,NA,NA,NA,1,NA
+"eco00760 Nicotinate and nicotinamide metabolism",NA,NA,NA,NA,0,NA
+"eco00770 Pantothenate and CoA biosynthesis",NA,NA,NA,NA,6,NA
+"eco00780 Biotin metabolism",NA,NA,NA,NA,3,NA
+"eco00785 Lipoic acid metabolism",NA,NA,NA,NA,0,NA
+"eco00790 Folate biosynthesis",NA,NA,NA,NA,2,NA
+"eco00860 Porphyrin and chlorophyll metabolism",NA,NA,NA,NA,2,NA
+"eco00900 Terpenoid backbone biosynthesis",NA,NA,NA,NA,0,NA
+"eco00903 Limonene and pinene degradation",NA,NA,NA,NA,1,NA
+"eco00910 Nitrogen metabolism",NA,NA,NA,NA,2,NA
+"eco00920 Sulfur metabolism",NA,NA,NA,NA,4,NA
+"eco00930 Caprolactam degradation",NA,NA,NA,NA,1,NA
+"eco01040 Biosynthesis of unsaturated fatty acids",NA,NA,NA,NA,1,NA
+"eco01053 Biosynthesis of siderophore group nonribosomal peptides",NA,NA,NA,NA,0,NA
+"eco01212 Fatty acid metabolism",NA,NA,NA,NA,4,NA
+"eco01220 Degradation of aromatic compounds",NA,NA,NA,NA,0,NA

@@ -1,0 +1,90 @@
+---
+title: "PCA_UR_PHYLO"
+author: "ASintsova"
+date: '2017-01-23'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(DESeq2)
+library (pheatmap)
+library(RColorBrewer)
+library (ggplot2)
+```
+
+
+## Loading in the datasets and subsetting on data of interest:
+
+
+```{r data}
+counts <- read.csv("~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/core_counts_urine.csv", header = TRUE, row.names = 1)
+experiment_info <- read.csv("~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/urine_info.csv", header = TRUE, row.names =1)
+head(counts, 1)
+head(experiment_info, 1)
+
+```
+
+## Creating DESeq Objects and Visual Analysis
+
+* Need to INPUT proper design parameter
+
+```{r DESeq DataSet}
+design = ~PRED_PHYLO
+(counts_dds <- DESeqDataSetFromMatrix(countData = as.matrix(counts), colData = experiment_info, design = design))
+
+
+```
+
+* Transforming the data set for exploratory analysis (using DEseq transform):
+
+```{r Transformation using DESeq}
+
+dds_transformed <- rlog(counts_dds, blind = FALSE)
+head(assay(dds_transformed))
+
+```
+
+* Alternative log2 transformation:
+```{r log2 Transform, eval = FALSE, include = FALSE}
+dds_transformed <- log2(counts(counts_dds) + 1)
+head(dds_transformed)
+core_dists <- dist(t(dds_transformed))# calculated distances
+dists_matrix <- as.matrix(core_dists)
+rownames(dists_matrix)<- paste(urine_info$STRAIN, urine_info$PRED_PHYLO, sep = "_")
+colnames(dists_matrix) <- NULL
+colors <- colorRampPalette( rev(brewer.pal(9, "Blues")) )(255)
+
+pheatmap(dists_matrix, #draw heatmap
+                 clustering_distance_rows=core_dists,
+                 clustering_distance_cols=core_dists,
+                 col=colors)
+```
+
+* Clustering analysis based on Eucleadian Distances
+* Need to include rownames_parameter
+
+```{r Clustering Heatmap}
+
+core_dists <- dist(t(assay(dds_transformed)))# calculated distances
+dists_matrix <- as.matrix(core_dists)
+rownames(dists_matrix)<- paste(dds_transformed$STRAIN, dds_transformed$PRED_PHYLO, sep = "_")
+colnames(dists_matrix) <- NULL
+colors <- colorRampPalette( rev(brewer.pal(9, "Blues")) )(255)
+
+pheatmap(dists_matrix, #draw heatmap
+                 clustering_distance_rows=core_dists,
+                 clustering_distance_cols=core_dists,
+                 col=colors)
+```
+
+* PCA analysis
+
+
+```{r PCA using DESeq functions}
+
+plotPCA(dds_transformed, intgroup = c("PRED_PHYLO"))
+
+
+```
+
