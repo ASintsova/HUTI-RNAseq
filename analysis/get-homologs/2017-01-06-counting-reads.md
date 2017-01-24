@@ -75,6 +75,15 @@ getGFFs(filename_in, filename_out)
 * Sort these by first column (i.e. genomes) and separate into separate gffs for each genome
 	- `while read p; do grep "^HM"$p"_1" test.gff > $p"_out"; done < strain.numbers`
 
+* Final Pbs script: get_gffs.pbs
+
+```
+
+
+
+```
+
+
 ## INPUT: ALIGNMENTS:
 * Bam files sorted by positions
 

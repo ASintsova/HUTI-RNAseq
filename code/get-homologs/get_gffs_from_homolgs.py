@@ -35,5 +35,6 @@ def getGFFs (filename_in, filename_out):
 
                 gff.write('{}\tcustom\tCDS\t{}\t{}\t.\t{}\t.\tgene_id "{}"; gene_name "{}"; PROKKA_ID "{}"\n'.format
                       (genome, start, end, strand, gene_id, gene_name, prokka))     
-                
+                #print ('{}\tcustom\tCDS\t{}\t{}\t.\t{}\t.\tgene_id "{}"; gene_name "{}"; PROKKA_ID "{}"\n'.format
+                      #(genome, start, end, strand, gene_id, gene_name, prokka))
 getGFFs(filename_in, filename_out)
