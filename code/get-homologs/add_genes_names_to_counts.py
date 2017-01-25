@@ -8,8 +8,11 @@ editing Log2FC file to extract gene names where possible
 
 """
 
-fh = open ("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/2017-01-20-core-genes-DE.csv")
-edited_file = open("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/2017-01-23-core-genes-DE-edited.csv", "w+")
+#fh = open ("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/2017-01-20-core-genes-DE.csv")
+#edited_file = open("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/2017-01-23-core-genes-DE-edited.csv", "w+")
+
+fh = open ("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/get-homologs/RPKM/ur_vs_uti_means.csv")
+edited_file = open("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/get-homologs/RPKM/2017-01-25-ur_vs_uti_RPKM_means-edited.csv", "w+")
 
 edited_file.write(fh.readline().rstrip() + "," + "geneName"+ "\n")
 
