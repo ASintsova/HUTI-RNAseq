@@ -103,9 +103,22 @@ htseq-count -t CDS $ALIGN/UR17.sam $ANNOT/HM17_gh.gff > HM17.out
 * Creating a loop to go through all alignment files:
 
 ```
-for i in $ALIGN/*.bam; do NUM=$(ls $i|sed -e s/[^0-9]//g); echo "HM"$NUM"_gh.gff"; done
+DATA=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data
+ALIGN=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/Alignments/BAM_by_Position_New_Samples
+ANNOT=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/Annotations/get-homologs-gff
+ANALYSIS=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/core-genome-analysis/2017-01-30-htseq-counts
+
+#htseq-count -f bam -r pos -m union -t CDS -s yes $ALIGN/UR17_SE_aln_sort.bam $ANNOT/HM17_gh.gff > HM17.out.1
+
+for i in $ALIGN/*.bam
+do
+NUM=$(ls $i|sed -e s/[^0-9]//g)
+NAM=$(ls $i|cut -d "/" -f9|cut -d "_" -f1)
+htseq-count -f bam -r pos -m union -t CDS -s yes $i $ANNOT/"HM"$NUM"_gh_final.gff"> $ANALYSIS/$NAM
+done
 
 ```
+
 * Right now have issues with htseq-count: not reads are being counted
 	* troubleshooting: is bam file not sorted properly?:
 		* resort by name see if that helps
