@@ -22,6 +22,8 @@
   
 - Phylogenetics
  * [List of must read papers](http://treethinkers.org/update-must-read-papers-for-graduate-students/)
+ * [UBC course](https://www.zoology.ubc.ca/~bio501/R/)
+ * [Harmon Tutorial] (http://lukejharmon.github.io/ilhabela/)
   
 - eQTL tutorial:
  * http://www.ebi.ac.uk/training/online/course/embo-practical-course-analysis-high-throughput-seq/allele-specific-expression-and-eqtl
