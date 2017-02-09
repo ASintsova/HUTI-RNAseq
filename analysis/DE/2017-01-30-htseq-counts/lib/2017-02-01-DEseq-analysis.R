@@ -103,6 +103,9 @@ ggplot(data = pcaData, aes(x=PC1, y=PC2, color = STRAIN , shape =MEDIA)) +
         ylab(paste0("PC2: ", percentVar[2], "% variance")) +
         coord_fixed()
 
+
+
+
 core_DE <- DESeq(core_dds)
 #Set LFC threshold 1 
 core_DE_results <- results(core_DE, lfcThreshold = 1)
@@ -110,7 +113,7 @@ core_DE_results_sign <- subset(core_DE_results, padj < 0.05)
 head(core_DE_results_sign[order(core_DE_results_sign$log2FoldChange, decreasing = TRUE),], 20)
 
 core_DE_genes_final <- core_DE_results_sign[order(core_DE_results_sign$log2FoldChange, decreasing = TRUE),]
-
+write.csv(core_DE_genes_final, "~/git_repos/HUTI-RNAseq/analysis/get-homologs/2017-01-30-htseq-counts/core_DEseq_results.csv", row.names=TRUE)
 topGene <- rownames(core_DE_results_sign)[which.min(core_DE_results_sign$padj)]
 plotCounts(core_dds, gene = topGene, intgroup = c("MEDIA"))
 
