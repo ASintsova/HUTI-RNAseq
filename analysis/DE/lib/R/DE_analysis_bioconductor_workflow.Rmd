@@ -30,8 +30,8 @@ library (ggplot2)
 
 
 ```{r data}
-counts <- read.csv("~/git_repos/HUTI-RNAseq/analysis/get-homologs/2017-01-30-htseq-counts/core_counts_urine.csv", header = TRUE, row.names = 1)
-experiment_info <- read.csv("~/git_repos/HUTI-RNAseq/analysis/get-homologs/counts/urine_info.csv", header = TRUE, row.names =1)
+counts <- read.csv("~/git_repos/HUTI-RNAseq/analysis/DE/2017-01-30-htseq-counts/data/core_gene_counts.csv", header = TRUE, row.names = 1)
+experiment_info <- read.csv("~/git_repos/HUTI-RNAseq/analysis/DE/data/Patient_meta_info.csv", header = TRUE, row.names =1)
 head(counts, 1)
 head(experiment_info, 1)
 
