@@ -13,7 +13,7 @@ source ("~/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/lib/KStatFromTraitM
 
 
 DATAPATH = "~/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/2017-02-14-K-statistic-contd/data/"
-FIGUREPATH = "~/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/2017-02-10-K-statistic-contd/figures/"
+FIGUREPATH = "~/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/2017-02-14-K-statistic-contd/figures/"
 odd <- seq(1,26,2)
 even <- seq(2, 26, 2)
 #metadata
@@ -64,9 +64,16 @@ uti_log2_mean_norm <- uti_log2 - rowMeans(uti_log)
 rownames(df) == colnames(uti_log2)
 pheatmap(uti_log2, annotation_col = df) #looks ok, clusters based on phylogroup
 pheatmap(uti_log2_mean_norm, annotation_col=df)# does not look quite as good, a bit of a mess
-#mat_ur <- assay(core_urine_transformed)[ur_names,]
-#mat_ur <- mat_ur-rowMeans(mat_ur)
-#df <- as.data.frame(colData(core_urine_transformed)[,c("PRED_PHYLO", "STRAIN")])
-pheatmap(mat_ur, annotation_col=df)
+
+log_names <- rownames(sig_log_phylosig[as.numeric(as.character(sig_count_phylosig$`P-value`)) < 0.003,])
+uti_log_low_pval <- uti_log[log_names,]
+
+counts <- round(norm_uti_counts[log_names,]/1000,1)
+
+pheatmap(uti_log_low_pval, annotation_col = df, cellwidth = 20, cellheight = 20, 
+         display_numbers = counts, cutree_cols = 3, cutree_rows = 6, 
+         filename = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/2017-02-14-K-statistic-contd/figures/uti_phylosig_low_pval.png")
+
+
 
 

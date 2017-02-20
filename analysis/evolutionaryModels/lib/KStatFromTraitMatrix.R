@@ -8,6 +8,10 @@ library(DESeq2)
 
 
 
+
+
+
+
 calculateKForDataFrame <- function(trait_matrix, tree, filename) {
         print ("K stat and P values can be accessed via $phylosig_K, matrix values: $phylosig_gene_counts")
         K_values <- c()
