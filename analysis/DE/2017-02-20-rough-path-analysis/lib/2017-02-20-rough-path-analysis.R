@@ -46,6 +46,11 @@ DE_names <- row.names(gene_list)
 DE_expr <- log2(all_data$counts[DE_names,]+1)  #norm counts for all the diff expr genes
 de_expr <- as.matrix(DE_expr)
 rownames(de_expr) <- gene_list[,1]
+
+de_counts <- all_data$counts[DE_names,]
+de_counts <- as.matrix(de_counts)
+rownames(de_counts) <- gene_list[,1]
+
 cn = colnames(de_expr)
 ur = grep ("UR", cn, ignore.case = TRUE)
 uti = grep("UTI", cn, ignore.case = TRUE)
@@ -110,15 +115,20 @@ p.a.geneSets.down <- esset.grp(path.analysis$less, de_expr, gsets = kg.ec, ref =
 
 
 
-#Pyrimidine metabolism: eco00240 
+
 #Purine metabolism: eco00230
-#Biosynthesis of amino acids: eco01230
+purine <- p.a.geneSets.up$coreGeneSets$`eco00230 Purine metabolism`
+pur_names <- eg2id(eg = purine, category = gene.idtype.list[1], org = "EcK12")
+pur_expr <- de_expr[purine,]
+rownames(pur_expr)<- as.data.frame(pur_names)$SYMBOL
+annot = all_data$exp_info[, c("MEDIA", "PRED_PHYLO")]
+pheatmap(pur_expr, annotation_col = annot, cellheight = 20, cellwidth = 20)
 
 
 #Butanoate metabolism: eco00650
-#Galactose metabolism: eco00052
+
 #Cysteine metabolism: eco00270
-#Pyruvate: eco00620
+
 
 
 #pathview
@@ -126,4 +136,129 @@ map.pathway <- as.matrix(gene[,n])
 rownames(map.pathway) <- symbols
 pv.out <- pathview(gene.data = map.pathway, pathway.id = "00230", species = "eco", gene.idtype = gene.idtype.list[1], same.layer = F)
 
+#function to get genes from a pathway from your dataset, assumes existence of kg.ec, and de_expr
 
+getPathwayAssociatedGenes <- function(path.assoc.genes){
+        
+        path.assoc.gene.names <- intersect(path.assoc.genes, rownames(de_expr))
+        gene.expr <- de_expr[path.assoc.gene.names,]
+        disp_counts <- round(de_counts[path.assoc.gene.names,]/1000, 1)
+        rownames(gene.expr)<- as.data.frame(eg2id(eg = path.assoc.gene.names, category = gene.idtype.list[1], org = "EcK12"))$SYMBOL
+        out <- list("gene_expression" = gene.expr, "counts" = disp_counts)
+        return (out)
+}
+
+
+
+###Looking for genes in my dataself belonging to certain pathway
+#Purine metabolism eco00230
+
+pur_met <- kg.ec$eco00230
+pur_expr_names <- intersect(pur_met, rownames(de_expr))
+pur_expr <- de_expr[pur_expr_names,]
+disp_counts <- round(de_counts[pur_expr_names,]/1000, 1)
+rownames(pur_expr)<- as.data.frame(eg2id(eg = pur_expr_names, category = gene.idtype.list[1], org = "EcK12"))$SYMBOL
+pheatmap(pur_expr, annotation_col = annot, display_numbers = disp_counts,
+         cellwidth = 20, cellheight = 20,
+         cutree_rows = 3, cutree_cols = 4, filename = paste0(FIGUREPATH, "2017-02-21-purine-metabolism.png"))
+#Biosynthesis of amino acids: eco01230
+aa.bio <- kg.ec$eco01230
+aa.bio.data <- getPathwayAssociatedGenes(aa.bio)
+aa.bio.expr <- aa.bio.data$gene_expression
+aa.bio.counts <- aa.bio.data$counts
+pheatmap(aa.bio.expr, annotation_col = annot, display_numbers = aa.bio.counts,
+          cutree_cols = 2)
+
+#Biosynthesis of cystein : kg.ec$`eco00270 Cysteine and methionine metabolism`
+x <- kg.ec$`eco00270 Cysteine and methionine metabolism`
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts)
+
+
+#Pyrimidine metabolism: eco00240 
+x <- kg.ec$`eco00240 Pyrimidine metabolism`
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20, filename = paste0(FIGUREPATH, "2017-02-21-pyrimidine-metabolism.png"))
+
+#Pyruvate: eco00620
+x <- kg.ec$`eco00620 Pyruvate metabolism`
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20)
+         #filename = paste0(FIGUREPATH, "2017-02-21-pyrimidine-metabolism.png"))
+
+#Galactose metabolism: eco00052
+
+x <- kg.ec$`eco00052 Galactose metabolism`
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20)
+
+
+#Butanoate metabolism: eco00650
+
+x <- kg.ec$`eco00650 Butanoate metabolism`
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20)
+
+
+#DNA replication
+
+x <- kg.ec$`eco03030 DNA replication`
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20)
+
+# doesn't look like these have anything to do with DNA replication :S
+
+
+#Fructose and mannose metabolism
+
+x <-kg.ec$`eco00051 Fructose and mannose metabolism`
+
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20)
+# fructose genes are up
+
+#Mismatch repair 
+x <-kg.ec$`eco03430 Mismatch repair`
+
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20)
+#no sign differences dnaX is up, exoX is down
+
+#Homologous recombination:
+x <-kg.ec$`eco03440 Homologous recombination`
+
+x.data <- getPathwayAssociatedGenes(x)
+x.expr <- x.data$gene_expression
+x.counts <- x.data$counts
+pheatmap(x.expr, annotation_col = annot, display_numbers = x.counts,
+         cellheight = 20, cellwidth = 20)
+
+#not showing much, but it looks like I might be missing some genes, i.e. cannot finde
+#recA in my dataset at all. 
+
+
+#should look at different aa seperately: down: isoleucine, cys, arg, glt
+         #filename = paste0(FIGUREPATH, "2017-02-21-purine-metabolism.png"))
