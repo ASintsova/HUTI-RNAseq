@@ -1,0 +1,374 @@
+---
+title: "correlation_core_genes_with_PTR"
+author: "ASintsova"
+date: "4/19/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(phytools)
+library(DESeq2)
+library(pheatmap)
+library(ggplot2)
+library(grid)
+library(gridExtra)
+source ("~/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/lib/LoadHTseqCountsandTree.R")
+DATAPATH = "~/git_repos/HUTI-RNAseq/analysis/growth_rate/data/"
+FIG = "~/git_repos/HUTI-RNAseq/analysis/growth_rate/figures/"
+```
+
+## Goal: see if gene expression correlates with PTR for five human UTI samples
+
+1. Going to look at ribosomal gene expression, since that had phylogenetic signal + highly expressed + should cluster close to origin of replication
+2. Do an unbiased search for genes whose expression correlated with PTR values
+3. Look at chromosomal location of all these genes with relation to the origin/terminus of replication
+
+
+
+## 1 Look at ribosomal gene expression, since that had phylogenetic signal + highly expressed + should cluster close to origin of replication
+
+* Load in the data
+
+```{r ribo_setup}
+PTR <- matrix(c(2.12, 2.29, 1.78, 2.38, 2.44, 1.79, 2.08, 1.21, 2.22, 2.32, 23.2, 20.0, 34.4, 18.7, 17.9), ncol = 3, nrow = 5, byrow = FALSE)
+rownames(PTR) <- c("HM14", "HM17", "HM56", "HM66", "HM68")
+colnames(PTR) <- c("PTR", "GR", "Doub.time")
+PTR
+
+ribdat = "~/git_repos/HUTI-RNAseq/analysis/DE/2017-02-17-ribosome-gene-expression/data/"
+ribo_genes <- as.vector(read.table(paste0(ribdat, "ribosomal_gene_ids.txt"))[,1])
+all_data <- LoadHTSeqCountsandTree()
+counts <- all_data$counts
+ribo_expr <- counts[ribo_genes,]
+ribo_expr <- ribo_expr[complete.cases(ribo_expr),]
+ribo_log <- log2(ribo_expr +1)
+ribo_log_mod <- ribo_log[!rownames(ribo_log) %in% c("15746_rplS", "15749_rpsP"),]
+
+row_sub = apply(ribo_log_mod, 1, function(row) all(row > 5 ))
+ribo.exprs <- ribo_log_mod[row_sub,]
+ptr_ribo_ur <- ribo.exprs[, c("UR14", "UR17", "UR56", "UR66", "UR68")]
+ptr_vs_ribo_ur <- cbind(PTR, colMeans(ptr_ribo_ur))
+colnames(ptr_vs_ribo_ur)[4] <- c("mean.ribo.exprs")
+ptr_vs_ribo_ur <- as.data.frame(ptr_vs_ribo_ur)
+
+ptr_ribo_uti <- ribo.exprs[, c("UTI14", "UTI17", "UTI56", "UTI66", "UTI68")]
+
+ptr_vs_ribo_uti <- cbind(PTR, colMeans(ptr_ribo_uti))
+colnames(ptr_vs_ribo_uti)[4] <- c("mean.ribo.exprs")
+ptr_vs_ribo_uti <- as.data.frame(ptr_vs_ribo_uti)
+
+```
+
+
+* Plot mean ribosomal gene expression for urine and uti samples
+
+
+```{r mean_ribosomal_gene_expression_vs_ptr}
+p <- ggplot(ptr_vs_ribo_uti, aes(x=PTR, y=mean.ribo.exprs))+
+    geom_point(shape=1)+
+    geom_smooth(method=lm) + ggtitle('mean.uti.ribosomal.gene.expr')
+g <- ggplot(ptr_vs_ribo_ur, aes(x=PTR, y=mean.ribo.exprs))+
+  geom_point(shape=1)+
+  geom_smooth(method=lm) + ggtitle('mean.urine.ribosomal.gene.expr')
+
+grid.arrange(p,g)
+```
+
+* Look at individual ribosomal genes
+
+
+```{r ribosomlal_gene_ptr_correlation, echo = FALSE}
+
+ptr_genes <- matrix (NA, ncol=2, nrow=3000)
+colnames(ptr_genes) <- c('gene', 'pval')
+for (i in 1:nrow(ptr_ribo_uti)){
+  m <- PTR
+  m <- cbind(m, as.numeric(ptr_ribo_uti[i,  ]))
+  colnames(m)[4] <- c("mean.ribo.exprs")
+  m <- as.data.frame(m)
+  mod <- lm(PTR ~ mean.ribo.exprs, data = m)
+  z <- anova(mod)
+  
+  ptr_genes[i,1] <- rownames(ptr_ribo_uti[i,])
+  ptr_genes[i,2]<- z$`Pr(>F)`[1]
+    
+
+}
+ptr_genes <- as.data.frame(ptr_genes)
+ptr_genes <- ptr_genes[complete.cases(ptr_genes),]
+ptr_genes <- ptr_genes[order(ptr_genes$pval),]
+ptr_genes
+```
+* A few are on the verge of significance, this doesn't indicate whether correlation is positive or negative
+
+
+* Examples
+
+
+```{r examples}
+plotCor <- function(name, counts){
+  
+  m <- cbind(PTR, as.numeric(counts[name,]))
+  colnames(m)[4]<- c("gene.exprs")
+  m <- as.data.frame(m)
+  print (name)
+  
+  p <- ggplot(m, aes(x=PTR, y=gene.exprs))+
+    geom_point(shape=1)+
+    geom_smooth(method=lm)+ ggtitle(name)
+
+  return (p)
+  
+}
+rplD <- plotCor("16442_rplD", ptr_ribo_uti)
+rpsR <- plotCor("17312_rpsR", ptr_ribo_uti)
+grid.arrange(rplD, rpsR, ncol = 2)
+
+
+```
+
+* Looks like if anything the correlation is negative...
+
+
+
+
+
+## 2 Do an unbiased search for genes whose expression correlated with PTR values
+
+* Load the data 
+
+```{r load_data, echo = FALSE}
+
+counts <- all_data$uti_counts_l[, c("UTI14", "UTI17", "UTI56", "UTI66", "UTI68")]
+row_sub = apply(counts, 1, function(row) all(row > 2 ))
+counts <- counts[row_sub,]
+PTR
+head(counts)
+```
+
+* Find genes correlating with PTR
+
+
+```{r gene_ptr_correlation}
+
+ptr_genes <- matrix (NA, ncol=3, nrow=3000)
+colnames(ptr_genes) <- c('gene', 'pval', 'int')
+for (i in 1:nrow(counts)){
+  m <- PTR
+  m <- cbind(m, as.numeric(counts[i,  c("UTI14", "UTI17", "UTI56", "UTI66", "UTI68")]))
+  colnames(m)[4] <- c("mean.exprs")
+  m <- as.data.frame(m)
+  mod <- lm(PTR ~ mean.exprs, data = m)
+  z <- anova(mod)
+  if (z$`Pr(>F)`[1] < 0.05){
+    ptr_genes[i,1] <- rownames(counts[i,])
+    ptr_genes[i,2]<- z$`Pr(>F)`[1]
+    ptr_genes[i, 3] <- mod$coefficients[1]
+    
+  }
+  
+}
+ptr_genes <- as.data.frame(ptr_genes)
+ptr_genes <- ptr_genes[complete.cases(ptr_genes),]
+
+head(ptr_genes)
+
+```
+* Save the Results
+
+```{r}
+rownames(ptr_genes) <- ptr_genes[,1]
+ptr_genes <- ptr_genes[,c(2,3)]
+ptr_genes <- ptr_genes[order(ptr_genes$pval),]
+write.csv(ptr_genes, paste0(DATAPATH, "ptr_genes_correlated.csv"), row.names = TRUE)
+
+```
+
+* Examples:
+
+```{r nhoA_and_groL, echo=FALSE}
+
+nho <- plotCor("18964_nhoA", counts)
+gro <- plotCor("17254_groL", counts)
+grid.arrange(nho, gro, ncol = 2)
+
+
+```
+
+
+
+## 3 Look at chromosomal location of all these genes with relation to the origin/terminus of replication
+
+### Ribosomal Genes
+
+* Load in the locations (see comments below about accuracy)
+
+* Origin - red, terminus - blue, rpsI - orange, rpsL - magenta, rplD - green
+
+```{r ribosomal_locations}
+
+rib_locs <- read.table(paste0(DATAPATH, "ribosomal_go_at_genome_locations.txt"), header = TRUE)
+
+```
+
+* HM14
+
+
+```{r HM14_ribosomes, echo = FALSE}
+
+hm14.rib.genes <- rib_locs[rib_locs$genome == "HM14",]
+
+hm14.rib.locs <- hm14.rib.genes[,4]
+names(hm14.rib.locs) <-hm14.rib.genes$gene_id
+rpsI <- hm14.rib.genes[hm14.rib.genes$gene_id == "16361_rpsI",4]
+rpsL <- hm14.rib.genes[hm14.rib.genes$gene_id == "16451_rpsL",4]
+rplD <- hm14.rib.genes[hm14.rib.genes$gene_id == "16442_rplD",4]
+
+hist(hm14.rib.locs, 500)
+abline(v = 1465521, col = 'blue')
+abline(v = 3831641, col = 'red')
+abline(v = rpsI, col = 'orange')
+abline(v = rpsL, col = 'magenta')
+abline(v = rplD, col = 'green')
+
+
+
+```
+
+
+* HM56
+
+```{r HM56_ribosome }
+
+hm56.rib.genes <- rib_locs[rib_locs$genome == "HM56",]
+
+hm56.rib.locs <- hm56.rib.genes[,4]
+names(hm56.rib.locs) <-hm56.rib.genes$gene_id
+rpsI <- hm56.rib.genes[hm56.rib.genes$gene_id == "16361_rpsI",4]
+rpsL <- hm56.rib.genes[hm56.rib.genes$gene_id == "16451_rpsL",4]
+rplD <- hm56.rib.genes[hm56.rib.genes$gene_id == "16442_rplD",4]
+
+hist(hm56.rib.locs, 500)
+abline(v = 3177816, col = 'blue')
+abline(v = 764444, col = 'red')
+abline(v = rpsI, col = 'orange')
+abline(v = rpsL, col = 'magenta')
+abline(v = rplD, col = 'green')
+
+```
+
+
+* HM3
+
+
+```{r HM3_ribosome}
+
+hm3.rib.genes <- rib_locs[rib_locs$genome == "HM3",]
+
+hm3.rib.locs <- hm3.rib.genes[,4]
+names(hm3.rib.locs) <-hm3.rib.genes$gene_id
+rpsI <- hm3.rib.genes[hm3.rib.genes$gene_id == "16361_rpsI",4]
+rpsL <- hm3.rib.genes[hm3.rib.genes$gene_id == "16451_rpsL",4]
+rplD <- hm3.rib.genes[hm3.rib.genes$gene_id == "16442_rplD",4]
+
+hist(hm3.rib.locs, 500)
+abline(v = 3177816, col = 'blue')
+abline(v = 764444, col = 'red')
+abline(v = rpsI, col = 'orange')
+abline(v = rpsL, col = 'magenta')
+abline(v = rplD, col = 'green')
+
+```
+
+
+### Genes correlating with PTR
+
+* Tried to figure out gene location on the chromosome (vs. contig as shown in gff file). Since the majority of genes were located on contig 1, those two were equivalent, and I decided to focus on only contig 1 genes for now. 
+
+* Load the data
+
+```{r genome_locations}
+ptr_gene_locs <- read.table(paste0(DATAPATH, "first_go_at_genome_locations.txt"), header = TRUE)
+head(ptr_gene_locs)
+
+
+```
+
+* Look at each genome seperately 
+* Origin and terminus were determined with OriC
+* Origin is shown in red, terminus in blue, nhoA in green, groL in magenta, (if terminus is of the axis, approximate location is shown in grey)
+
+* HM14
+
+```{r HM14, echo = FALSE}
+
+hm14.ptr.genes <- ptr_gene_locs[ptr_gene_locs$genome == "HM14",]
+hm14.nhoA <- hm14.ptr.genes[hm14.ptr.genes$gene_id == "18964_nhoA", 4]
+groL <- hm14.ptr.genes[hm14.ptr.genes$gene_id == "17254_groL", 4]
+hm14.ptr.genes <- hm14.ptr.genes[!grepl("15607_acrB_2", hm14.ptr.genes$gene_id),]
+rownames(hm14.ptr.genes) <- hm14.ptr.genes$gene_id
+hm14.ptr.locs <- hm14.ptr.genes[,4]
+names(hm14.ptr.locs) <-hm14.ptr.genes$gene_id
+
+hist(hm14.ptr.locs, 500)
+abline(v = 1465521, col = 'blue')
+abline(v = 3831641, col = 'red')
+abline(v = hm14.nhoA, col = 'green')
+abline(v = groL, col = 'magenta')
+
+```
+
+* HM3
+
+
+```{r HM3, echo = FALSE}
+
+hm3.ptr.genes <- ptr_gene_locs[ptr_gene_locs$genome == "HM3",]
+hm3.nhoA <- hm3.ptr.genes[hm3.ptr.genes$gene_id == "18964_nhoA", 4]
+groL <- hm3.ptr.genes[hm3.ptr.genes$gene_id == "17254_groL", 4]
+
+hm3.ptr.genes <- hm3.ptr.genes[!grepl("15607_acrB_2", hm3.ptr.genes$gene_id),]
+rownames(hm3.ptr.genes) <- hm3.ptr.genes$gene_id
+hm3.ptr.locs <- hm3.ptr.genes[,4]
+names(hm3.ptr.locs) <-hm3.ptr.genes$gene_id
+
+hist(hm3.ptr.locs, 500)
+abline(v = 15050, col = 'blue')
+abline(v = 2179454, col = 'red')
+abline(v = hm3.nhoA, col = 'green')
+abline(v = groL, col = 'magenta')
+
+```
+
+
+* HM17
+
+```{r HM17, echo = FALSE}
+
+
+hm17.ptr.genes <- ptr_gene_locs[ptr_gene_locs$genome == "HM17",]
+hm17.nhoA <- hm17.ptr.genes[hm17.ptr.genes$gene_id == "18964_nhoA", 4]
+groL <- hm17.ptr.genes[hm17.ptr.genes$gene_id == "17254_groL", 4]
+hm17.ptr.genes <- hm17.ptr.genes[!grepl("17383_intA_2", hm17.ptr.genes$gene_id),]
+hm17.ptr.locs <- hm17.ptr.genes[,4]
+names(hm17.ptr.locs) <-hm17.ptr.genes$gene_id
+
+hist(hm17.ptr.locs, 500)
+abline(v = 5086096, col = 'blue')
+abline(v = 2560407, col = 'red')
+abline(v = 4900000, col = 'grey')
+abline(v = hm17.nhoA, col = 'green')
+abline(v = groL, col = 'magenta')
+
+```
+
+
+
+* Conclusion: No significant correlation between location of these genes and their relationship with PTR
+
+
+
+
+
+
