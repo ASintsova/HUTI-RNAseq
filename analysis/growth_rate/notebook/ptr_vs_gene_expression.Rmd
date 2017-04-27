@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(phytools)
 library(DESeq2)
 library(pheatmap)
@@ -75,7 +75,7 @@ g <- ggplot(ptr_vs_ribo_ur, aes(x=PTR, y=mean.ribo.exprs))+
 grid.arrange(p,g)
 ```
 
-* Look at individual ribosomal genes
+* Look at individual ribosomal genes: fit linear model, run an anova, anova p-vals are displayes
 
 
 ```{r ribosomlal_gene_ptr_correlation, echo = FALSE}
@@ -171,7 +171,7 @@ for (i in 1:nrow(counts)){
 }
 ptr_genes <- as.data.frame(ptr_genes)
 ptr_genes <- ptr_genes[complete.cases(ptr_genes),]
-
+ptr_genes <- ptr_genes[order(ptr_genes$pval),]
 head(ptr_genes)
 
 ```
