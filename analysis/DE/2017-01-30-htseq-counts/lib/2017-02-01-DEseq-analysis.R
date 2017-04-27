@@ -6,10 +6,10 @@ library(RColorBrewer)
 library (ggplot2)
 
 #Importing the counts
-combined_counts <- read.csv("~/git_repos/HUTI-RNAseq/analysis/get-homologs/2017-01-30-htseq-counts/2017-02-01-combined_counts.csv", header = TRUE, row.names = 1)
+combined_counts <- read.csv("~/git_repos/HUTI-RNAseq/analysis/DE/2017-01-30-htseq-counts/data/2017-02-01-combined_counts.csv", header = TRUE, row.names = 1)
 
 #Importing metadata
-experiment_info <- read.csv("~/git_repos/HUTI-RNAseq/analysis/Patient_meta_info.csv", header = TRUE, row.names =1)
+experiment_info <- read.csv("~/git_repos/HUTI-RNAseq/analysis/DE/data/Patient_meta_info.csv", header = TRUE, row.names =1)
 
 head(combined_counts)
 
