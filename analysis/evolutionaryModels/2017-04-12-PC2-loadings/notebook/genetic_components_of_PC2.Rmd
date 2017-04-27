@@ -11,6 +11,7 @@ library(stats)
 library(devtools)
 #install_github("ggbiplot", "vqv")
 library(ggbiplot)
+library(pheatmap)
 data ="/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/2017-04-12-PC2-loadings/data/"
 fig = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/evolutionaryModels/2017-04-12-PC2-loadings/figures/"
 
@@ -259,10 +260,91 @@ pheatmap(load.genes, annotation_col = annot, cellheight = 10, cellwidth = 10, cl
 ```
 
 
-* Look at the location of these genes on B vs B1 genome, use HM3 and HM56
+* Look at the location of these genes on B vs B1 genome, use HM14 and HM56
+
+```{r pc2_hm14}
+
+
+hm14.pc2.locs <- c(3831641, 1816299, 933957, 2035632, 936157, 2615289, 2615678, 2616476, 2617043, 2617428,3570210, 937776, 4160540, 1465521 )
+names(hm14.pc2.locs) <- c("ori","argS","wzc1", "wzc2", "wzb", "rplS", "trmD", "rimM", "rpsP", "ffh", "bcsB", "hypo1", "hypo2", "termi")
+hist(hm14.pc2.locs, 100, xlim = c(0, 4400000))
+abline(v = 1465521, col = 'blue')
+abline(v = 3831641, col = 'red')
+abline(v = 2035632, col = "orange")
+abline(v = 4160540, col = "orange" )
+
+```
+
+
+* HM56
+
+
+```{r hm56_pc2_genes}
+
+all.locs <- read.table(paste0(data, "pc2_ed.gff"), sep = "\t")
+get_id <- function(x){
+  gi <- unlist(strsplit(unlist(strsplit(x, c(";")))[1], "="))[2]
+  return (gi)
+}
+
+g.ids<- sapply(as.character(all.locs[,3]), get_id)
+all.locs[,3]<- g.ids
+colnames(all.locs)<- c("genome", "location", "gene")
+
+
+hm56.pc2 <- all.locs[all.locs$genome == "HM56_1",]
+hm56.pc2.locs <- hm56.pc2$location
+names(hm56.pc2.locs)<- hm56.pc2$gene
+
+hm56.pc2.locs
+
+
+hist(hm56.pc2.locs, 100, xlim = c(0, 4000000))
+abline(v = 3177816, col = 'blue')
+abline(v = 764444, col = 'red')
 
 
 
+```
+
+* Now do the same thing only using urine data and visualize 
+
+
+
+```{r pc2_urine_alone}
+annot = info[, c("MEDIA", "PRED_PHYLO")]
+pca.data.urine <- prcomp(t.urine[,1:2502])
+pc2.loadings.urine <- pca.data.urine$rotation[,2][order(pca.data.urine$rotation[,2], decreasing = TRUE)][1:5]#PC2
+names.urine <- names(pc2.loadings.urine)
+load.genes.urine <-inv.norm.c[names.urine, odd]
+head(names.urine, 10)
+
+pheatmap(load.genes.urine, annotation_col = annot, cellheight = 10, cellwidth = 10, cluster_rows = FALSE)#,
+
+```
+
+
+* Same for only UTI samples...
+
+
+```{r pc2_uti_alone}
+annot = info[, c("MEDIA", "PRED_PHYLO")]
+pca.data.uti <- prcomp(t.uti[,1:2502])
+pc2.loadings.uti <- pca.data.uti$rotation[,2][order(pca.data.uti$rotation[,2], decreasing = TRUE)][1:20]#PC2
+names.uti <- names(pc2.loadings.uti)
+load.genes.uti <-inv.norm.c[names.uti, even]
+head(names.uti, 10)
+
+pheatmap(load.genes.uti, annotation_col = annot, cellheight = 10, cellwidth = 10, cluster_rows = FALSE)#,
+
+```
+
+
+## 3. Run phylogenetic tests on genes identified to see if they show 'phylogenetic signal'
+
+
+
+* Have to remember how I did this before...
 
 
 

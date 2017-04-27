@@ -176,3 +176,7 @@ write.csv(load.genes1, paste0(data, "pc1_loading_genes.csv"))
 g.c <-log2(counts[names,]+1)
 pheatmap(g.c, annotation_col = annot, cellheight = 10, cellwidth = 10)#,
 
+
+
+#2017-04-20 
+
