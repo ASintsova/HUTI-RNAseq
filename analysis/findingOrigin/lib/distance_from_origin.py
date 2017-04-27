@@ -59,7 +59,59 @@ def openMultiFasta(filename):
 
 geneLoc = 163441
 genome = "HM7"
+
+
 def getGeneLocs(seq_dict, geneLoc, genome):
+    origin = genome_info[genome][1]
+    print(origin)
+    length = genome_info[genome][0]
+    print(length)
+    contigs = natural_sort([id for id in seq_dict.keys()])
+    print (contigs)
+    genome_length = 0
+    originDist = None
+    for seq in contigs:
+        print (len(seq_dict[seq]))
+        genome_length += len(seq_dict[seq])
+        
+        if geneLoc < genome_length:
+            if geneLoc < origin:
+                originDist = 1+((geneLoc - origin)/length)
+            else:
+                originDist = (geneLoc - origin)/length
+        else:
+            pass
+            
+    return originDist
+
+output = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/growth_rate/data/"
+#corelated_genes_csv = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/growth_rate/data/ptr_genes_correlated.csv"
+upec_gff = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/upec_gh_edited.gff"
+corelated_genes_csv = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/ribosomal_gene_ids.txt"
+def getGffForCorrelatedGenes(corelated_genes_csv, upec_gff):
+    fh = open(corelated_genes_csv)
+    header = fh.readline().rstrip()
+    path = output + "ribosomal_go_at_genome_locations.txt"
+    out = open (path, "w+")
+    out.write("gene_id\tgenome\tcontig\tcontig_location\n")
+    for line in fh:
+        gene_id = line.rstrip().split(",")[0].strip('"')
+        print(gene_id)
+        gff = open(upec_gff)
+        for gene in gff:
+            #out = open (str())
+            if gene_id in gene:
+                info = gene.rstrip().split("\t")
+                genome = info[0].split("_")[0]
+                contig = info[0].split("_")[1]
+                location = info[3]
+                #print(gene.rstrip())
+                out.write(gene_id + "\t" + genome + "\t" + contig + "\t" + location + "\n")
+    
+
+
+
+def getGeneLocsFromGff(genome, fasta_file, gff_file, out_file):
     origin = genome_info[genome][1]
     print(origin)
     length = genome_info[genome][0]
