@@ -103,9 +103,9 @@ pv.out <- pathview(gene.data = p.a, pathway.id = "02010", species = "eco", gene.
 core <- read.csv("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2017-04-03-pathway-analysis-revisited/data/DE_genes_edited.csv",
                  row.names = 1)
 
-all.genes <- rbind(core[,c(2,9)], non.core[,c(2,8)])
+all.genes <- rbind(core[,c(2,7,9)], non.core[,c(2,7,8)])
 
-
+write.csv(all.genes, paste0(dat, "all_de_genes.csv"))
 
 p.a <- all.genes[,1]
 names(p.a) <- all.genes[,2]
