@@ -1,0 +1,84 @@
+Running on
+nyx5561
+nyx5561
+nyx5561
+nyx5561
+Running from /scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM1_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM3_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM6_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM7_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM14_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM17_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM43_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM54_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM56_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM57_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM66_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM68_gh.gff'
+Traceback (most recent call last):
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 92, in <module>
+    crossRefWithProkka (filename_in, filename_out)
+  File "/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Analysis/lib/get-homologs/get_gffs_from_homolgs.py", line 50, in crossRefWithProkka
+    gh = open(gh_gff)
+IOError: [Errno 2] No such file or directory: '/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Data/HM86_gh.gff'

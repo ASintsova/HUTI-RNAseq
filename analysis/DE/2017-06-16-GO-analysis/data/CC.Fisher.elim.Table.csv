@@ -1,0 +1,8 @@
+"","GO.ID","Term","Annotated","Significant","Expected","elimFisher","genesInTerm","DEGenesInTerm"
+"3","GO:0042597","periplasmic space",74,33,23.16,"0.0082","agp,amiA,amiB,amiC,ansB,aphA,appA,araF,artI,artJ,bisC,btuF,cpdB,cpxP,csgC,csgE,cusB,cusF,cysP,dcp,degQ,dppA,dsbC,eco,efeB,envC,fdnG,fepB,fkpA,ggt,glnH,glpQ,gltI,hdeA,livJ,lolA,malE,malM,malS,marB,mglB,napA,nikA,nrfA,oppA,osmY,potD,potF,ppiA,prc,pspE,rbsB,rseB,sapA,sbp,secM,sgrR,slt,spy,tesA,tolB,treA,ugpB,ushA,xylF,ybaV,ydhX,yedY,ygiW,yiaO,yliI,yncE,yobA,ytfQ","csgC,glpQ,malE"
+"4","GO:0009331","glycerol-3-phosphate dehydrogenase compl...",4,4,1.25,"0.0092","glpA,glpB,glpC,glpD",""
+"5","GO:0042995","cell projection",6,5,1.88,"0.0127","csgA,csgB,flgB,flgD,yehA,yehD","flgB,yehD"
+"6","GO:0030288","outer membrane-bounded periplasmic space",68,30,21.29,"0.0138","agp,amiA,amiB,amiC,ansB,aphA,araF,artI,artJ,bisC,btuF,cpdB,cpxP,csgE,cusB,cusF,cysP,dcp,degQ,dppA,dsbC,eco,envC,fdnG,fepB,fkpA,glnH,gltI,hdeA,livJ,lolA,malE,malM,malS,marB,mglB,napA,nikA,nrfA,oppA,osmY,potD,potF,ppiA,prc,pspE,rbsB,rseB,sapA,sbp,sgrR,slt,spy,tesA,tolB,treA,ugpB,ushA,xylF,ybaV,ydhX,yedY,ygiW,yiaO,yliI,yncE,yobA,ytfQ","malE"
+"7","GO:1990060","maltose transport complex",3,3,0.94,"0.0299","malE,malG,malK","malE"
+"8","GO:0009325","nitrate reductase complex",3,3,0.94,"0.0299","narI,narV,narY",""
+"9","GO:0045239","tricarboxylic acid cycle enzyme complex",5,4,1.57,"0.0348","sucA,sucB,sucC,sucD,yahF",""
