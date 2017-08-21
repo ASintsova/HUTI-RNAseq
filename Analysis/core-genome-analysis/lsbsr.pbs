@@ -1,0 +1,41 @@
+            
+####  PBS preamble
+
+#PBS -N ls_bsr 
+
+#PBS -M annasint@umich.edu
+#PBS -m bea
+#PBS -j oe
+
+#PBS -l nodes=1:ppn=4,pmem=4gb,walltime=12:00:00
+#PBS -V
+
+#PBS -A hmobley_fluxod
+#PBS -l qos=flux
+#PBS -q fluxod
+
+####  End PBS preamble
+####  Commands follow this line
+
+# This script requires many modules loaded
+
+if [ -s "$PBS_NODEFILE" ] ; then
+    echo "Running on"
+    cat $PBS_NODEFILE
+fi
+
+if [ -d "$PBS_O_WORKDIR" ] ; then
+    cd $PBS_O_WORKDIR
+    echo "Running from $PBS_O_WORKDIR"
+fi
+
+
+
+
+
+
+python /sw/med/centos7/ls-bsr/1.0/ls_bsr.py -d ../Genomes/New_Strains -c usearch -y /scratch/hmobley_fluxod/annasint/HUTI_RNAseq/core
+#python /sw/med/centos7/ls-bsr/1.0/ls_bsr.py -d ../Genomes -g ../Annotations/gsp.core.hm54.fasta -y /scratch/hmobley_fluxod/annasint/HUTI_RNAseq/temp_ls_bsr
+
+
+

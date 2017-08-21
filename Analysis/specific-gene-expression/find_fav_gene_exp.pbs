@@ -1,0 +1,50 @@
+            
+####  PBS preamble
+
+#PBS -N find fav_gene_expression 
+
+#PBS -M annasint@umich.edu
+#PBS -m bea
+#PBS -j oe
+
+#PBS -l nodes=1:ppn=4,pmem=4gb,walltime=12:00:00
+#PBS -V
+
+#PBS -A hmobley_fluxod
+#PBS -l qos=flux
+#PBS -q fluxod
+
+####  End PBS preamble
+####  Commands follow this line
+
+# python, bedtools, ncbi-blast
+
+if [ -s "$PBS_NODEFILE" ] ; then
+    echo "Running on"
+    cat $PBS_NODEFILE
+fi
+
+if [ -d "$PBS_O_WORKDIR" ] ; then
+    cd $PBS_O_WORKDIR
+    echo "Running from $PBS_O_WORKDIR"
+fi
+
+GEN=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Genomes
+SCR=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Scripts
+ALG=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/Alignments 
+FAVGEN=/scratch/hmobley_fluxod/annasint/HUTI_RNAseq/ARA
+#mkdir $FAVGEN
+#python $SCR/getgenlocs.py "['araG', 'araF', 'araH']" $GEN/CFT073.gbk $FAVGEN/arabinose.bed
+#bedtools getfasta -name  -fi $GEN/CFT073.fasta -bed ARA/arabinose.bed -fo $FAVGEN/ara.CFT.fasta
+ 
+#optional - only needs to be done once really, unless want to use subset of genomes
+#makeblastdb -in $GEN/HUTI_20.fasta -title HUTI_ref -dbtype nucl -out $GEN/databases/HUTI_ref
+
+#blastn -db $GEN/databases/HUTI_ref -query $FAVGEN/ara.CFT.fasta  -evalue 1e-3 -word_size 11 -outfmt "6 sseqid sstart send evalue qseqid" > $FAVGEN/ara.blast.out
+cd $FAVGEN
+#while read p;do grep "HM"$p"_" ara.blast.out > "HM"$p"_ara"; done < $GEN/strain.numbers
+#find . -size 0 -delete
+#for i in HM*; do python $SCR/blast_to_dataframe.py $i; done
+R CMD BATCH --no-restore --no-save $SCR/readCounts.R
+
+

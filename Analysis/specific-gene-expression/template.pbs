@@ -1,0 +1,37 @@
+            
+####  PBS preamble
+
+#PBS -N job_name 
+
+#PBS -M annasint@umich.edu
+#PBS -m bea
+#PBS -j oe
+
+#PBS -l nodes=1:ppn=4,pmem=4gb,walltime=12:00:00
+#PBS -V
+
+#PBS -A hmobley_fluxod
+#PBS -l qos=flux
+#PBS -q fluxod
+
+####  End PBS preamble
+####  Commands follow this line
+
+# This script requires no modules loaded
+
+if [ -s "$PBS_NODEFILE" ] ; then
+    echo "Running on"
+    cat $PBS_NODEFILE
+fi
+
+if [ -d "$PBS_O_WORKDIR" ] ; then
+    cd $PBS_O_WORKDIR
+    echo "Running from $PBS_O_WORKDIR"
+fi
+
+echo "Running from $(pwd)"
+
+
+mkdir $DAT
+
+
