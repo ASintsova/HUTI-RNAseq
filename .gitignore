@@ -1,4 +1,5 @@
 data/
+Data/
 !README.md
 Tools/*
 *.log
