@@ -1,4 +1,5 @@
-## 2017-08-11
+#### 2017-08-11
+##### Summary: Learning get_homologues
 
 ### First attempt at making strain specific model
 
@@ -67,7 +68,8 @@ EscherichiacolistrainSCEC2plasmidpSCEC2NC022377_f0_alltaxa_algBDBH_Pfam_e0_\
 
 
 
-## 2017-08-14
+#### 2017-08-14
+##### Summary: Playing with my first model, running get_homologues on HM01
 
 ### First attempt at making strain specific model cntd
 
@@ -107,9 +109,8 @@ perl $GETHOMS/get_homologues.pl -d hm01 -n 2
 - if its blank to begin with, leave it blank, however if it isn't blank, but not homologs found delete reaction
 
 
-## 2017-08-15
-
-### Building a model
+#### 2017-08-15
+##### Summary: Building first model with CobraPy
 
 - MG1655 model was downloaded from [this paper](https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-5-182)
 
@@ -134,8 +135,8 @@ thus for each prokka number in the file want to have all possible ASAP number_of
 - next step: read in mg1655 model, and see if can update with HM01 info. See how many reactions are removed. Not worrying about adding extra at this time.
 
 
-## 2017-08-16
-
+#### 2017-08-16
+##### Summary: Contd working on Cobrapy script for strain specific model
 
 ### Building a model contd
 
@@ -164,3 +165,79 @@ python lib/buildingModel.py data/hm01/hm01_ids_to_mg1655_bnums.txt data/mg1655_m
 
 
 - analyze created model after lunch
+- this updated all the reactions and removed quite a few (118) - might have to put some back if are essential. Did not do anything to metabolites. Also did not remove the bnum genes - need to do that.
+
+- how do I know if the model is 'gapless'
+
+#### 2017-08-30
+##### Summary: Contd working on Cobrapy script for strain specific model. Trying to avoid gaps. 
+
+### Building a model contd
+
+- adding removal of all bnum genes from the model, should not make a big difference in long term, but cleaning up.
+
+- Cannot find a biomass reaction in the base model I'm using. Add one if I can find it? Use a different base that already has this incorporated? Why is it missing?
+
+- I think idea behind creating a gapless model is trying to run your biomass optimization after deletion of each reaction, and if flux is inhibited put it back in.
+
+
+#### 2017-09-01
+##### Summary: Generated model not workable due to too many reactions being removed. Figure out a way around this.
+
+### Building a model contd
+
+- Looking for biomass reaction function. Found one in a different model of MG1655. See what the differences are, probably just use the other model as a base? Will this be a problem when incorporating multiple models???
+
+
+- Looking for the latest/most updated MG1655 model. Going to stick with just incorporating one model for now. This latest (is it latest?) seems to have two different bioMass reactions. What is the difference?
+
+- trying to run old script on new base model
+
+```
+python lib/buildingModel.py data/hm01/hm01_ids_to_mg1655_bnums.txt data/mg1655_2011_model.xml data/hm01/2017-09-01-hm01-model-1.xml
+
+```
+
+- as expected, deleted way too many reactions, and consequently flux via model is infeasible
+
+- see if deleting disables flux
+
+- success, but now significantly diminished growth rate, possible make a different cut off, not just > 0 flux through biomass reaction.
+
+
+- all right onto mapping confidence scores. First get those pesky gh ids onto prokkas ... fml...
+
+
+
+#### 2017-09-13
+##### Summary: Evan has no confidence in what I am doing, wants me to use Model Seed
+
+### Building a model cntd
+
+- Last week met with Evan. Not surprisingly he was not very confident in my ability to create a decent model, so instead of what I am doing he wants me to use modelSeed.
+- To do so need to re-annotate genomes with RAST then build a model. Going to do so via PATRIC. How am I going to integrate gene expression data into this??
+- Keeps failing I'm not sure what this is about, too dumb right now to figure it out
+
+
+
+#### 2017-12-05
+##### Summary: Trying to revisit this model after a long break. Switched to playing with PATRIC models as a warm up. 
+
+### Building model: starting again.
+
+- Although I'm pretty confident I will have to come up with my own model at some point - for fun if for nothing else, right now playing around with PATRIC and modelSEED.
+- [modelSEED original paper](https://www.nature.com/articles/nbt.1672) 
+
+- uploaded all fasta files into PATRIC
+- ran the annotation tool, all queued right now, probably will have to build the models tomorrow. 
+- going to go read that paper now
+
+
+#### 2017-12-13
+##### Summary: Found an awesome resource with detailed workflow that will allow me to build strain specific models. 
+
+### Building Strains Specific Model 2.0
+
+- Overall I was on the right track. A few python shortcuts to make life easier that I did not know about. 
+- As I suspected the hard but important part will be to incorporate multiple models into my reference instead of using E.coli alone. 
+- Really excite to start playing with code etc. 
