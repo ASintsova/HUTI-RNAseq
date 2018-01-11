@@ -4,3 +4,5 @@ Data/
 Tools/*
 *.log
 *.sbml
+venv/
+.idea/
