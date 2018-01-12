@@ -14,6 +14,8 @@ def getArgs():
     parser.add_argument("-i", "--input", nargs='+', help="List of files", required=True)
     parser.add_argument("-o", "--out_dir", help="Location of the output directory", required=True)
     parser.add_argument('-ref', '--reference_genome', help="Reference genome for alignments", required=False)
+    parser.add_argument('--no_index', help="Don't build bowtie2 index again", action="store_true", required=False)
+
     return parser
 
 
@@ -40,7 +42,7 @@ def pipeline():  # will eventually add a logger
     args = getArgs().parse_args()
     analysis = args.analysis
     if os.path.isdir(args.input[0]):
-        files = os.listdir(args.input[0])
+        files = [os.path.join(args.input[0],fi) for fi in os.listdir(args.input[0])]
     elif args.input:
         files = args.input
     else:
@@ -63,17 +65,18 @@ def pipeline():  # will eventually add a logger
         analysis_name = "Trimmomatic Job"
     elif analysis == 'align':
         ref = args.reference_genome
+        ix = False if args.no_index else True
         assert ref
         if os.path.isdir(ref):
             multi_ref = True
         else:
             multi_ref = False
         pbs_name = os.path.join(out_dir, datetime.datetime.now().strftime("%Y-%m-%d") + '_bowtie2.pbs')
-        gJ.generatePBSScript(pbs_name, fq.BowTieAlign(files, ref, out_dir, multi_ref))
+        gJ.generatePBSScript(pbs_name, fq.BowTieAlign(files, ref, out_dir, multi_ref, ix))
         analysis_name = "BowTie2 Alignment Job"
     else:
         return "Wrong Answer"
-    subprocess.call(["qsub", pbs_name])
+    #subprocess.call(["qsub", pbs_name])
     return "{} submitted!".format(analysis_name)
 
 

@@ -31,7 +31,7 @@ def generatePBSScript(script_name, script):
         echo "Running from $PBS_O_WORKDIR"
     fi
 
-    """.format(script_name.split(".")[0])
+    """.format(os.path.basename(script_name).split(".")[0])
 
     pbs = open(script_name, "w")
     pbs.write(pbs_preamble + "\n" + script + "\n")

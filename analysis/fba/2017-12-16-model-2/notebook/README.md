@@ -82,3 +82,10 @@ for d in *homologues/
 * Most strains/models look ok, something is off about HM7 and HM66. Need to go back to the list of deleted genes and see whats up.
 
 * Other things to consider: develop scripts that quickly identify what genes were deleted from each model, and then possibly re-run blast to make sure those are absent. See if there are any patterns between different clinical strains.
+
+
+#### 2018-01-11
+##### Summary: Ran iron simulations. NO difference between models.
+
+* Probably not surprising and good is that not differences between models.
+* There are differences between aerobic and anaerobic conditions in terms both of how much iron is needed for at least minimal growth and need for ferrous vs ferric iron. Don't really know what is present during infection. 
