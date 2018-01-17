@@ -74,7 +74,7 @@ This last one is not working, need to use path.join not path.abspath. Too tired 
 
 
 #### 2018-01-12
-##### Summary:
+##### Summary: ASM abstract. Looked at multiqc report. Fixed a bunch of path related bugs. fasqc, trim and align modules working
 
 * multiqc report still is appearing in the wrong place (root), instead of outdir. Might want to look into the parameters for multiqc
 
@@ -83,6 +83,9 @@ This last one is not working, need to use path.join not path.abspath. Too tired 
  scp annasint@flux-xfer.arc-ts.umich.edu:/scratch/hmobley_fluxod/annasint/HUTI-RNAseq/2018-01-11_multiqc_report.html ~/git_repos/HUTI-RNAseq/analysis/pipeline/
 ```
 
+* Submitted all the alignment jobs. (Human completed yesterday - looks fine in terms of no human reads in urine samples, but need next module to actually look at the alignment files)
+
+* Wrote ASM abstract
 
 
 
