@@ -89,3 +89,23 @@ for d in *homologues/
 
 * Probably not surprising and good is that not differences between models.
 * There are differences between aerobic and anaerobic conditions in terms both of how much iron is needed for at least minimal growth and need for ferrous vs ferric iron. Don't really know what is present during infection. 
+
+
+
+#### 2018-01-15
+##### Summary: Brainstorming paper outline
+
+* Made a list of figures I want by meeting in Feb: 
+
+    - Tree
+    - PCA
+    - heatmap of presence/absence of genes
+    - heatmap of metabolic potential
+    - heatmpat showing differences in expresion of metabolic pathway
+    - zoom in on a couple of specific pathways
+    
+* Need to submit ASM abstract tomorrow.
+
+* Want to take a closer at the genes being deleted, fill like something is not quite right there - same genes being deleted, but they are all related to LPS biosynthesis - maybe just too divergent?
+* Easy script to go through all those files and find genes in common: count how many times each gene appears. Dictionary like.
+* Interesting? all of them missing an lps biosynthetic cluster??
