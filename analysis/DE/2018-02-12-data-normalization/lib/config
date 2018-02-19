@@ -1,0 +1,14 @@
+[GFF]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-genomes/data/gff_files
+format = genome.gff
+
+[BAMS]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/alignments/
+format = genome_sample.bam
+
+[sample_format]
+format = genome_sample
+
+[output]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-02-12-data-normalization/data
+file = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-02-12-data-normalization/data/2018-02-17-saturation_data.csv
