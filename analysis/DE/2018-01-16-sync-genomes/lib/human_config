@@ -1,0 +1,22 @@
+[GFF]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/human/data/ref/ceacam3_transcript_variant_1.gff
+format =
+
+[GETHOMS]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-genomes/data/genomes_homologues
+suffix =_CM_t0
+matrix_suffix = _t0
+
+[HTSEQ]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/human/data/counts
+format = genome_sample_trimmed_sorted_counts
+
+[FLAG]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat
+format = genome_sample_trimmed_
+
+[sample_format]
+format = genome_sample
+
+[output]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/human/data
