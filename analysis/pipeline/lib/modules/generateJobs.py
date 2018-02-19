@@ -1,4 +1,6 @@
 import os
+import logging
+
 def generatePBSScript(script_name, script):
 
     pbs_preamble = """
