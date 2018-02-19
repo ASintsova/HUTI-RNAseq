@@ -114,7 +114,10 @@ done
 
 These counts were compared to Ali's and were found to be the same (random check)
 
+#### Data Normalization
 
+Normalization is designed to transform the distributions of abundances for each sample, without distortion, into distributions that can be compared.
+ It accounts for differences in sequencing depths and in biases arising from the library preparation or its sequencing
 
 #### _Differential Expression Analysis_
 

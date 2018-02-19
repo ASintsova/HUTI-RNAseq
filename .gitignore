@@ -6,3 +6,4 @@ Tools/*
 *.sbml
 venv/
 .idea/
+*test*
