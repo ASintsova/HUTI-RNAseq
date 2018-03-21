@@ -109,3 +109,80 @@ for d in *homologues/
 * Want to take a closer at the genes being deleted, fill like something is not quite right there - same genes being deleted, but they are all related to LPS biosynthesis - maybe just too divergent?
 * Easy script to go through all those files and find genes in common: count how many times each gene appears. Dictionary like.
 * Interesting? all of them missing an lps biosynthetic cluster??
+
+
+#### 2018-03-09
+##### Summary: Back to trying to get gapfilling alg to work
+
+* Running a test salmonella model
+* Same problem as before, cannot find a solution with just exchange reactions
+* Have a filling I can make gapfilling work by re-introducing deleted reactions, but not by opening appropriate exhchange reactions
+* This is taking a super long time even on the test model
+* Going to look at different packages suggested by cobrapy
+* Proceed two ways: gapfill from a list of reactions that were deleted, as in cobrapy example, use the other python package that runs vir PATRIC and ModelSeed and use their gapfilling alg
+* Compare the results
+* Move on to CORDA
+* I think it's beyond me at this point to do anything with PATRIC and try to figure out what those genes are in their annotation
+* Alternatively though I can go through everything using PATRIC annotations instead of PROKKA numbers - shame crap!
+
+
+* _Multistrain Webinar Notes:_
+
+        - FoldMe 2017 PNAS
+
+        - SBRG youtube channel
+        - iML1515 latest E.coli reconstruction Nat Biotech 2017
+
+#### 2018-03-14
+##### Summary: Working on `strainSpecificModel.py`
+
+* Look at BDBH parameters, might want to relax them a bit, for example, finding only 3607 genes for HM01 in MG1655
+* Going to generate new data folder, and re-run gh: BDBH with only 80% seq identity as cut off.
+
+
+#### 2018-03-15
+##### Summary: My models are probably not going to be so bad
+* Now found 3644 genes, not a huge improvement. Conclusion, with these closely related strains these conditions don't really matter. But we'll also try using 70% cut off, P. group seem to play around with cut offs to fit their needs.
+* Suddenly the only 'essential' genes is the mysterious s0001.
+* Overall not sure that their gapfilling/auxotrophy thing is not a complete bs
+* Moving on: need to get the latest model and CFT073 gbk
+* Created models for 'the best' strains and CFT073
+* Ready to run some simulations
+* Obviously missing any extra metabolic abilities carried by these strains. In the future could add other models to help.
+
+* Can do gapfilling from the 'essential list'. Although for everyone except CFT073 there was no essential list
+* Only for 2 strains deleting reactions resulted in decreased growth rate
+
+#### 2018-03-16
+##### Summary: Model drafts ready to be tested, for all but CFT073 could delete not found genes/reactions without seriously compromising the biomass production
+
+* Going back to simulations
+* Going through all 331 exchange reactions as carbon sources, need to go back and figure out which ones can actually be sources of C/N/P/S etc.
+* Something is off in the script, getting wrong results
+
+#### 2018-03-20
+##### Summary: Finished a script to parse KEGG API, so can get info on genes relatively quickly. Looking for genes deleted from all 14 clinical strain models
+
+* Actually I think it's 13, I think I'm misshing HM60 for whatever reason
+* Looks like mostly missing some LPS biosynthesis genes, suggesting LPS of clinical strains is different from that of MG1655, not exactly ground breaking
+* Look at other genes/reaction deletions, any patterns between strains, i.e. LPS should align with phylogroup designations? or should they?
+* Re-running simulation script, and trying to visualize. Matplotlib has a steep learning curve.
+* Script seems to be working, now need to make sure what I'm using as carbon source can actually be used as carbon source, also add nitrogen, etc.
+
+* going to upload everything on PATRIC and compare the models
+
+#### 2018-03-21
+##### Summary: Trying out CORDA. Closing this directory.
+
+* Takes a long time
+* How do you convert jupyter to script?
+* Might need to run o/n at home
+* Might want to adjust the assigning confidence function
+* Converting `.ipynb` to script
+```
+sudo jupyter nbconvert --to script 2018-03-21-HM54-CORDA.ipynb
+```
+* Done with this directory
+
+
+

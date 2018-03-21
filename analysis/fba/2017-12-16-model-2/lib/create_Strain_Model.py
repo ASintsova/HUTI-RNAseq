@@ -30,7 +30,7 @@ def generateStrainModel(ogc_file):
     strain = os.path.basename(ogc_file).split("OGC")[0]
     print("Running generateStrainModel for {}".format(strain.strip("_")))
     print("Getting all the genes from {}".format(os.path.basename(ogc_file)))
-    bnum = re.compile(r'b\d\d\d\d')
+    bnum = re.compile(r'b\d\d\d\d')# Could make this any letter followed by 4 numbers
     with open(ogc_file, "r") as fh:
         text = fh.read()
         strain_genes = bnum.findall(text)
