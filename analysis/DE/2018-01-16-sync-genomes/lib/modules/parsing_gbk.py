@@ -54,5 +54,20 @@ def replaceProteinIdWithLocusTags(gbk_file, genome,table, feature_type = 'CDS',
 
 
 
+if __name__ == "__main__":
+    table = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/get_homologs_output/C50_S90_e0_/run_C50_S90_e0__pan_C50_S90/pangenome_matrix_t0_crossRef.csv"
+    print("CFT073")
+    gbk = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/" \
+                  "2018-01-16-sync-genomes/data/" \
+              "CFT073/GCA_000007445.1_ASM744v1_genomic.gbff"
+    genome = "CFT073"
 
-#replaceProteinIdWithLocusTags(csv_file)
+    replaceProteinIdWithLocusTags(gbk, genome, table)
+    print("MG1655")
+
+    gbk = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/" \
+                          "2018-01-16-sync-genomes/data/" \
+                       "MG1655/GCA_000005845.2_ASM584v2_genomic.gbff"
+    genome = "MG1655"
+
+    replaceProteinIdWithLocusTags(gbk, genome, table)

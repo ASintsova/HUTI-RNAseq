@@ -22,7 +22,7 @@ import re
 import numpy as np
 
 
-def crossRefFromPangenome(pangenome_matrix, OGC_dir):
+def crossRefFromPangenome(pangenome_matrix, OGC_dir): # only need one input really, replace with glob.glob
 
     # Read in the pangenome matrix
     pgm = pd.read_csv(pangenome_matrix, sep="\t", index_col=0).T
@@ -56,8 +56,11 @@ def crossRefFromPangenome(pangenome_matrix, OGC_dir):
                 continue  # Hopefully this doesn't happen
 
     out_file = os.path.join(OGC_dir, (pangenome_matrix.split(".")[0]+"_crossRef.csv"))
-    pgm.to_csv(out_file)
+    pgm.to_csv(out_file) # maybe add the date
     return out_file  # Returns the path to the file
 
 
-
+if __name__ == "__main__":
+    pangenome_matrix = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/get_homologs_output/C50_S90_e0_/run_C50_S90_e0__pan_C50_S90/pangenome_matrix_t0.tab"
+    OGC_dir = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/get_homologs_output/C50_S90_e0_/run_C50_S90_e0__pan_C50_S90"
+    crossRefFromPangenome(pangenome_matrix, OGC_dir)

@@ -143,3 +143,44 @@ pipe = subprocess.Popen(["perl", "uireplace.pl", var])#just an example, obviousl
     - Creating a crossreference matrix
     - If counts are provided, putting counts and calculated RPKMs in as well
     
+#### 2018-02-20
+##### Summary: Re-worked the script, still can't figure out how to run these in parallel
+
+* Re-worked the script so that there are csv files produced after each run, otherwise it's too frustrating
+* Fixed some minor bugs (looking at `size` not `taxa` in the cluster.lists)
+* Also now preserving some of the essential outputs
+* Testing on 3 genomes if works will set up a bunch for overnight run
+*  Getting an error in my clusterSizeDistribution, but can still do the runGH for conditions of interest
+
+* glob.glob is not working. 
+
+
+#### 2018-02-21
+##### Summary: Fixed another bug, made so can submit multiple jobs at the same time to flux
+
+* Re-worked version of this is now in `multistrain_rnaseq`, see that directory for more detailed documentation
+
+#### 2018-02-23
+##### Summary: Refactoring code that adds counts and RPKMS to OGC matrix
+
+* Needs to be tested
+
+
+#### 2018-02-26
+##### Summary: Testing code from Feb 23
+
+* Pulling data from flux into `git_repos/HUTI-RNAseq/data/get_homologs_output`
+*  `scp` has an r argument that allows transferring whole directories
+
+* Running crossRefOGC.py: success
+* Running parsing_gbk.py for CFT073 and MG1655:success
+
+* **NOTE**: all of this will need to be tested. Ex. of test to run: look up CFT073 and MG1655 in KEGG database and see if they are the same thing
+* Running getGeneID to add counts and RPKM: success
+* Exploratory data analysis
+
+
+
+
+
+

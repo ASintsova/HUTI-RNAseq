@@ -16,3 +16,5 @@ def generateSampleNames(genomes = ALL, sample = COND, reseqed = True):
         sample_names += additional_names
     names = ["_".join(s) for s in sample_names]
     return names
+
+#print(generateSampleNames())

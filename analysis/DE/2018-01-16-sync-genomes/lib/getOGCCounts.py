@@ -1,9 +1,15 @@
 
 """
-
+Appropriate file naming formats are outlined in the config file as well
 
 Given: a list of sample names (ex. HM01_UR, or HM07_UTI_seq1), create a csv file with counts, RPKMs and MG1655 and CFT073 orthologs
 Also creates individual csv file for each sample
+
+
+1. Run get_homologues on genomes of interest, specific configuration to be found in the config file
+2. Using output from get_homolouges generate a crossReference (module crossRefOGC) matching orthologs between different genome annotations
+
+3.
 
 """
 
@@ -12,7 +18,7 @@ import configparser
 import subprocess
 import argparse
 from modules import get_gene_id
-from modules import generating_OGC_crossref as cr
+from modules import getOGCCounts as gc
 from modules import parsing_gbk as pg
 from itertools import product
 from modules import parse_flagstats as pf
@@ -45,30 +51,38 @@ def generateSampleNames(genomes = ALL, sample = COND, reseqed = True):
 def parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--config", required=False)
-
-
-def orthologFinder():
-
-
+    parser.add_argument("-o", "--out_dir", required=True)
+    parser.add_argument("-s", "--samples", nargs='+', help="List of samples", required=False)
 
 
 
-#config = configparser.ConfigParser()
-#config.read("lib/human_config")
-GETHOMS = config.get("GETHOMS", "path") # dir
-HTSEQ = config.get("HTSEQ", "path") # dir
-FLAG = config.get("FLAG", "path") # dir
-
-if not os.path.isfile(os.path.join(FLAG, "flagstat_summary.txt")):
-    pf.parseFlagstat(config)
-assert os.path.isfile(os.path.join(FLAG, "flagstat_summary.txt"))
+#def orthologFinder():
+    #this is where running of get_homologues would go
 
 
-GFF = config.get("GFF", "path") # dir or file check
-OUTDIR = config.get("output", "path") # dir
+########################################################
 
 
-def clean_counts(samples, config, out_dir=OUTDIR): # This will only work as long as outdir is specified in the config file
+########################################################
+
+# 1. Check if CrossRef has been generated
+
+def isCrossRef(matrix):
+    if os.path.isfile(matrix.split(".")[0] + "_crossRef.csv"):
+        return matrix.split(".")[0] + "_crossRef.csv"
+    return False
+
+# 2. Check that gethomologues output contains all the genomes you're interested in
+
+def checkGETHOMS(genome, ref_genomes, GETHOMS):
+    genome_list = os.path.join(GETHOMS, "input_order.txt")
+    with open(genome_list, "r") as gl:
+        input = gl.read()
+    return all([g in input for g in ([genome] + ref_genomes)])
+
+
+def getOGCCounts(samples, config, out_dir):
+
     subprocess.call(["mkdir", "-p", out_dir])
     assert os.path.isdir(out_dir)
 
@@ -85,17 +99,29 @@ def clean_counts(samples, config, out_dir=OUTDIR): # This will only work as long
 
 
 if __name__ == "__main__":
-    #samples = generateSampleNames(genomes = ["HM01", "HM06", 'HM07', 'HM57'], sample = ["UR", "UTI"], reseqed = False)
-    samples = generateSampleNames()
-    clean_counts(samples, config)
+    # Get info from config parser
 
-    #######################
+
     args = parser().parse_args()
     config = configparser.ConfigParser()
     if args.config:
         config.read(args.config)
     else:
         config.read(os.path.dirname(os.path.abspath(__file__)))
+
+    GETHOMS = config.get("GETHOMS", "path")  # dir
+    HTSEQ = config.get("HTSEQ", "path")  # dir
+    FLAG = config.get("FLAG", "path")  # flagstat_summary.txt
+    GFF = config.get("GFF", "path")  # dir or file check
+
+
+    if args.samples:
+        samples = [sam for sam in args.input]
+    else:
+        samples = samples = generateSampleNames()
+
+
+
 
 
 

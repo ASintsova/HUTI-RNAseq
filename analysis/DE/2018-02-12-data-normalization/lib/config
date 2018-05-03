@@ -11,4 +11,4 @@ format = genome_sample
 
 [output]
 path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-02-12-data-normalization/data
-file = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-02-12-data-normalization/data/2018-02-17-saturation_data.csv
+file = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-02-12-data-normalization/data/2018-02-17-saturation_data2.csv

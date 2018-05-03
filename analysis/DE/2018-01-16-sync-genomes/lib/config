@@ -3,9 +3,12 @@ path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-gen
 format = genome.gff
 
 [GETHOMS]
-bin = /Users/annasintsova/tools/get_homologues-macosx-20170807
+path = /Users/annasintsova/tools/get_homologues-macosx-20170807
 gbk_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-genomes/data/genomes_testing
+I = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-genomes/data/genomes_testing/include_gbk.txt
 
+
+[genomes]
 path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-genomes/data/genomes_homologues
 suffix =_CM_t0
 matrix_suffix = _t0
@@ -15,11 +18,12 @@ path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/data/
 format = genome_sample_trimmed_sorted_counts
 
 [FLAG]
-path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat
+bin = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat/flagstat_summary.txt
 format = genome_sample_trimmed_
 
 [sample_format]
 format = genome_sample
 
 [output]
-path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/data/processed_counts
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/get_homologs_output/C50_S90_e0_/run_C50_S90_e0__pan_C50_S90
