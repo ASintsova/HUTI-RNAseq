@@ -34,20 +34,56 @@ def parser():
     return parser
 
 
-def getgenes(genome, gene_list_txt):
+def get_gene_names(genome, gene_list_txt):
     """
     :param genome: string, KEGG genome designation, ex. ecc for CFT073, eco for MG1655
     :param gene_list_txt: list of genes for which info/seq is needed, have to Gene entry name or accession (from KEGG API)
     :return: list KEGG API compatible gene requests, ex. genome:geneid
     """
-    genes = []
-    with open (gene_list_txt) as gl:
+    with open(gene_list_txt) as gl:
         genes = [line.rstrip() for line in gl]
     return ["{}:{}".format(genome, gene) for gene in genes]
 
 
 
-def getgeneInfo(gene_call_list, output_prefix):
+def get_genes(gene_list_file, genome,
+            output_directory, blast=""):
+    """
+
+    :param gene_list_file: txt file with locus tags, one on each line
+    :param genome: KEGG genome designation, ex. ecc for CFT073
+    :param output_directory: directory where output files will be saved
+    :param blast: "nt" or "aa" whehter the function will return path to nucleotide or amino acid fasta,
+    if nothing is specified will return path to the info file
+    :return: one of three file names
+
+    """
+
+    gene_list = get_gene_names(genome, gene_list_file)
+    output_prefix = os.path.join(output_directory, os.path.basename(gene_list_file).split(".")[0])
+    info, aa_file, nt_file = get_gene_info(gene_list, output_prefix)
+
+    if blast == "nt":
+        return nt_file
+    elif blast == "aa":
+        return aa_file
+    else:
+        return info
+
+
+def get_gene_info(gene_call_list, output_prefix):
+
+    """
+    for each gene provided get kegg database info on it:
+    info: tab seperated file, locus tag, name, definition, pathway
+    nt_seq: nucleotide sequence
+    aa_seq: amino acid sequence
+
+    :param gene_call_list: list of genes of interest in the following format: genome:locus tag
+    :param output_prefix: output file name prefix
+    :return: file paths to 3 files generated
+
+    """
 
     for gene in gene_call_list:
         try:
@@ -59,7 +95,8 @@ def getgeneInfo(gene_call_list, output_prefix):
                                      ('name',''),
                                      ('definition',''),
                                      ('pathway',''),
-                                     ('aa_seq','')]) # can add more if needed
+                                     ('aa_seq',''),
+                                     ('nt_seq','')]) # can add more if needed
 
             for i in range(len(lines)):
                 field = lines[i].split()[0]
@@ -92,19 +129,33 @@ def getgeneInfo(gene_call_list, output_prefix):
                         count +=1
                     gene_info['aa_seq'] = p.replace("            ", '')
 
+                elif field == "NTSEQ":
+                    p = ''
+                    count = 1
+                    while lines[i+count].startswith("           ") and len(lines[i+count]) > 0:
+                        p += lines[i+count]
+                        count +=1
+                    gene_info['nt_seq'] = p.replace("            ", '')
+
+
             info_str = "\t".join([v for k,v in gene_info.items() if k in ["locus_tag", "name", "definition","pathway"]]).rstrip('\t')
 
             aa_str = ">{}\n{}".format(gene, gene_info['aa_seq'])
-
+            nt_str = ">{}\n{}".format(gene, gene_info['nt_seq'])
             # Want to write to file right away, in case connection breaks
             with open(output_prefix+"_info.tab", "a") as of:
                 of.write(info_str+"\n")
-            with open(output_prefix+".fasta", "a") as of:
+            with open(output_prefix+"_aa.fasta", "a") as of:
                 of.write(aa_str+"\n")
+            with open(output_prefix+"_nt.fasta", "a") as of:
+                of.write(nt_str+"\n")
         except:
             with open(output_prefix+"_info.tab", "a") as of:
                 of.write("{}\tERROR\n".format(gene.split(":")[1]))
             continue
+    return (output_prefix+"_info.tab", output_prefix+"_aa.fasta", output_prefix+"_nt.fasta" )
+
+
 
 
 def searchKEGGGenome(genome = "eco", search_term = "ribosomal subunit", out_dir = "."):
