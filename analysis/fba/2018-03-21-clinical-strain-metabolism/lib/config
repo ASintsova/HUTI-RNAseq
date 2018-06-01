@@ -1,0 +1,13 @@
+[base_model]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/fba/2017-12-16-model-2/data/ref/iML1515.json
+format = JSON
+
+[get_homologues]
+path = /Users/annasintsova/tools/get_homologues-macosx-20170807
+S = 80
+C = 1
+
+[paths]
+data = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/fba/2017-12-16-model-2/data
+output =
+bnum_file = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/fba/2017-12-16-model-2/data/ref/MG1655_asap_to_bnum.csv

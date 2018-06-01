@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: annasintsva
+@author: annasintsova
 """
 import argparse
 import os
-import re
+
 
 
 #takes in ouptut from get-homologs:
@@ -89,13 +89,7 @@ def output(id_collection, output):
     out_file.close()
 
 
-def mapOGCs():
-    args = parser().parse_args()
-    cL = args.cluster_list
-    homDir = os.path.abspath(args.homologs_dir)
-    bnum_file = os.path.abspath(args.bnum_ref_file)
-    out = os.path.abspath(args.output_file)
-
+def mapOGCs(cL, homDir, bnum_file, out):
 #parse out
     print("Parsing ASAP and PROKKA ids")
     mapped_ids = parseOGCs(cL, homDir)
@@ -109,7 +103,14 @@ def mapOGCs():
     output(id_collection, out)
     return "Done"
 
-mapOGCs()
+
+if __name__ == "__main__":
+    args = parser().parse_args()
+    cL = args.cluster_list
+    homDir = os.path.abspath(args.homologs_dir)
+    bnum_file = os.path.abspath(args.bnum_ref_file)
+    out = os.path.abspath(args.output_file)
+    mapOGCs(cL, homDir, bnum_file, out)
 
 
 # right now bnum ref is in data/ref/
