@@ -220,8 +220,10 @@ def exploreKEGG():
 
 if __name__ == "__main__":
 
-    #args = parser().parse_args()
-    #gene_call_list = getgenes(args.genome, args.gene_list_file)
-    #getgeneInfo(gene_call_list, args.output_prefix)
-    print(searchKEGGGenome("eco", "ribosomal subunit",
-                 "/Users/annasintsova/git_repos/HUTI-RNAseq/results/resource_allocation"))
+    args = parser().parse_args()
+    output_directory = os.path.dirname(args.output_prefix)
+    gene_call_info = get_genes(args.gene_list_file, args.genome,
+                              output_directory)
+    #get_gene_info(gene_call_list, args.output_prefix)
+    #print(searchKEGGGenome("eco", "ribosomal subunit",
+    #             "/Users/annasintsova/git_repos/HUTI-RNAseq/results/re-source_allocation"))

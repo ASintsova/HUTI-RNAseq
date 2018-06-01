@@ -29,20 +29,27 @@ def get_rpkms_for_prokka(rpkm_folder, genome,  prokka, condition):
 
 def make_presence_absence_matrix(gene_to_prokka, config_dict, output_directory,
                                  genome_set="all"):
-
+    Genome = config_dict["virulence_genes"]["genome"]
     strains = config_dict["genomes"][genome_set].split()
     pa_matrix = {}
+    pa_matrix_prokka = {}
     for gene, prokka_list in gene_to_prokka.items():
         pa_matrix[gene] = {st:0 for st in strains}
+        pa_matrix_prokka[gene] = {st:0 for st in strains}
         for st in prokka_list:
             prokka = st[1]
             if "PROKKA" not in prokka:
                 continue
             pa_matrix[gene][st[0]] = 1
+            pa_matrix_prokka[gene][st[0]] = prokka
     matrix_file = os.path.join(output_directory,
-                               "{}_presence_absence_matrix.csv".format(TODAY))
+                               "{}_{}_presence_absence_matrix.csv".format(TODAY, Genome))
+    matrix_prokka_file = os.path.join(output_directory,
+                               "{}_{}_presence_absence_matrix_prokka.csv".format(TODAY, Genome))
     matrix = pd.DataFrame(pa_matrix).T
+    matrix_prokka = pd.DataFrame(pa_matrix_prokka).T
     matrix.to_csv(matrix_file)
+    matrix_prokka.to_csv(matrix_prokka_file)
     return matrix_file
 
 
@@ -96,6 +103,7 @@ def compare_virulence_gene_expression(config_dict, blast = "nt"):
     # 4 Identify Prokkas
     gff_folder = config_dict["gff_folder"]["path"]
     gene_to_prokka = run_blast.find_all_overlaps(gene_in_genomes, gff_folder)
+    # I need this to be written out
 
     # 5 Build p/a matrix
 
