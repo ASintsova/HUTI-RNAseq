@@ -1,0 +1,16 @@
+[sigmas]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/code/sequence_comparison_sigma_factors/sigma.txt
+genome = ecc
+
+[output_directory]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/results/sequence_comparison_sigma_factors
+
+
+[blast]
+path = /Users/annasintsova/tools/ncbi-blast-2.7.1+/bin/
+genome_folder = /Users/annasintsova/git_repos/HUTI-RNAseq/data/genomes/clinical_strains
+db_prefix = HUTI_db
+cft073_sigmas_nt = /Users/annasintsova/git_repos/HUTI-RNAseq/results/sequence_comparison_sigma_factors/sigma_nt.fasta
+
+[gff_folder]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gff_files
