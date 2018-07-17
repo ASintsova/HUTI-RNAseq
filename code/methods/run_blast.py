@@ -51,7 +51,7 @@ def gene_nucleotide_blast(gene_fasta, blast_db, blast_bin, output_directory):
     prefix = os.path.basename(gene_fasta).split(".")[0] + "_blast.output.txt"
     outfile = os.path.join(output_directory, prefix)
     cmd_str = '{}/blastn -db {} -query {} -outfmt '\
-               '"7 qacc sacc evalue qstart qend sstart send"'.format(blast_bin,
+               '"7 qacc sacc evalue qstart qend sstart send nident"'.format(blast_bin,
                                                                      blast_db,
                                                                      gene_fasta)
     cmd = shlex.split(cmd_str)
@@ -109,7 +109,7 @@ def clean_up(temp_file):
 def process_blast_output(blast_out_dir):
 
     """
-
+    ONLY LOOKING AT FULL LENGTH ALIGNMENTS
     :param blast_out_dir:
     :return: location of blast hits within genomes
 
@@ -133,8 +133,12 @@ def process_blast_output(blast_out_dir):
                     sequence = info[1]
                     end = info[-1]
                     start = info[-2]
+
+                    if info[3].strip() != '1':
+                        continue
                     if int(end) < int(start):
-                        start,end = end, start
+                        start, end = end, start
+
                     if not gene in gene_in_genomes.keys():
                         gene_in_genomes[gene] = [(sequence,start, end)]
                     else:

@@ -40,9 +40,12 @@ def get_gene_names(genome, gene_list_txt):
     :param gene_list_txt: list of genes for which info/seq is needed, have to Gene entry name or accession (from KEGG API)
     :return: list KEGG API compatible gene requests, ex. genome:geneid
     """
-    with open(gene_list_txt) as gl:
-        genes = [line.rstrip() for line in gl]
-    return ["{}:{}".format(genome, gene) for gene in genes]
+    if type(gene_list_txt) == list:
+        return ["{}:{}".format(genome, gene) for gene in gene_list_txt]
+    else:
+        with open(gene_list_txt) as gl:
+            genes = [line.rstrip() for line in gl]
+        return ["{}:{}".format(genome, gene) for gene in genes]
 
 
 
