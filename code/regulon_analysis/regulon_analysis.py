@@ -1,5 +1,6 @@
 import pandas as pd
 import sys
+import sqlite3
 
 sys.path.append('/Users/annasintsova/git_repos/HUTI-RNAseq/code/methods')
 import keggAPI
@@ -83,6 +84,8 @@ def final_tables(gsea_out_csv, kegg_info_tab, external_db_link_file, out_file):
     names = [info_tab.loc[b].Name for b in bnums]
     df.index = names
     df.to_csv(out_file)
+
+######################################################################################################
 
 
 
