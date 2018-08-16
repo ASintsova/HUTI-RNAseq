@@ -1,0 +1,35 @@
+[data]
+bin = /Users/annasintsova/git_repos/HUTI-RNAseq/data
+fasta =
+alignments =
+gff =
+counts =
+final_counts =
+
+
+[RegulonDB]
+ bin = /Users/annasintsova/git_repos/HUTI-RNAseq/data/RegulonDB
+ geneRegulation = generegulation_tmp.txt
+
+[blast]
+bin = /Users/annasintsova/tools/ncbi-blast-2.7.1+/bin/
+
+
+[results]
+bin = /Users/annasintsova/git_repos/HUTI-RNAseq/results
+figure1 =
+figure2 =
+figure3 =
+figure4 =
+
+[analysis]
+bin = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis
+methods = methods
+rnaseq =
+genomes =
+figure1 =
+figure2 =
+figure3 =
+figure4 = resource_reallocation
+
+
