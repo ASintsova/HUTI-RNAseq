@@ -1,0 +1,3 @@
+[pacbio]
+assembler = canu
+bin = /home/annasint/bin/canu-1.7/Linux-amd64/bin/canu
