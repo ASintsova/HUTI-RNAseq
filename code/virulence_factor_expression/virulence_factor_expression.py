@@ -78,24 +78,23 @@ def get_rpkms_for_virulence_factor(gene_to_prokka, config_dict, output_directory
     matrix.to_csv(matrix_file)
 
 
-
-def compare_virulence_gene_expression(config_dict, blast = "nt"):
+def compare_virulence_gene_expression(config_dict, blast="nt"):
 
     # 1 Get nucleotide sequence for each virulence factor
+    # todo refactor: make one virulence factor list, each line is genome, locus_tag
     gene_list_file = config_dict["virulence_genes"]["path"]
-    ref_genome = config_dict["virulence_genes"]["genome"]
+    #ref_genome = config_dict["virulence_genes"]["genome"]
     output_directory = config_dict["output_directory"]["path"]
-
-    multi_fasta = keggAPI.get_genes(gene_list_file, ref_genome,
-                        output_directory, blast)
+    multi_fasta = keggAPI.get_genes(gene_list_file, output_directory, blast)  # todo make sure this works
 
     # 2 For each gene run blast
     blast_bin = config_dict["blast"]["path"]
-    genome_folder = config_dict["blast"]["genome_folder"]
+    genome_folder = config_dict["blast"]["genome_folder"]  # this is where clinical strains are
     db_prefix = config_dict["blast"]["db_prefix"]
 
-    run_blast.run_nucleotide_blast(output_directory, blast_bin, db_prefix, genome_folder,
-                         multi_fasta, today=TODAY)
+    run_blast.run_nucleotide_blast(output_directory, blast_bin,
+                                   db_prefix, genome_folder,
+                                   multi_fasta, today=TODAY)  # todo does this check/build db_index?
 
     # 3 Process Blast output
     gene_in_genomes = run_blast.process_blast_output(output_directory)

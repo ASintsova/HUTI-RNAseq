@@ -1,40 +1,27 @@
 """
 __author__ = annasint
 
-for each gene see if there's NAME, PATHWAY, BRITE field
-
-ENTRY
-NAME
-DEFINITION
-ORTHOLOGY
-ORGANISM
-BRITE
-POSITION
-MOTIF
-DBLINKS
-STRUCTURE
-AASEQ
-NTSEQ
-///
-
+Getting nucleotide and amino acid sequences for a list of genes from KEGG
 
 """
-import urllib.request
-from collections import OrderedDict
 import argparse
+from collections import OrderedDict
 import datetime as dt
 import os
+import urllib.request
+
 
 def parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-l', '--gene_list_file',  help = 'file with list of genes',
-                            type=str, required=True)
+    parser.add_argument('-l', '--gene_list_file',  help='file with list of genes',
+                        type=str, required=True)
     parser.add_argument('-g', '--genome', help='Genome', type=str, required=True)
-    parser.add_argument('-o', '--output_prefix', type=str,required=True)
+    parser.add_argument('-o', '--output_prefix', type=str, required=True)
     return parser
 
 
 def get_gene_names(genome, gene_list_txt):
+
     """
     :param genome: string, KEGG genome designation, ex. ecc for CFT073, eco for MG1655
     :param gene_list_txt: list of genes for which info/seq is needed, have to Gene entry name or accession (from KEGG API)
@@ -48,30 +35,9 @@ def get_gene_names(genome, gene_list_txt):
         return ["{}:{}".format(genome, gene) for gene in genes]
 
 
-
-def get_genes(gene_list_file, genome,
-            output_directory, blast=""):
-    """
-
-    :param gene_list_file: txt file with locus tags, one on each line
-    :param genome: KEGG genome designation, ex. ecc for CFT073
-    :param output_directory: directory where output files will be saved
-    :param blast: "nt" or "aa" whehter the function will return path to nucleotide or amino acid fasta,
-    if nothing is specified will return path to the info file
-    :return: one of three file names
-
-    """
-
-    gene_list = get_gene_names(genome, gene_list_file)
-    output_prefix = os.path.join(output_directory, os.path.basename(gene_list_file).split(".")[0])
-    info, aa_file, nt_file = get_gene_info(gene_list, output_prefix)
-
-    if blast == "nt":
-        return nt_file
-    elif blast == "aa":
-        return aa_file
-    else:
-        return info
+def get_gene_names_genome_in_file(gene_list_file):
+    with open(gene_list_file) as gl:
+        return [line.rstrip() for line in gl]
 
 
 def get_gene_info(gene_call_list, output_prefix):
@@ -94,12 +60,12 @@ def get_gene_info(gene_call_list, output_prefix):
             with urllib.request.urlopen(url) as f:
                 lines = f.read().decode('utf-8').splitlines()
 
-            gene_info = OrderedDict([('locus_tag',''),
-                                     ('name',''),
-                                     ('definition',''),
-                                     ('pathway',''),
-                                     ('aa_seq',''),
-                                     ('nt_seq','')]) # can add more if needed
+            gene_info = OrderedDict([('locus_tag', ''),
+                                     ('name', ''),
+                                     ('definition', ''),
+                                     ('pathway', ''),
+                                     ('aa_seq', ''),
+                                     ('nt_seq', '')])  # can add more if needed
 
             for i in range(len(lines)):
                 field = lines[i].split()[0]
@@ -129,7 +95,7 @@ def get_gene_info(gene_call_list, output_prefix):
                     count = 1
                     while lines[i+count].startswith("           ") and len(lines[i+count]) > 0:
                         p += lines[i+count]
-                        count +=1
+                        count += 1
                     gene_info['aa_seq'] = p.replace("            ", '')
 
                 elif field == "NTSEQ":
@@ -137,12 +103,11 @@ def get_gene_info(gene_call_list, output_prefix):
                     count = 1
                     while lines[i+count].startswith("           ") and len(lines[i+count]) > 0:
                         p += lines[i+count]
-                        count +=1
+                        count += 1
                     gene_info['nt_seq'] = p.replace("            ", '')
-
-
-            info_str = "\t".join([v for k,v in gene_info.items() if k in ["locus_tag", "name", "definition","pathway"]]).rstrip('\t')
-
+            relevant_info = ["locus_tag", "name", "definition", "pathway"]
+            info_list = [v for k, v in gene_info.items() if k in relevant_info]
+            info_str = "\t".join(info_list).rstrip('\t')
             aa_str = ">{}\n{}".format(gene, gene_info['aa_seq'])
             nt_str = ">{}\n{}".format(gene, gene_info['nt_seq'])
             # Want to write to file right away, in case connection breaks
@@ -156,9 +121,34 @@ def get_gene_info(gene_call_list, output_prefix):
             with open(output_prefix+"_info.tab", "a") as of:
                 of.write("{}\tERROR\n".format(gene.split(":")[1]))
             continue
-    return (output_prefix+"_info.tab", output_prefix+"_aa.fasta", output_prefix+"_nt.fasta" )
+    return output_prefix+"_info.tab", output_prefix+"_aa.fasta", output_prefix+"_nt.fasta"
 
 
+def get_genes(gene_list_file, genome="",
+              output_directory=".", blast=""):
+    """
+
+    :param gene_list_file: txt file with locus tags, one on each line
+    :param genome: KEGG genome designation, ex. ecc for CFT073
+    :param output_directory: directory where output files will be saved
+    :param blast: "nt" or "aa" whehter the function will return path to nucleotide or amino acid fasta,
+    if nothing is specified will return path to the info file
+    :return: one of three file names
+
+    """
+    if genome:
+        gene_list = get_gene_names(genome, gene_list_file)
+    else:
+        gene_list = get_gene_names_genome_in_file(gene_list_file)
+    output_prefix = os.path.join(output_directory, os.path.basename(gene_list_file).split(".")[0])
+    info, aa_file, nt_file = get_gene_info(gene_list, output_prefix)
+
+    if blast == "nt":
+        return nt_file
+    elif blast == "aa":
+        return aa_file
+    else:
+        return info
 
 
 def searchKEGGGenome(genome = "eco", search_term = "ribosomal subunit", out_dir = "."):
@@ -203,11 +193,11 @@ def exploreKEGG():
         for l in lines:
             print(l)
             if l.split()[0] == "NAME":
-                name_field +=1
+                name_field += 1
             elif l.split()[0] == "DEFINITION":
-                definition_field +=1
+                definition_field += 1
             elif l.split()[0] == "ORGANISM":
-                organism_field +=1
+                organism_field += 1
             elif l.split()[0] == "PATHWAY":
                 pathway_field += 1
             elif l.split()[0] == "BRITE":
@@ -221,12 +211,10 @@ def exploreKEGG():
     print("Number of BRITE fields: {}".format(brite_field))
     print("Number of AASEQ fields: {}".format(aa_seq_field))
 
+
 if __name__ == "__main__":
 
     args = parser().parse_args()
-    output_directory = os.path.dirname(args.output_prefix)
+    out_dir = os.path.dirname(args.output_prefix)
     gene_call_info = get_genes(args.gene_list_file, args.genome,
-                              output_directory)
-    #get_gene_info(gene_call_list, args.output_prefix)
-    #print(searchKEGGGenome("eco", "ribosomal subunit",
-    #             "/Users/annasintsova/git_repos/HUTI-RNAseq/results/re-source_allocation"))
+                               out_dir)
