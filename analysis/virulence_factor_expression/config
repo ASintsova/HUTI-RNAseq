@@ -1,5 +1,5 @@
 [virulence_genes]
-path = /Users/annasintsova/git_repos/HUTI-RNAseq/results/virulence_factor_expression/uti_89_virulence_factors.txt
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/results/virulence_factor_expression/VIRULENCE_FACTORS.txt
 genome = eci
 
 [blast]
@@ -17,4 +17,4 @@ path = /Users/annasintsova/git_repos/HUTI-RNAseq/results/virulence_factor_expres
 rpkm_path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/rpkms
 
 [genomes]
-all = HM01 HM03 HM06 HM07 HM14 HM17 HM43 HM54 HM56 HM57 HM60 HM68 HM86
+all = HM01 HM03 HM06 HM07 HM14 HM17 HM43 HM54 HM56 HM57 HM60 HM66 HM68 HM86

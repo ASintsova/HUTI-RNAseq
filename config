@@ -14,10 +14,15 @@ final_counts =
 [blast]
 bin = /Users/annasintsova/tools/ncbi-blast-2.7.1+/bin/
 
+[analysis]
+bin = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis
+
 
 [results]
 bin = /Users/annasintsova/git_repos/HUTI-RNAseq/results
-figure1 =
+
+[names]
+figure1 = virulence_factor_expression
 figure2 =
 figure3 =
 figure4 =
