@@ -62,8 +62,8 @@ def gene_nucleotide_blast(gene_fasta, blast_db, blast_bin, output_directory):
     cmd_str = '{}/blastn -db {} -query {} '\
               '-evalue 0.000001 -outfmt '\
               '"6 qacc sacc qstart qend sstart send evalue pident qcovhsp"'.format(blast_bin,
-                                                                                 blast_db,
-                                                                                 gene_fasta)
+                                                                                   blast_db,
+                                                                                   gene_fasta)
     # IMPORTANT: if change output format need to change read_blast_output accordingly
     cmd = shlex.split(cmd_str)
     output = subprocess.Popen(cmd, stdout=subprocess.PIPE).stdout.read()
@@ -144,12 +144,12 @@ def read_blast_output_file(blast_output_file):
                 contig = info[1]
                 start = info[4]
                 end = info[5]
-                eval = float(info[6])
+                evalue = float(info[6])
                 identity = float(info[7])
                 coverage = float(info[8])
                 if int(end) < int(start):
                     start, end = end, start
-                if eval < 0.000001 and identity > 80 and coverage > 90:
+                if evalue < 0.000001 and identity > 80 and coverage > 90:
                     blast_out.append((contig, start, end))
                     gene_identity.append(identity)
                     gene_coverage.append(coverage)
@@ -170,7 +170,7 @@ def process_blast_output(blast_out_dir):
     gene_coverage = {}
     file_names = [os.path.join(blast_out_dir, f) for f in os.listdir(blast_out_dir)]
     for fi in file_names:
-        if not "blast.output" in fi:
+        if "blast.output" not in fi:
             continue
         gene, locations, mean_identity, mean_coverage = read_blast_output_file(fi)
         gene_in_genomes[gene] = locations
@@ -226,14 +226,8 @@ if __name__ == "__main__":
     b_bin = "/Users/annasintsova/tools/ncbi-blast-2.7.1+/bin/"
     mf = "/Users/annasintsova/git_repos/HUTI-RNAseq/results/virulence_factor_expression/" \
          "VIRULENCE_FACTORS_nt.fasta"
-    gff = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gff_files"
+    gff_dir = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gff_files"
     run_nucleotide_blast(od, b_bin, b_db, genome_dir, mf)
     q, x, y = process_blast_output(od)
-    gp = find_all_overlaps(q, gff)
+    gp = find_all_overlaps(q, gff_dir)
     print(gp)
-
-
-
-
-
-
