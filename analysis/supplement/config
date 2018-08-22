@@ -1,0 +1,7 @@
+[output_directory]
+figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/supplement
+results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement
+
+[flagstat]
+path  = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat
+summary = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat/flagstat_summary.txt
