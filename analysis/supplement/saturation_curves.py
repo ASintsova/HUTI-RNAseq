@@ -37,6 +37,15 @@ def coverage_pybedtools(bam_file, gff_file, coverage_file):
 
 def high_covered_genes(coverage_file, cutoff, reads=True):
 
+    """
+    Resulting coverage file columns: first 9 are the gff columns,
+        10: number of reads overalapped with gene,
+        11: number of bases in the gene covered by reads
+        12: length of gene
+        13: % of gene covered
+
+    """
+
     df = pd.read_csv(coverage_file,  sep="\t", header=None,
                      names=["chr", "soft", "feat", "start", "end",
                             "score", "str", "frame", "attr", "num_reads",
@@ -114,72 +123,5 @@ if __name__ == "__main__":
         iterations = 5
         saturation_curves(config_file, fractions, hi_reads, r, iterations, 'all', 'all')
 
-        #
-        # samples = sampleNames.generateSampleNames([ "HM14", "HM17", "HM43", "HM54", "HM56"], ["UR", "UTI"])
-        # print(samples)
-        # config = configparser.ConfigParser()
-        # config.read(os.path.dirname(os.path.abspath(__file__))+"/config")
-        # output_file = config.get("output", "file")
-        # getDataforSaturationCurves(samples, config, [0.001, 0.005, 0.01, 0.1, 0.5, 0.75, 1], 10, True, "data/2018-02-19-first-of-saturation-data.csv", 5)
-
-#Same problem as with gh program - need it to spit out intermediate results
-
-#Also very slow :'(
-
-#gff_file = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-genomes/data/gff_files/HM01.gff"
-#bam_file = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/alignments/HM01_UR_trimmed_sorted.bam"
-#output_dir = "/Users/annasintsova/git_repos/HUTI-RNAseq/test"
-
-#coverage_file = "test/test.1.coverage.txt"
-#plotSaturationCurve(bam_file, gff_file, [0.1, 0.2, 0.3], 10, True, output_dir, iter=3)
-
-#Before I forget output:
-
-#Faster to do each sample at a time
-"""
-10: number of reads overalapped with gene,
-11: number of bases in the gene covered by reads
-12: length of gene
-13: % of gene covered
-
-to the best of my ability to understand this
-
-will try to look at this 2 different ways: 10 reads per gene / 10x coverage
-
-
-
-"""
-
-# ~/tools/bedtools2/bin/bedtools coverage -a $gff -b test/test.1.bam >test/test.1.coverage.txt
-#After generating subsample call bedtools coverage on gff and subsampled bam. Need to first make sure bedtools is working
-
-#Process bedtools output to see how many genes > 10x
-
-# Add this number to pandas dataframe
-
-# Plot with matplotlib
-
-
-
-#################
-"""
-subsampling from iterator
-
-def iter_sample_fast(iterable, samplesize):
-    results = []
-    iterator = iter(iterable)
-    # Fill in the first samplesize elements:
-    try:
-        for _ in xrange(samplesize):
-            results.append(iterator.next())
-    except StopIteration:
-        raise ValueError("Sample larger than population.")
-    random.shuffle(results)  # Randomize their positions
-    for i, v in enumerate(iterator, samplesize):
-        r = random.randint(0, i)
-        if r < samplesize:
-            results[r] = v  # at a decreasing rate, replace random items
-    return results
-    
-    
-"""
+        # Same problem as with gh program - need it to spit out intermediate results
+        # Also very slow :'(
