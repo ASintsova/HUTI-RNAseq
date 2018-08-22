@@ -5,3 +5,21 @@ results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement
 [flagstat]
 path  = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat
 summary = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat/flagstat_summary.txt
+
+[BAMS]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/alignments
+
+[GFF]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gff_files
+
+[strains]
+all = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68 HM57 HM17 HM07 HM60 HM66
+best = HM56 HM14 HM43 HM54 HM86
+good = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68
+so_so = HM57 HM17 HM07 HM60
+bad = HM66
+
+[conditions]
+all = UR UTI
+urine = UR
+uti = UTI
