@@ -117,11 +117,12 @@ def saturation_curves(config, subsample_range, cutoff, reads, i, strains='all', 
 
 if __name__ == "__main__":
         config_file = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/supplement/config"
-        fractions = [0.001, 0.005, 0.01, 0.5, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+        fractions = [0.001, 0.005, 0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
         hi_reads = 10
         r = True
         iterations = 5
         saturation_curves(config_file, fractions, hi_reads, r, iterations, 'all', 'all')
 
-        # Same problem as with gh program - need it to spit out intermediate results
-        # Also very slow :'(
+        # Still pretty slow
+        # Not perfect output: each csv file conatins info on the current strains
+        #  + all strains before it, so last file will contain info on all strains (HM66_UTI)
