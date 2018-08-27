@@ -1,3 +1,5 @@
+import functools
+import time
 import os
 import configparser
 
@@ -18,6 +20,10 @@ def to_bytes(bytes_or_str):
     return value
 
 
+def all_exist(file_list):
+    return all([os.path.isfile(f) for f in file_list])
+
+
 def process_config(config_file=''):
     """
     by default looks for config file in the same directory as the script
@@ -33,3 +39,21 @@ def process_config(config_file=''):
     for section in config.sections():
         config_dict[section] = {name: value for name, value in config.items(section)}
     return config_dict
+
+
+########################################################################################################
+# Decorators
+
+def timer(func):
+    """ Print the runtime of the decorated funtion
+        Quick and dirty, for more precise measuremnt use timeit module
+    """
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start_time = time.perf_counter()
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()
+        run_time = end_time - start_time
+        print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
+        return value
+    return wrapper_timer

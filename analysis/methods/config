@@ -1,3 +1,11 @@
 [pacbio]
 assembler = canu
 bin = /home/annasint/bin/canu-1.7/Linux-amd64/bin/canu
+
+[get_homologs]
+path = /Users/annasintsova/tools/get_homologues-macosx-20170807
+gbk_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gbf_files
+gbk_list = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gbf_files/include_gbk.txt
+
+[out_dir]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods
