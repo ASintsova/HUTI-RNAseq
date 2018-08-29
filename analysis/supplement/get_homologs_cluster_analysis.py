@@ -1,3 +1,4 @@
+
 import os
 import subprocess
 import shlex
@@ -10,6 +11,8 @@ import shutil
 import sys
 sys.path.append("/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/methods")
 import run_gethomologues as gh
+import helpers
+
 
 def cluster_size_distribution(cluster_list):
     cluster_sizes = []
@@ -46,28 +49,33 @@ def params(C = [50, 60, 70, 75] , S =[1, 70, 90] ):
     return list(itertools.product(C, S))
 
 
-def generate_cluster_size_distributions(gh, gbk_dir, I, params, exclude_paralogs):
+def generate_cluster_size_distributions(gh_bin, gbk_dir, I, params, exclude_paralogs):
+    """Run gh once, get info on cluster sizes"""
 
     C = params[0]
     S = params[1]
     e_name = "e1" if exclude_paralogs else "e0"
 
     run_id = "C{}_S{}_{}_".format(C, S, e_name)
-    gh.run_get_homologs(gh, gbk_dir, I, C, S, exclude_paralogs, run_id)
+    gh.run_get_homologs(gh_bin, gbk_dir, I, C, S, 0, exclude_paralogs, run_id, clean_up=True, core=False)
     cluster_sizes(run_id)
 
 
 if __name__ == "__main__":
-    config = configparser.ConfigParser()
-    config.read("lib/config")
-    gh = config.get("GETHOMS", "bin")
-    gbk_dir = config.get("GETHOMS", "gbk_dir")
-    I = config.get("GETHOMS", "I")
 
-    # params = params()
-    # C = [50, 60, 70, 75], S = [1, 70, 90]
-    params = (75, 1)
-    # generateClusterSizeDistributions(gh, gbk_dir, I, params, exclude_paralogs)
-    ###### Include Paralogs ######
+    # For flux, create a folder name get_homologs: put the following there:
+    # run_gethomologues.py, this script, helpers.py, config file
+    # in the config file change path to the gh_bin and gbk_dir and I
+    # also folder with all the genomes
+    # create pbs script with looong wall time
 
-    ###### Only Syntenic genes (inlcuding paralogs)######
+    config_file = "/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/supplement/config"
+    # For flux use config file below:
+    # config_file = "config"
+    config_dict = helpers.process_config(config_file)
+    get_homologs_path = config_dict["get_homologs"]["path"]
+    gbk_dir = config_dict["get_homologs"]["gbk_dir"]
+    I = config_dict["get_homologs"]["I"]
+    params = params()
+    for param in params:
+        generate_cluster_size_distributions(get_homologs_path, gbk_dir, I, param, exclude_paralogs=True)

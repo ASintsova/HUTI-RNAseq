@@ -1,6 +1,6 @@
 [output_directory]
 figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/supplement
-results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement
+results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement/saturation_curve_data
 
 [flagstat]
 path  = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat
@@ -15,11 +15,31 @@ path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gff_files
 [strains]
 all = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68 HM57 HM17 HM07 HM60 HM66
 best = HM56 HM14 HM43 HM54 HM86
+good_not_best = HM01 HM06 HM68
 good = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68
-so_so = HM57 HM17 HM07 HM60
+not_good = HM57 HM17 HM07 HM60 HM66
 bad = HM66
+over = HM56 HM14 HM43 HM54 HM86 HM03 HM06 HM01
+under = HM57 HM17 HM07 HM60 HM66 HM68
 
 [conditions]
 all = UR UTI
 urine = UR
 uti = UTI
+
+[get_homologs]
+path = /Users/annasintsova/tools/get_homologues-macosx-20170807
+gbk_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gbf_files
+I = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis/DE/2018-01-16-sync-genomes/data/genomes_testing/include_gbk.txt
+results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement/test_gh_params
+figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/supplement
+clusters = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement/test_gh_params
+
+
+
+[saturation_curves]
+results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement/saturation_curve_data
+figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/supplement
+
+[ranges]
+core_counts = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/core_counts_and_tpms.csv
