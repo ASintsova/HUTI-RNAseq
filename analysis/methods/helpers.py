@@ -40,6 +40,16 @@ def process_config(config_file=''):
         config_dict[section] = {name: value for name, value in config.items(section)}
     return config_dict
 
+def process_count_file(count_file, sep="\t"):
+    counts = {}
+    with open(count_file, "r") as fh:
+        for line in fh:
+            words = line.split(sep)
+            prokka = words[0].strip()
+            cnt = float(words[1].strip())
+            counts[prokka] = cnt
+    return counts
+
 
 ########################################################################################################
 # Decorators

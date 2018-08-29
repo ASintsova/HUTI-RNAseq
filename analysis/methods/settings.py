@@ -21,8 +21,19 @@ def invnorm(x):
 strain_info_file = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/huti_patient_info_short.csv"
 
 
+def get_labels(df):
+    """ df.index needs to be in form strain_condition"""
+    labels = []
+    for i in df.index:
+        strain = i.split("_")[0]
+        cond = ur if i.split("_")[1] == "UR" else uti
+        label = sample_label(strain, cond)
+        labels.append(label)
+    return labels
+
+
 def sample_label(strain, treat, jn=" | "):
-    return strain + jn + treat
+    return strain + jn + treat + " "
 
 
 col1 = "#f34236"
