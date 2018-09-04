@@ -1,27 +1,34 @@
 import sqlite3
 import pandas as pd
-
-
-def view(db):
-    conn = sqlite3.connect(db)
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM SIGMA_TMP")
-    rows = cur.fetchall()
-    conn.close()
-    return rows
+import os
+import sys
+sys.path.append('/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/methods')
+import helpers
 
 
 def get_all_regulators(db):
+    """Returns a list of regulators"""
     conn = sqlite3.connect(db)
     cur = conn.cursor()
     cur.execute("SELECT transcription_factor_id "
                 "FROM TRANSCRIPTION_FACTOR ")
     rows = cur.fetchall()
     conn.close()
-    return [r[0] for r in rows]  # returns list of regulators
+    return [r[0] for r in rows]
 
 
-def get_bnum(db, object_id=""):  # given id try to find bnum
+def get_all_regulators_iterator(db):
+    """Returns one regulator at a time """
+    conn = sqlite3.connect(db)
+    cur = conn.cursor()
+    for row in cur.execute("SELECT transcription_factor_id "
+                           "FROM TRANSCRIPTION_FACTOR "):
+        yield row[0]
+    conn.close()
+
+
+def get_bnum(db, object_id=""):
+    """given id try to find bnum"""
     conn = sqlite3.connect(db)
     cur = conn.cursor()
     cur.execute("SELECT ext_reference_id "
@@ -36,6 +43,8 @@ def get_bnum(db, object_id=""):  # given id try to find bnum
 
 
 def get_regulon(db, gene_name_regulator="", tf_id_regulator=""):
+    """Returns list of tuples (regulator_name,
+    regulated_name, regulated_id, repressed/activated)"""
     conn = sqlite3.connect(db)
     cur = conn.cursor()
     cur.execute("SELECT gene_name_regulator, gene_name_regulated, "
@@ -49,25 +58,31 @@ def get_regulon(db, gene_name_regulator="", tf_id_regulator=""):
     for reg in regulon:
         eck = reg[2]
         bnum = get_bnum(db, object_id=eck)
-        reg_network.append((reg[0], reg[1], bnum, reg[3]))
+        reg_network.append((reg[0], reg[1], bnum, reg[3]))  # Should I make this a dictionary?
+    return reg_network
 
-    return reg_network  # returns list of tuples (regulated_name, id, reprssed/activated)
 
-
-def get_all_regulons(db):
+def get_all_regulons(db, filename):
     regulators = get_all_regulators(db)
-    # t_r = [regulators[10], regulators[22]]
     pd_list = []
     for regulator in regulators:
         regulon = get_regulon(db, tf_id_regulator=regulator)
         pd_list.append(pd.DataFrame(regulon))
-
     df = pd.concat(pd_list).reset_index(drop=True)
-    df.to_csv("/Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/regulatory_network.csv")
+    df.to_csv(filename)
     return df
 
 
+def create_regulon_csv():
+    config = os.path.join(os.path.dirname(os.path.realpath(__file__)), "config")
+    config_dict = helpers.process_config(config)
+    filename = config_dict["out_dir"]["regulon_csv"]
+    rdb = config_dict["db"]["path"]
+    rn = get_all_regulons(rdb, filename)
+    return rn
+
+
 if __name__ == "__main__":
-    rdb = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/regulondb9.4.db"
-    rn = get_all_regulons(rdb)
-    print(rn.head())
+    print(create_regulon_csv().head())
+
+
