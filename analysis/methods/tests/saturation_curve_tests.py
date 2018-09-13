@@ -1,5 +1,8 @@
+# todo not sure this actually works
+
+
 import sys
-sys.path.insert(0, '/Users/annasintsova/git_repos/HUTI-RNAseq/code/')
+sys.path.append('/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/')
 sys.path.insert(0, "/Users/annasintsova/tools/bedtools2/bin/")
 from methods import saturation_curves
 
