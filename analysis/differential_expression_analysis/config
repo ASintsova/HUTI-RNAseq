@@ -1,0 +1,22 @@
+[out_dir]
+
+results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis
+figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/differential_expression_analysis
+
+
+[data]
+core_tpms = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/core_counts_and_tpms.csv
+media_de_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_significant.csv
+all_genes_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_all.csv
+deseq2_norm_counts_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_DSeq2_norm_counts.csv
+pg_urine_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/pg_urine_de_genes_significant.csv
+pg_uti_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/pg_uti_de_genes_significant.csv
+
+
+
+[strains]
+all = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68 HM57 HM17 HM07 HM60 HM66
+over = HM56 HM14 HM43 HM54 HM86 HM03 HM06 HM01
+under = HM57 HM17 HM07 HM60 HM66 HM68
+b1_strains = HM03 HM07 HM14 HM60
+b2_strains = HM56 HM43 HM54 HM86 HM06 HM68 HM57 HM66 HM17
