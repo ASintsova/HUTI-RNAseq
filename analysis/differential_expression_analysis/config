@@ -11,7 +11,7 @@ all_genes_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_
 deseq2_norm_counts_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_DSeq2_norm_counts.csv
 pg_urine_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/pg_urine_de_genes_significant.csv
 pg_uti_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/pg_uti_de_genes_significant.csv
-
+go_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_pathway_analysis_BP.csv
 
 
 [strains]
