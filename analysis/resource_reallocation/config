@@ -1,0 +1,14 @@
+
+[out_dir]
+results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/resource_reallocation
+figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/resource_reallocation
+regulon_csv = /Users/annsintsova/git_repos/HUTI-RNAseq/results/methods/Regulon.csv
+counts = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/core_counts_and_tpms.csv
+de_edited_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_all_genes_edited.csv
+
+
+[db]
+path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/regulondb9.4.db
+
+[flagstat]
+summary = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/flagstat/flagstat_summary.txt
