@@ -1,7 +1,7 @@
 [out_dir]
 
-results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/supplement/test_gh_params
-figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/supplement
+results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/in-patient-transcription-state
+figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/in-patient-transcription-state
 
 
 [data]

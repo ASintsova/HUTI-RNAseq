@@ -10,5 +10,6 @@ core_tpms = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/core_count
 regulon_csv =  /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/2018-09-03-regulatory_network.csv
 repressor_gmt = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/2018-09-03-repressor.gmt
 activator_gmt = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/2018-09-03-activator.gmt
+regulon_gmt = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/regulon.gmt
 results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/
 figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/regulon_analysis/
