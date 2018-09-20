@@ -5,7 +5,7 @@ import pandas as pd
 import os
 import re
 import urllib.request
-
+from termcolor import cprint
 
 class Gene(object):
 
@@ -20,7 +20,8 @@ class Gene(object):
         self.pathway_string = ""
 
     def get_full_info(self):
-        return "\t".join([self.entry, self.name, self.definition, self.pathway_string]).rstrip('\t')
+        return "\t".join([self.entry, self.name, self.definition,
+                          self.pathway_string]).rstrip('\t')
 
     def get_short_info(self):
         return "\t".join([self.entry, self.name, self.definition])
@@ -32,8 +33,27 @@ class Gene(object):
         return ">{}|{}\n{}\n".format(self.entry, self.name, self.nt_seq)
 
     def __str__(self):
-        return "GENE:\n{}\t{}\t{}\nPATHWAYS:\n{}".format(self.entry, self.name, self.definition,
+        return "GENE:\n{}\t{}\t{}\nPATHWAYS:\n{}".format(self.entry, self.name,
+                                                         self.definition,
                                                          "\n".join(self.pathways))
+
+    def print_fancy(self):
+        gene_string = "{}\t{}\t{}".format(self.entry, self.name, self.definition).expandtabs(tabsize=4)
+        x = 'test'
+        max_p = max([len(p) for p in self.pathways]) if self.pathways else 0
+        max_len = max(max_p, len(gene_string))
+        border = "_"*(max_len+1) if max_len else ""
+        print(type(border))
+        print("")
+        cprint(border, "white")
+        cprint("GENE:", "red", attrs=["bold"])
+        print(gene_string)
+        cprint(border, "white")
+        cprint("PATHWAYS:", "blue", attrs=["bold"])
+        print("\n".join(self.pathways))
+        cprint(border, "white")
+        print("")
+
 
     def kegg_get(self):
         try:

@@ -70,7 +70,7 @@ def normalize_counts_to_tpm(counts_dir, gff_dir, out_dir):
     :return:
     """
     count_files = [os.path.join(counts_dir, f) for f in os.listdir(counts_dir)]
-    all_tpms = {}
+    all_tpms = {}ls
     for cf in count_files:
         if "_counts" not in cf:
             continue

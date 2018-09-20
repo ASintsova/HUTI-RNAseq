@@ -83,6 +83,11 @@ def create_regulon_csv():
 
 
 if __name__ == "__main__":
-    print(create_regulon_csv().head())
+    #print(create_regulon_csv().head())
 
-
+    config = os.path.join(os.path.dirname(os.path.realpath(__file__)), "config")
+    config_dict = helpers.process_config(config)
+    filename = config_dict["out_dir"]["regulon_csv"]
+    rdb = config_dict["db"]["path"]
+    rn = get_regulon(rdb, 'crp')
+    print(rn)
