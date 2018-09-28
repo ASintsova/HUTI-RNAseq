@@ -16,7 +16,7 @@ figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/supplement
 path = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods
 counts = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/raw
 tpms = /Users/annasintsova/git_repos/HUTI-RNAseq/data/counts/tpm
-regulon_csv = /Users/annsintsova/git_repos/HUTI-RNAseq/results/methods/Regulon.csv
+regulon_csv = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/Regulon.csv
 
 [db]
 path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/regulondb9.4.db

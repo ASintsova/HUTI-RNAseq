@@ -68,7 +68,8 @@ def get_all_regulons(db, filename):
     for regulator in regulators:
         regulon = get_regulon(db, tf_id_regulator=regulator)
         pd_list.append(pd.DataFrame(regulon))
-    df = pd.concat(pd_list).reset_index(drop=True)
+    df = pd.concat(pd_list, ).reset_index(drop=True)
+    df.columns = ["regulator", "regulated_name", "regulated_bnum", "regulator_function"]
     df.to_csv(filename)
     return df
 
@@ -83,11 +84,11 @@ def create_regulon_csv():
 
 
 if __name__ == "__main__":
-    #print(create_regulon_csv().head())
+    print(create_regulon_csv().head())
 
-    config = os.path.join(os.path.dirname(os.path.realpath(__file__)), "config")
-    config_dict = helpers.process_config(config)
-    filename = config_dict["out_dir"]["regulon_csv"]
-    rdb = config_dict["db"]["path"]
-    rn = get_regulon(rdb, 'crp')
-    print(rn)
+    # config = os.path.join(os.path.dirname(os.path.realpath(__file__)), "config")
+    # config_dict = helpers.process_config(config)
+    # filename = config_dict["out_dir"]["regulon_csv"]
+    # rdb = config_dict["db"]["path"]
+    # rn = get_regulon(rdb, 'crp')
+    # print(rn)
