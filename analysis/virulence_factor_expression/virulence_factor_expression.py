@@ -1,10 +1,20 @@
+"""
+
+This script requires config file to contain the following:
+
+- valid path to locally installed BLAST
+- valid path to folder with fasta files for all genomes of interest
+- valid path to folder with gff files for all genomes of interest
+
+"""
+
 import argparse
 import datetime as dt
 import os
 import pandas as pd
 import sys
 
-sys.path.append('/Users/annasintsova/git_repos/HUTI-RNAseq/analysis/methods')
+sys.path.append('../methods')
 
 import keggAPI
 import helpers
@@ -92,19 +102,21 @@ def compare_virulence_gene_expression(virulence_factor_file="", output_directory
         for gene in gene_identities.keys():
             i_f.write('{},{},{}\n'.format(gene, gene_identities[gene], gene_coverage[gene]))
 
-    # 7 Clean up: remove all the blast output files, etc
-
 
 if __name__ == "__main__":
 
     args = get_args().parse_args()
+    if args.multifasta:
+        mf = args.multifasta
+    else:
+        mf = ""
     if args.analysis == "blast" or args.analysis == "both":
         blast_run = True
     else:
         blast_run = False
     compare_virulence_gene_expression(virulence_factor_file=args.virulence_file,
                                       output_directory=args.outdir,
-                                      config="", blast="nt", multi_fasta=args.multifasta,
+                                      config="", blast="nt", multi_fasta=mf,
                                       blast_run=blast_run, clean_up=False)
 
 
