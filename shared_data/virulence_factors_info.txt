@@ -1,0 +1,40 @@
+c3623,iutA,Iron Acquisition
+c4308,chuA,Iron Acquisition
+c2482,hma,Iron Acquisition
+c1250,iroN,Iron Acquisition
+c0185,fhuA,Iron Acquisition
+c3610,iha,Iron Acquisition
+c5174,ireA,Iron Acquisition
+c4186,feoB,Iron Acquisition
+c3625,iucC,Iron Acquisition
+c1646,prrA,Iron Acquisition
+UTI89_c2188,fyuA,Iron Acquisition
+c3570,hlyA,Toxins
+c0393,vat,Toxins
+c0350,pic,Toxins
+c3619,sat,Toxins
+UTI89_c4921,cnf1,Toxins
+c5393,fimA,Adhesins
+c5400,fimH,Adhesins
+c1245,focH,Adhesins
+c1936,ydeA,Adhesins
+c0166,yadC,Adhesins
+c2635,yehA,Adhesins
+c4207,aufA,Adhesins
+c4210,aufD,Adhesins
+c2884,yfcV,Adhesins
+c2883,yfcU,Adhesins
+c2394,pilV-like,Adhesins
+c2395,pilin,Adhesins
+c0400,yagV,Adhesins
+c0405,matA,Adhesins
+c2302,cheW,Motility
+c2297,cheY,Motility
+c1340,flgM,Motility
+c2304,motB,Motility
+c2305,motA,Motility
+c4293,uspA,Other
+c3990,degS,Other
+c5430,tsr,Other
+c0652,ompT,Other
+UTI89_c5035,ibeA,Other
