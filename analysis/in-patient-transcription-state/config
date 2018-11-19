@@ -1,11 +1,11 @@
 [out_dir]
 
-results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/in-patient-transcription-state
-figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/in-patient-transcription-state
-
+results = ../../results/in-patient-transcription-state
+figures = ../../figures/in-patient-transcription-state
+sup = ../../figures/supplement
 
 [data]
-core_tpms = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/core_counts_and_tpms.csv
+core_tpms = ../../shared_data/core_counts_and_tpms.csv
 
 [strains]
 all = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68 HM57 HM17 HM07 HM60 HM66

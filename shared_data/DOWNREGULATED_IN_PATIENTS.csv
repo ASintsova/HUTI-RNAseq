@@ -1,0 +1,345 @@
+Entry,log2FoldChange,padj,Name,Function,Pathways
+b0061,-3.2943634060408398,5.49292824215612e-08,araD,L-ribulose-5-phosphate 4-epimerase,"eco00040  Pentose and glucuronate interconversions, eco00053  Ascorbate and aldarate metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b0062,-3.2015463180086,1.66123349327075e-07,araA,L-arabinose isomerase,"eco00040  Pentose and glucuronate interconversions, eco01100  Metabolic pathways"
+b0063,-3.02172775853741,2.9188395704522496e-05,araB,L-ribulokinase,"eco00040  Pentose and glucuronate interconversions, eco01100  Metabolic pathways"
+b0071,-5.48618580864582,2.0088106630703897e-31,leuD,3-isopropylmalate dehydratase small subunit,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00660  C5-Branched dibasic acid metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b0072,-5.07880228456002,1.2974808513327598e-27,leuC,3-isopropylmalate dehydratase large subunit,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00660  C5-Branched dibasic acid metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b0073,-5.3251986517865495,9.92494223900769e-30,leuB,"3-isopropylmalate dehydrogenase, NAD(+)-dependent","eco00290  Valine, leucine and isoleucine biosynthesis, eco00660  C5-Branched dibasic acid metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b0074,-5.76412163484332,4.5723226736562096e-33,leuA,2-isopropylmalate synthase,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00620  Pyruvate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b0076,-2.62268405331645,2.8486953890948897e-14,leuO,global transcription factor,
+b0077,-2.317014667409,2.2727915038454997e-21,ilvI,acetolactate synthase 3 large subunit,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00650  Butanoate metabolism, eco00660  C5-Branched dibasic acid metabolism, eco00770  Pantothenate and CoA biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b0078,-2.9596140931571,8.23674215911144e-23,ilvH,"acetolactate synthase 3, small subunit, valine-sensitive","eco00290  Valine, leucine and isoleucine biosynthesis, eco00650  Butanoate metabolism, eco00660  C5-Branched dibasic acid metabolism, eco00770  Pantothenate and CoA biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b0163,-2.32543934144468,3.9996263551359894e-42,yaeH,UPF0325 family protein,
+b0197,-2.67017884827967,6.08357949755038e-12,metQ,DL-methionine transporter subunit,eco02010  ABC transporters
+b0198,-2.59756091229701,1.9521116364340802e-11,metI,DL-methionine transporter subunit,eco02010  ABC transporters
+b0199,-2.86907513929335,1.27445526197404e-14,metN,DL-methionine transporter subunit,eco02010  ABC transporters
+b0209,-2.01572669016002,8.217099651001429e-30,yafD,endo/exonuclease/phosphatase family protein,
+b0210,-2.3062983123736402,5.81672047942204e-10,yafE,putative S-adenosyl-L-methionine-dependent methyltransferase,
+b0220,-2.4458086244443904,7.876973944323401e-12,ivy,"inhibitor of c-type lysozyme, periplasmic",
+b0325,-3.29413252351458,9.60956721877327e-16,yahK,"broad specificity NADPH-dependent aldehyde reductase, Zn-containing",
+b0329,-5.53762153487895,4.1923802259038895e-37,yahO,"periplasmic protein, function unknown, YhcN family",
+b0344,-6.6202111224928,2.1311329596660698e-29,lacZ,beta-D-galactosidase,"eco00052  Galactose metabolism, eco00511  Other glycan degradation, eco00600  Sphingolipid metabolism, eco01100  Metabolic pathways"
+b0380,-2.2032493671533797,4.79390728284157e-14,yaiZ,DUF2754 family putative inner membrane protein,
+b0382,-3.9739455604912597,5.318051977872419e-34,iraP,"anti-RssB factor, RpoS stabilzer during Pi starvation; anti-adapter protein",
+b0391,-2.67463955943962,1.6522113855219498e-26,yaiE,UPF0345 family protein,"eco00230  Purine metabolism, eco00240  Pyrimidine metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites"
+b0445,-2.08404224917302,4.5980079692776096e-07,ybaE,putative ABC transporter periplasmic binding protein,
+b0453,-2.82955586795211,2.2082256694121903e-12,ybaY,outer membrane lipoprotein,
+b0454,-2.34773081606689,2.19101132288647e-27,ybaZ,"excision repair protein, alkyltransferase-like protein ATL",
+b0479,-2.14398426367581,8.78829489761879e-21,fsr,putative fosmidomycin efflux system protein,
+b0487,-2.00213412609173,1.59721373300006e-10,cueR,copper-responsive regulon transcriptional regulator,
+b0515,-2.02315335218973,9.83721515833288e-11,allE,S-ureidoglycine aminohydrolase,"eco00230  Purine metabolism, eco01120  Microbial metabolism in diverse environments"
+b0585,-2.03599643192133,2.96507715393744e-07,fes,enterobactin/ferrienterobactin esterase,
+b0599,-5.05638743685454,1.1060870802993399e-27,ybdH,putative oxidoreductase,
+b0600,-4.45358943769119,2.34849681174366e-18,ybdL,"methionine aminotransferase, PLP-dependent",
+b0607,-3.1871133718267997,1.47725501166915e-38,uspG,universal stress protein UP12,
+b0612,-3.1086960407537205,4.3444048466644195e-12,citT,citrate/succinate antiporter; citrate carrier,eco02020  Two-component system
+b0613,-3.2907869628329505,2.08819780298361e-08,citG,2-(5''-triphosphoribosyl)-3'-dephosphocoenzyme-A synthase,eco02020  Two-component system
+b0614,-4.299326957996819,7.06850594619253e-18,citX,apo-citrate lyase phosphoribosyl-dephospho-CoA transferase,eco02020  Two-component system
+b0615,-2.86893560510371,2.34729081281462e-08,citF,"citrate lyase, citrate-ACP transferase (alpha) subunit",eco02020  Two-component system
+b0616,-2.82219648197779,9.20588579710983e-08,citE,"citrate lyase, citryl-ACP lyase (beta) subunit",eco02020  Two-component system
+b0617,-4.16782921789704,1.5294352590021602e-17,citD,"citrate lyase, acyl carrier (gamma) subunit",eco02020  Two-component system
+b0618,-3.18700289270723,1.33523259307698e-09,citC,citrate lyase ligase; [citrate [pro-3S]-lyase] ligase,eco02020  Two-component system
+b0643,-2.6726697118087204,3.4031502294215e-24,ybeL,DUF1451 family protein,
+b0679,-2.55452094501597,8.92892859059079e-11,nagE,"N-acetyl glucosamine specific PTS enzyme IIC, IIB, and IIA components","eco00520  Amino sugar and nucleotide sugar metabolism, eco02060  Phosphotransferase system (PTS)"
+b0681,-2.12723180815376,9.64457538771817e-07,chiP,"chitoporin, uptake of chitosugars",
+b0720,-3.27456159089347,1.57510033686119e-21,gltA,citrate synthase,"eco00020  Citrate cycle (TCA cycle), eco00630  Glyoxylate and dicarboxylate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b0721,-2.5890386775193797,8.898244317306401e-10,sdhC,"succinate dehydrogenase, membrane subunit, binds cytochrome b556","eco00020  Citrate cycle (TCA cycle), eco00190  Oxidative phosphorylation, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b0723,-2.5222771029106297,5.788557484414321e-10,sdhA,"succinate dehydrogenase, flavoprotein subunit","eco00020  Citrate cycle (TCA cycle), eco00190  Oxidative phosphorylation, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b0724,-2.4250169733672697,9.40027530748687e-10,sdhB,"succinate dehydrogenase, FeS subunit","eco00020  Citrate cycle (TCA cycle), eco00190  Oxidative phosphorylation, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b0728,-2.37460308995736,2.2807425732503e-21,sucC,"succinyl-CoA synthetase, beta subunit","eco00020  Citrate cycle (TCA cycle), eco00640  Propanoate metabolism, eco00660  C5-Branched dibasic acid metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b0756,-3.0008963023131,4.09329608596258e-27,galM,aldose 1-epimerase; type-1 mutarotase; galactose mutarotase,"eco00010  Glycolysis / Gluconeogenesis, eco00052  Galactose metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics"
+b0757,-3.4773130248883097,6.83208628238767e-45,galK,galactokinase,"eco00052  Galactose metabolism, eco00520  Amino sugar and nucleotide sugar metabolism, eco01100  Metabolic pathways"
+b0758,-3.08487978572209,4.2432372693476304e-26,galT,galactose-1-phosphate uridylyltransferase,"eco00052  Galactose metabolism, eco00520  Amino sugar and nucleotide sugar metabolism, eco01100  Metabolic pathways"
+b0759,-2.73681586633699,2.28840560788946e-16,galE,UDP-galactose-4-epimerase,"eco00052  Galactose metabolism, eco00520  Amino sugar and nucleotide sugar metabolism, eco01100  Metabolic pathways"
+b0760,-2.76623340169847,3.5155773465201497e-38,modF,molybdate ABC transporter ATPase,eco02010  ABC transporters
+b0790,-3.1898983305293798,1.50810394618182e-13,ybhP,endo/exonuclease/phosphatase family protein,
+b0801,-2.38037226361295,4.35955586861333e-27,ybiC,putative dehydrogenase,
+b0806,-2.02233838630997,1.0826790590065699e-07,mcbA,colanic acid mucoidy stimulation protein,
+b0823,-4.4567627396370595,6.705499372358449e-19,ybiW,putative pyruvate formate lyase,"eco00620  Pyruvate metabolism, eco00640  Propanoate metabolism, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b0824,-3.6319690884935802,2.54008088592316e-10,ybiY,putative pyruvate formate lyase activating enzyme,
+b0836,-4.79277365726928,8.870564485823739e-25,bssR,repressor of biofilm formation by indole transport regulation,
+b0854,-2.19181065787727,6.1188931482890595e-09,potF,putrescine ABC transporter periplasmic binding protein,eco02010  ABC transporters
+b0855,-2.2574107719401897,3.02871015876708e-10,potG,putrescine ABC transporter ATPase,eco02010  ABC transporters
+b0865,-2.72488940281583,2.1438851814635697e-18,ybjP,lipoprotein,
+b0871,-2.98927548493936,5.59263791475648e-14,poxB,"pyruvate dehydrogenase, thiamine triphosphate-binding, FAD-binding",eco00620  Pyruvate metabolism
+b0872,-2.45082792395474,7.18317661447615e-07,hcr,"HCP oxidoreductase, NADH-dependent",
+b0880,-5.60671016612579,2.8672780006594903e-40,cspD,"inhibitor of DNA replication, cold shock protein homolog",
+b0953,-5.5390197558050795,2.1291893171482098e-36,rmf,ribosome modulation factor,
+b0999,-2.58897959784519,1.4098304458353002e-14,cbpM,modulator of CbpA co-chaperone,
+b1000,-2.26834017294467,1.0630359863141199e-38,cbpA,DnaK co-chaperone; curved DNA-binding protein,
+b1002,-3.8191712760727503,1.26068856829028e-21,agp,glucose-1-phosphatase/inositol phosphatase,"eco00010  Glycolysis / Gluconeogenesis, eco01120  Microbial metabolism in diverse environments"
+b1003,-3.90754472816671,2.19616332463085e-35,yccJ,uncharacterized protein,
+b1004,-4.54959149186301,9.567970036183609e-36,wrbA,NAD(P)H:quinone oxidoreductase,"eco00130  Ubiquinone and other terpenoid-quinone biosynthesis, eco01110  Biosynthesis of secondary metabolites"
+b1014,-3.1880139928536004,3.4574482769183095e-25,putA,fused DNA-binding transcriptional regulator/proline dehydrogenase/pyrroline-5-carboxylate dehydrogenase,"eco00250  Alanine, aspartate and glutamate metabolism, eco00330  Arginine and proline metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics"
+b1020,-3.22918714006158,2.85268138941964e-17,phoH,ATP-binding protein; putative PhoH family P-loop ATPase,
+b1037,-2.2262119689850803,2.1729561068329e-09,csgG,curli production assembly/transport outer membrane lipoprotein,
+b1038,-3.2800833829162097,2.2657595096025603e-13,csgF,curli nucleation outer membrane protein,
+b1039,-3.5023870554378,6.37580654566173e-12,csgE,curlin secretion specificity factor,
+b1040,-3.9781459693410297,4.0511717358940294e-20,csgD,csgBAC operon transcriptional regulator,eco02026  Biofilm formation - Escherichia coli
+b1041,-2.45062149949236,9.030743075578358e-09,csgB,"curlin nucleator protein, minor subunit in curli complex",eco02026  Biofilm formation - Escherichia coli
+b1042,-3.1649851596384595,1.94757128365295e-12,csgA,"curlin subunit, amyloid curli fibers, cryptic",eco02026  Biofilm formation - Escherichia coli
+b1051,-3.6531659692176603,5.47021152742462e-28,msyB,multicopy suppressor of secY and secA,
+b1065,-3.24722392477762,2.83519665721798e-30,mdtH,multidrug resistance efflux transporter conferring overexpression resistance to norfloxacin and enoxacin,
+b1127,-2.73696831058213,7.95300273570908e-30,pepT,peptidase T,
+b1188,-3.61371214990186,1.2724416357868801e-19,ycgB,SpoVR family stationary phase protein,
+b1190,-2.21555382007834,2.31349510848382e-12,dadX,"alanine racemase, catabolic, PLP-binding","eco00473  D-Alanine metabolism, eco01100  Metabolic pathways, eco01502  Vancomycin resistance"
+b1195,-2.52397401880666,6.904247275712339e-07,ymgE,UPF0410 family putative inner membrane protein,
+b1197,-2.6884663819767702,1.3529791730753601e-15,treA,periplasmic trehalase,"eco00500  Starch and sucrose metabolism, eco01100  Metabolic pathways"
+b1205,-3.6724217482171806,5.2698196108591104e-14,ychH,DUF2583 family putative inner membrane protein,
+b1217,-2.1417489807693704,2.57411783053736e-13,chaB,cation transport regulator,
+b1218,-2.1849071481103,4.5555316826286e-18,chaC,cation transport regulator,"eco00480  Glutathione metabolism, eco01100  Metabolic pathways"
+b1227,-2.43787953964052,5.48128560677814e-05,narI,"nitrate reductase 1, gamma (cytochrome b(NR)) subunit","eco00910  Nitrogen metabolism, eco01120  Microbial metabolism in diverse environments, eco02020  Two-component system"
+b1243,-2.24349593263829,2.4373568877188298e-20,oppA,oligopeptide ABC transporter periplasmic binding protein,"eco01501  beta-Lactam resistance, eco02010  ABC transporters, eco02024  Quorum sensing"
+b1251,-2.57100298943223,1.1094477556763398e-54,yciI,putative DGPF domain-containing enzyme,
+b1376,-4.47510963486575,6.056165096346129e-25,uspF,"stress-induced protein, ATP-binding protein",
+b1406,-2.9633765183408,4.10279529484961e-19,ydbC,putative NAD(P)-binding oxidoreductase,"eco00750  Vitamin B6 metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b1415,-2.45910624344709,1.19930964305417e-09,aldA,"aldehyde dehydrogenase A, NAD-linked","eco00620  Pyruvate metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco01120  Microbial metabolism in diverse environments"
+b1423,-2.1364333902955703,6.31634444539791e-10,ydcJ,putative metalloenzyme,
+b1426,-5.002149433436861,4.23730831294699e-30,ydcH,DUF465 family protein,
+b1428,-2.40004996958264,1.2037671216064498e-16,ydcK,uncharacterized protein,
+b1441,-2.2182940954629102,1.1376816861893201e-08,ydcT,putative ABC transporter ATPase,eco02024  Quorum sensing
+b1442,-3.21792897010612,5.15854167549253e-09,ydcU,putative ABC transporter permease,eco02024  Quorum sensing
+b1447,-2.3375374072599,1.66983481465005e-12,ydcZ,DUF606 family inner membrane protein,eco02024  Quorum sensing
+b1448,-2.38337216759859,1.7040022934471199e-18,mnaT,methionine N-acyltransferase; L-amino acid N-acyltransferase,"eco00440  Phosphonate and phosphinate metabolism, eco01130  Biosynthesis of antibiotics"
+b1462,-2.53373580668323,4.3764528918517296e-10,yddH,flavin reductase like-protein,
+b1480,-5.51983734374724,1.7304826473843997e-34,sra,stationary-phase-induced ribosome-associated protein,
+b1482,-3.5923574137135694,2.41214896058348e-36,osmC,"lipoyl-dependent Cys-based peroxidase, hydroperoxide resistance; salt-shock inducible membrane protein; peroxiredoxin",
+b1489,-2.44924935763612,2.899134172089029e-16,dosP,"oxygen sensor, c-di-GMP phosphodiesterase, heme-regulated; cold- and stationary phase-induced bioflim regulator",
+b1492,-4.84731971207306,3.43994202852944e-24,gadC,glutamate:gamma-aminobutyric acid antiporter,eco02024  Quorum sensing
+b1521,-4.35327007498006,4.0697710044760095e-28,uxaB,"altronate oxidoreductase, NAD-dependent","eco00040  Pentose and glucuronate interconversions, eco01100  Metabolic pathways"
+b1541,-2.12854035358987,4.30743268557972e-08,ydfZ,"selenoprotein, function unknown",
+b1593,-2.10559345715301,3.18087041427961e-16,ynfK,putative dethiobiotin synthetase,"eco00780  Biotin metabolism, eco01100  Metabolic pathways"
+b1619,-3.07518696539801,5.00398648359888e-22,hdhA,"7-alpha-hydroxysteroid dehydrogenase, NAD-dependent",eco00121  Secondary bile acid biosynthesis
+b1635,-2.4605809955709503,8.5543883777831e-15,gstA,glutathionine S-transferase,eco00480  Glutathione metabolism
+b1648,-2.03566145230629,2.2160996933874397e-09,ydhL,DUF1289 family protein,
+b1678,-2.4171843262597403,2.0877824584141002e-10,ldtE,"murein L,D-transpeptidase",
+b1703,-2.29227785102222,2.47943036479049e-22,ppsR,PEP synthase kinase and PEP synthase pyrophosphorylase,
+b1708,-2.0489325712647,1.2400173460054299e-23,nlpC,putative C40 clan peptidase lipoprotein,
+b1724,-2.3585598297250803,3.357666809697169e-24,ydiZ,uncharacterized protein,
+b1725,-3.1335726109548396,5.656279135913679e-32,yniA,fructosamine kinase family protein,
+b1761,-2.4413051994992303,1.62210637358527e-20,gdhA,"glutamate dehydrogenase, NADP-specific","eco00220  Arginine biosynthesis, eco00250  Alanine, aspartate and glutamate metabolism, eco00910  Nitrogen metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b1783,-3.83946982192491,4.3435536133249395e-31,yeaG,"protein kinase, endogenous substrate unidentified; autokinase",
+b1784,-3.90404998320754,4.2976899095874895e-22,yeaH,UPF0229 family protein,
+b1795,-2.1993981635963498,7.70874358735437e-15,yeaQ,UPF0410 family protein,
+b1797,-2.33726197856612,1.0798411668245e-05,yeaR,"DUF1971 family protein, nitrate-inducible",
+b1895,-3.47486518599599,2.13006612683158e-31,uspC,universal stress protein,
+b1896,-2.9974429197001498,4.58496810157845e-20,otsA,trehalose-6-phosphate synthase,"eco00500  Starch and sucrose metabolism, eco01100  Metabolic pathways"
+b1897,-2.74628432126067,3.9518787101536705e-11,otsB,"trehalose-6-phosphate phosphatase, biosynthetic","eco00500  Starch and sucrose metabolism, eco01100  Metabolic pathways"
+b1900,-3.62027710779819,1.5038842447504197e-15,araG,L-arabinose ABC transporter ATPase,eco02010  ABC transporters
+b1927,-2.5191448985945697,4.20010916208173e-11,amyA,cytoplasmic alpha-amylase,"eco00500  Starch and sucrose metabolism, eco01100  Metabolic pathways"
+b1967,-2.99714565041858,4.44616274765712e-25,hchA,glyoxalase III and Hsp31 molecular chaperone,"eco00620  Pyruvate metabolism, eco01120  Microbial metabolism in diverse environments"
+b1976,-2.6997853227429,3.32753173091878e-43,mtfA,anti-repressor for DgsA(Mlc),
+b1982,-2.17362456967022,8.852425668220641e-09,amn,AMP nucleosidase,eco00230  Purine metabolism
+b2080,-3.97069157565965,1.17329869424076e-24,yegP,UPF0339 family protein,
+b2086,-2.3895088282362797,2.2100041169896397e-09,yegS,"phosphatidylglycerol kinase, metal-dependent",
+b2093,-2.02204713417293,0.0177027963767266,gatB,galactitol-specific enzyme IIB component of PTS,"eco00052  Galactose metabolism, eco01100  Metabolic pathways, eco02060  Phosphotransferase system (PTS)"
+b2094,-2.48501653246058,0.000323688286699746,gatA,galactitol-specific enzyme IIA component of PTS,"eco00052  Galactose metabolism, eco01100  Metabolic pathways, eco02060  Phosphotransferase system (PTS)"
+b2095,-2.09125991972107,0.000255656782202985,gatZ,"D-tagatose 1,6-bisphosphate aldolase 2, subunit","eco00052  Galactose metabolism, eco01100  Metabolic pathways"
+b2096,-2.1027462562249197,0.000343711683121551,gatY,"D-tagatose 1,6-bisphosphate aldolase 2, catalytic subunit","eco00052  Galactose metabolism, eco01100  Metabolic pathways"
+b2097,-3.8371719972243303,1.1599460649600598e-34,fbaB,fructose-bisphosphate aldolase class I,"eco00010  Glycolysis / Gluconeogenesis, eco00030  Pentose phosphate pathway, eco00051  Fructose and mannose metabolism, eco00680  Methane metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01230  Biosynthesis of amino acids"
+b2111,-2.3987672913000497,2.14407639746594e-08,yehD,putative fimbrial-like adhesin protein,
+b2112,-2.9650389072518504,1.4343071010868e-13,yehE,DUF2574 family protein,
+b2131,-2.13768406638515,2.59056815028365e-10,osmF,putative ABC transporter periplasmic binding protein,eco02010  ABC transporters
+b2135,-2.75121187720289,4.6039113621164405e-08,yohC,Yip1 family inner membrane protein,
+b2149,-4.62985727642174,1.6205986472300098e-22,mglA,methyl-galactoside ABC transporter ATPase,eco02010  ABC transporters
+b2150,-5.31792483670507,5.90031663352057e-25,mglB,methyl-galactoside transporter subunit,"eco02010  ABC transporters, eco02030  Bacterial chemotaxis"
+b2151,-2.8975319203341097,1.17834135057704e-11,galS,galactose- and fucose-inducible galactose regulon transcriptional isorepressor; mgl operon transcriptional repressor; autorepressor,
+b2162,-4.53801403085495,1.0713144914602901e-13,rihB,ribonucleoside hydrolase 2,"eco00230  Purine metabolism, eco00240  Pyrimidine metabolism, eco01100  Metabolic pathways"
+b2163,-2.6037595748139397,2.6124245113981697e-16,yeiL,putative transcriptional regulator,
+b2239,-3.08312442517739,9.03248808975208e-19,glpQ,periplasmic glycerophosphodiester phosphodiesterase,eco00564  Glycerophospholipid metabolism
+b2241,-2.4949471090480397,1.70073893062814e-06,glpA,"anaerobic sn-glycerol-3-phosphate dehydrogenase, large FAD/NAD(P)-binding subunit","eco00564  Glycerophospholipid metabolism, eco01110  Biosynthesis of secondary metabolites"
+b2242,-2.89350182874282,3.7814288563867296e-07,glpB,anaerobic sn-glycerol-3-phosphate dehydrogenase membrane anchor subunit,"eco00564  Glycerophospholipid metabolism, eco01110  Biosynthesis of secondary metabolites"
+b2243,-3.4643286309186805,4.6496245627376203e-10,glpC,"anaerobic sn-glycerol-3-phosphate dehydrogenase, C subunit, 4Fe-4S iron-sulfur cluster","eco00564  Glycerophospholipid metabolism, eco01110  Biosynthesis of secondary metabolites"
+b2257,-2.18364357181678,5.26462711753538e-14,arnT,4-amino-4-deoxy-L-arabinose transferase,eco01503  Cationic antimicrobial peptide (CAMP) resistance
+b2266,-3.5545051828282404,7.194259292257389e-25,elaB,putative membrane-anchored DUF883 family ribosome-binding protein,
+b2272,-2.7288709491484795,1.0236965561741099e-15,yfbM,DUF1877 family protein,
+b2301,-2.47871990268998,7.710279246734989e-29,yfcF,glutathione S-transferase,eco00480  Glutathione metabolism
+b2302,-2.18173702398114,1.0781732630203199e-07,yfcG,GSH-dependent disulfide bond oxidoreductase,
+b2341,-2.20413907762264,4.77218268843092e-10,fadJ,enoyl-CoA hydratase/epimerase and isomerase/3-hydroxyacyl-CoA dehydrogenase,"eco00071  Fatty acid degradation, eco00280  Valine, leucine and isoleucine degradation, eco00281  Geraniol degradation, eco00310  Lysine degradation, eco00362  Benzoate degradation, eco00380  Tryptophan metabolism, eco00410  beta-Alanine metabolism, eco00640  Propanoate metabolism, eco00650  Butanoate metabolism, eco00903  Limonene and pinene degradation, eco00930  Caprolactam degradation, eco01040  Biosynthesis of unsaturated fatty acids, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01212  Fatty acid metabolism"
+b2464,-2.97208533387312,6.36455220422054e-14,talA,transaldolase A,"eco00030  Pentose phosphate pathway, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01230  Biosynthesis of amino acids"
+b2535,-2.48810962679291,5.28277563024462e-14,csiE,stationary phase inducible protein,
+b2543,-3.2639453160030896,1.15690776425983e-18,yphA,DoxX family inner membrane protein,
+b2551,-2.45794491222926,5.459346752369689e-23,glyA,serine hydroxymethyltransferase,"eco00260  Glycine, serine and threonine metabolism, eco00460  Cyanoamino acid metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco00670  One carbon pool by folate, eco00680  Methane metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01230  Biosynthesis of amino acids"
+b2579,-3.20923921115835,3.49969755581424e-18,grcA,autonomous glycyl radical cofactor,
+b2587,-2.6919925566415603,6.839555281149971e-11,kgtP,alpha-ketoglutarate transporter,
+b2597,-3.11381687240373,1.4098304458353002e-14,raiA,cold shock protein associated with 30S ribosomal subunit,
+b2662,-2.2888728593557004,1.84033447524373e-16,gabT,"4-aminobutyrate aminotransferase, PLP-dependent","eco00250  Alanine, aspartate and glutamate metabolism, eco00280  Valine, leucine and isoleucine degradation, eco00410  beta-Alanine metabolism, eco00640  Propanoate metabolism, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b2665,-3.38737833597745,3.06479463061478e-20,ygaU,uncharacterized protein,
+b2672,-3.88228559386657,2.2815218027675197e-27,ygaM,putative membrane-anchored DUF883 family ribosome-binding protein,
+b2673,-2.5176179502698397,7.11319830852867e-07,nrdH,hydrogen donor for NrdEF electron transport system; glutaredoxin-like protein,
+b2674,-2.7671940318400097,2.9841823845867506e-08,nrdI,NrdEF cluster assembly flavodoxin,
+b2702,-4.263868536816751,1.3489696219406998e-08,srlA,glucitol/sorbitol-specific enzyme IIC component of PTS,"eco00051  Fructose and mannose metabolism, eco02060  Phosphotransferase system (PTS)"
+b2703,-5.24858468306243,1.94667341975755e-12,srlE,glucitol/sorbitol-specific enzyme IIB component of PTS,"eco00051  Fructose and mannose metabolism, eco02060  Phosphotransferase system (PTS)"
+b2704,-3.68870552754967,1.797583911591e-07,srlB,glucitol/sorbitol-specific enzyme IIA component of PTS,"eco00051  Fructose and mannose metabolism, eco02060  Phosphotransferase system (PTS)"
+b2705,-4.20389380868644,2.85339025146632e-09,srlD,sorbitol-6-phosphate dehydrogenase,eco00051  Fructose and mannose metabolism
+b2706,-3.0860126524660703,1.31027925579362e-11,srlM,sorbitol=responsive srl operon transcriptional activator,
+b2708,-2.5883212205945,1.40763205620607e-12,srlQ,D-arabinose 5-phosphate isomerase,
+b2713,-2.0753959004551596,3.44093797325299e-05,hydN,"formate dehydrogenase-H, [4Fe-4S] ferredoxin subunit",
+b2724,-2.37795234341966,0.00112531270622985,hycB,"hydrogenase 3, Fe-S subunit",
+b2725,-2.64208386301203,0.000125376227420074,hycA,regulator of the transcriptional regulator FhlA,
+b2728,-2.09491648323507,2.3720833196079103e-05,hypC,hydrogenase maturation protein,
+b2799,-3.87704933236942,2.0187212473578197e-18,fucO,"L-1,2-propanediol oxidoreductase","eco00630  Glyoxylate and dicarboxylate metabolism, eco00640  Propanoate metabolism, eco01120  Microbial metabolism in diverse environments"
+b2801,-2.0232764221794297,0.000272839139354694,fucP,L-fucose transporter,
+b2803,-2.32359580147905,9.097843081374308e-17,fucK,L-fuculokinase,"eco00051  Fructose and mannose metabolism, eco01120  Microbial metabolism in diverse environments"
+b2804,-2.38313518130005,2.39914535024771e-13,fucU,L-fucose mutarotase,
+b2805,-2.11949445112769,3.15185434633467e-24,fucR,l-fucose operon activator,
+b2809,-2.7468861535580404,1.6097434049970001e-15,ygdI,DUF903 family verified lipoprotein,
+b2818,-3.7351255180616496,1.2792400673608499e-27,argA,amino acid N-acetyltransferase and inactive acetylglutamate kinase,"eco00220  Arginine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b2838,-3.91986356387663,3.9708853739673304e-12,lysA,"diaminopimelate decarboxylase, PLP-binding","eco00300  Lysine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01230  Biosynthesis of amino acids"
+b2842,-4.50740715954602,4.0697710044760095e-28,kduD,2-dehydro-3-deoxy-D-gluconate 5-dehydrogenase; KDG oxidoreductase; 20-ketosteroid reductase,eco00040  Pentose and glucuronate interconversions
+b2843,-4.602627720299309,2.92971314042949e-22,kduI,hexuronate isomerase,eco00040  Pentose and glucuronate interconversions
+b2866,-2.91124863863729,1.17987815481258e-12,xdhA,"xanthine dehydrogenase, molybdenum binding subunit","eco00230  Purine metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b2868,-2.33033890034772,9.095545218994511e-08,xdhC,"xanthine dehydrogenase, Fe-S binding subunit","eco00230  Purine metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b2869,-2.5242947804972298,9.800227904021401e-15,ygeV,putative sigma-54-interacting transcriptional activator,
+b2903,-2.64188019968953,2.07188099806785e-21,gcvP,"glycine decarboxylase, PLP-dependent, subunit P of glycine cleavage complex","eco00260  Glycine, serine and threonine metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b2904,-2.94383054598742,2.96676329383534e-25,gcvH,glycine cleavage complex lipoylprotein,"eco00260  Glycine, serine and threonine metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b2905,-2.8765849738449702,1.5556261188143498e-23,gcvT,"aminomethyltransferase, tetrahydrofolate-dependent, subunit (T protein) of glycine cleavage complex","eco00260  Glycine, serine and threonine metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco00670  One carbon pool by folate, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b2913,-2.7134963090653503,8.1765208988646e-33,serA,D-3-phosphoglycerate dehydrogenase,"eco00260  Glycine, serine and threonine metabolism, eco00680  Methane metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01230  Biosynthesis of amino acids"
+b2934,-2.13028688940207,0.00109025128683179,cmtB,putative mannitol-specific enzyme IIA component of PTS,"eco00051  Fructose and mannose metabolism, eco02060  Phosphotransferase system (PTS)"
+b2989,-2.17745859976433,2.7318694860653696e-29,yghU,putative S-transferase,
+b3008,-3.31772990593244,2.3164207803755e-22,metC,"cystathionine beta-lyase, PLP-dependent","eco00270  Cysteine and methionine metabolism, eco00450  Selenocompound metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01230  Biosynthesis of amino acids"
+b3049,-3.8890358030319905,5.09657435516989e-21,glgS,motility and biofilm regulator,
+b3070,-2.02446740857644,2.0828391589971498e-13,yqjH,putative siderophore interacting protein,
+b3073,-3.35257311424083,1.68768601537058e-21,patA,"putrescine:2-oxoglutaric acid aminotransferase, PLP-dependent","eco00330  Arginine and proline metabolism, eco01100  Metabolic pathways"
+b3074,-3.5744358816756896,3.8473078867468995e-15,ygjH,putative tRNA binding protein; putative tRNA corner chaperone,
+b3076,-3.8973246427897594,6.278390289543701e-17,ebgA,"evolved beta-D-galactosidase, alpha subunit","eco00052  Galactose metabolism, eco00511  Other glycan degradation, eco01100  Metabolic pathways"
+b3077,-4.54492240042205,2.51930395097369e-18,ebgC,"evolved beta-D-galactosidase, beta subunit; cupin superfamily","eco00052  Galactose metabolism, eco00511  Other glycan degradation, eco01100  Metabolic pathways"
+b3078,-5.270240542013941,5.61710750125151e-19,ygjI,putative transporter,
+b3080,-3.70978806126861,9.48744893010529e-16,ygjK,alpha-glucosidase,
+b3090,-2.4309341607487203,1.66267451793211e-12,ygjV,Imp-YgjV family inner membrane protein,
+b3091,-4.212661151748399,8.12443902169595e-20,uxaA,altronate hydrolase,"eco00040  Pentose and glucuronate interconversions, eco01100  Metabolic pathways"
+b3092,-4.18884207337289,6.25683431268185e-19,uxaC,uronate isomerase,"eco00040  Pentose and glucuronate interconversions, eco01100  Metabolic pathways"
+b3093,-5.319839423867861,2.56610299046585e-44,exuT,hexuronate transporter,
+b3097,-2.6313217006941096,6.972859199807239e-23,yqjC,DUF1090 family putative periplasmic protein,
+b3098,-2.8338471192717303,2.76692736566044e-22,yqjD,membrane-anchored ribosome-binding protein,
+b3099,-3.2287662920006297,8.57144304188116e-28,yqjE,DUF1469 family inner membrane protein,
+b3128,-2.03536095082199,4.04898544167696e-10,garD,D-galactarate dehydrogenase,eco00053  Ascorbate and aldarate metabolism
+b3132,-6.361175381292719,5.512844540110041e-29,kbaZ,"tagatose 6-phosphate aldolase 1, kbaZ subunit","eco00052  Galactose metabolism, eco01100  Metabolic pathways"
+b3133,-5.4594037038866,4.07305167636594e-19,agaV,N-acetylgalactosamine-specific enzyme IIB component of PTS,"eco00052  Galactose metabolism, eco02060  Phosphotransferase system (PTS)"
+b3136,-6.18844029817786,4.33353665208355e-24,agaS,tagatose-6-phosphate ketose/aldose isomerase,
+b3137,-6.63098065123657,6.840662440788919e-34,kbaY,"tagatose 6-phosphate aldolase 1, kbaY subunit","eco00052  Galactose metabolism, eco01100  Metabolic pathways"
+b3138,-5.43804136870437,1.39194427050521e-26,agaB,N-acetylgalactosamine-specific enzyme IIB component of PTS,"eco00052  Galactose metabolism, eco02060  Phosphotransferase system (PTS)"
+b3139,-5.7408026229419695,7.813163383671058e-27,agaC,N-acetylgalactosamine-specific enzyme IIC component of PTS,"eco00052  Galactose metabolism, eco02060  Phosphotransferase system (PTS)"
+b3140,-4.858408551161349,9.908708700166858e-23,agaD,N-acetylgalactosamine-specific enzyme IID component of PTS,"eco00052  Galactose metabolism, eco02060  Phosphotransferase system (PTS)"
+b3141,-3.9166946257704103,6.32364572564076e-15,agaI,galactosamine-6-phosphate isomerase,eco00052  Galactose metabolism
+b3172,-3.0913826914551,1.9485343229466899e-31,argG,argininosuccinate synthetase,"eco00220  Arginine biosynthesis, eco00250  Alanine, aspartate and glutamate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01230  Biosynthesis of amino acids"
+b3212,-2.0845915714184,5.281393226184739e-19,gltB,"glutamate synthase, large subunit","eco00250  Alanine, aspartate and glutamate metabolism, eco00910  Nitrogen metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01230  Biosynthesis of amino acids"
+b3221,-5.07498344061017,7.1383087230334085e-25,yhcH,"DUF386 family protein, cupin superfamily",
+b3222,-5.90324062285893,1.9490519990387e-33,nanK,N-acetylmannosamine kinase,"eco00520  Amino sugar and nucleotide sugar metabolism, eco01100  Metabolic pathways"
+b3223,-5.94857236115206,2.81513855650627e-37,nanE,putative N-acetylmannosamine-6-P epimerase,eco00520  Amino sugar and nucleotide sugar metabolism
+b3225,-5.716514788218371,9.65163115804446e-25,nanA,N-acetylneuraminate lyase,eco00520  Amino sugar and nucleotide sugar metabolism
+b3236,-2.7815138105827097,1.5060303737831798e-35,mdh,"malate dehydrogenase, NAD(P)-binding","eco00020  Citrate cycle (TCA cycle), eco00270  Cysteine and methionine metabolism, eco00620  Pyruvate metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco00680  Methane metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b3359,-2.2727989552411803,1.88300271032739e-13,argD,bifunctional acetylornithine aminotransferase and succinyldiaminopimelate aminotransferase,"eco00220  Arginine biosynthesis, eco00300  Lysine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3410,-2.43436448356707,8.77641449820891e-10,feoC,putative DNA-binding transcriptional regulator,
+b3429,-3.0727756181903194,1.6074734099282696e-47,glgA,glycogen synthase,"eco00500  Starch and sucrose metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco02026  Biofilm formation - Escherichia coli"
+b3430,-2.5892519800012597,1.6198568900075899e-26,glgC,glucose-1-phosphate adenylyltransferase,"eco00500  Starch and sucrose metabolism, eco00520  Amino sugar and nucleotide sugar metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco02026  Biofilm formation - Escherichia coli"
+b3431,-2.61244903787465,2.9310449764987e-24,glgX,glycogen debranching enzyme,"eco00500  Starch and sucrose metabolism, eco01100  Metabolic pathways"
+b3432,-2.5766452238932698,5.87559255101586e-41,glgB,"1,4-alpha-glucan branching enzyme","eco00500  Starch and sucrose metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites"
+b3454,-2.4653364140745198,2.1476439262174697e-19,livF,branched-chain amino acid ABC transporter ATPase,"eco02010  ABC transporters, eco02024  Quorum sensing"
+b3456,-2.35741204458186,4.22237520088524e-23,livM,branched-chain amino acid ABC transporter permease,"eco02010  ABC transporters, eco02024  Quorum sensing"
+b3457,-2.02442441554047,5.47258365662396e-12,livH,branched-chain amino acid ABC transporter permease,"eco02010  ABC transporters, eco02024  Quorum sensing"
+b3485,-2.19722907407118,4.4264595368215e-08,yhhJ,putative ABC transporter permease,
+b3491,-2.0415110433973402,0.000100246592091528,yhiM,"acid resistance protein, inner membrane",
+b3494,-2.10367334106661,3.76458858481853e-11,uspB,universal stress (ethanol tolerance) protein B,
+b3495,-3.15468360386741,9.907434623964009e-42,uspA,universal stress global response regulator,
+b3506,-3.6957971552343305,4.04684702784854e-13,slp,outer membrane lipoprotein,
+b3507,-2.00827103026923,5.1608173822358204e-05,dctR,Putative LuxR family repressor for dicarboxylate transport,
+b3508,-2.84446963977904,4.96293277203424e-09,yhiD,"putative Mg(2+) transport ATPase, inner membrane protein",
+b3509,-3.9755364858177398,2.8046551816503803e-14,hdeB,acid-resistance protein,
+b3510,-4.81796056890643,4.27289076451779e-22,hdeA,stress response protein acid-resistance protein,
+b3511,-3.51114782198042,1.22626460940601e-11,hdeD,acid-resistance membrane protein,
+b3512,-3.37904539002875,1.02479688830381e-05,gadE,gad regulon transcriptional activator,
+b3515,-2.08048338454907,1.40487523795343e-06,gadW,transcriptional activator of gadA and gadBC; repressor of gadX,
+b3516,-3.5496916357402997,3.7802777245563e-21,gadX,acid resistance regulon transcriptional activator; autoactivator,
+b3523,-4.546513920038691,8.307416931985619e-55,yhjE,putative MFS transporter; membrane protein,
+b3544,-2.45328431839012,2.72147583640158e-14,dppA,dipeptide/heme ABC transporter periplasmic binding protein; dipeptide chemotaxis receptor,"eco02010  ABC transporters, eco02030  Bacterial chemotaxis"
+b3548,-2.8995294886236502,7.02319917025634e-19,yhjY,autotransporter beta-domain protein,
+b3555,-4.2566988342562695,1.07360561783592e-23,yiaG,HTH_CROC1 family putative transcriptional regulator,
+b3563,-2.7386510086673397,2.48717157594462e-06,yiaB,YiaAB family inner membrane protein,
+b3565,-5.5633141348176505,5.89345905507066e-19,xylA,D-xylose isomerase,"eco00040  Pentose and glucuronate interconversions, eco00051  Fructose and mannose metabolism, eco01100  Metabolic pathways"
+b3566,-6.046653054186879,2.56098314002234e-22,xylF,D-xylose transporter subunit,eco02010  ABC transporters
+b3567,-4.97403641021816,1.3481915576277199e-18,xylG,D-xylose ABC transporter dual domain ATPase,eco02010  ABC transporters
+b3568,-3.63203073266338,4.76361687120372e-15,xylH,D-xylose ABC transporter permease,eco02010  ABC transporters
+b3569,-3.10010790033267,1.32237658812474e-15,xylR,xylose divergent operon transcriptional activator,
+b3575,-4.59052815983672,1.07875336438747e-15,yiaK,"2,3-diketo-L-gulonate reductase, NADH-dependent","eco00040  Pentose and glucuronate interconversions, eco00053  Ascorbate and aldarate metabolism"
+b3576,-3.21892469136432,1.56011397296524e-07,yiaL,DUF386 family protein,
+b3579,-2.72997817997383,2.58900452249824e-06,yiaO,"2,3-diketo-L-gulonate-binding periplasmic protein",
+b3581,-3.4933277867896404,2.88147500819553e-09,sgbH,3-keto-L-gulonate 6-phosphate decarboxylase,"eco00040  Pentose and glucuronate interconversions, eco00053  Ascorbate and aldarate metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b3582,-3.01338673723153,7.3781346794485305e-09,sgbU,putative L-xylulose 5-phosphate 3-epimerase,"eco00040  Pentose and glucuronate interconversions, eco00053  Ascorbate and aldarate metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b3583,-3.18410269869493,1.31393784716367e-10,sgbE,L-ribulose-5-phosphate 4-epimerase,"eco00040  Pentose and glucuronate interconversions, eco00053  Ascorbate and aldarate metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b3657,-2.1904613736111798,8.724361153436261e-08,yicJ,putative transporter,
+b3670,-4.84281089176057,2.4373568877188298e-20,ilvN,acetolactate synthase 1 small subunit,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00650  Butanoate metabolism, eco00660  C5-Branched dibasic acid metabolism, eco00770  Pantothenate and CoA biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3671,-4.44906913076419,5.49520255274176e-35,ilvB,acetolactate synthase 2 large subunit,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00650  Butanoate metabolism, eco00660  C5-Branched dibasic acid metabolism, eco00770  Pantothenate and CoA biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3691,-3.92607085315717,1.41416165000876e-11,dgoT,D-galactonate transporter,
+b3693,-4.23296932846696,8.78829489761879e-21,dgoK,2-oxo-3-deoxygalactonate kinase,"eco00052  Galactose metabolism, eco01100  Metabolic pathways"
+b3708,-6.7422326475727905,1.0667230969011099e-29,tnaA,"tryptophanase/L-cysteine desulfhydrase, PLP-dependent",eco00380  Tryptophan metabolism
+b3709,-4.21072874303097,1.26871221012882e-08,tnaB,tryptophan transporter of low affinity,
+b3748,-2.5570775465399502,3.5266746133333e-07,rbsD,D-ribose pyranase,eco02010  ABC transporters
+b3750,-3.2818478810400498,2.2908836982887003e-16,rbsC,D-ribose ABC transporter permease,eco02010  ABC transporters
+b3751,-2.9652751216932005,2.6416843840029396e-21,rbsB,D-ribose ABC transporter periplasmic binding protein; ribose chemotaxis receptor,"eco02010  ABC transporters, eco02030  Bacterial chemotaxis"
+b3769,-3.4823595235771903,3.83333999719112e-26,ilvM,acetolactate synthase 2 small subunit,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00650  Butanoate metabolism, eco00660  C5-Branched dibasic acid metabolism, eco00770  Pantothenate and CoA biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3770,-3.36865008317554,1.2824166008920099e-22,ilvE,branched-chain amino acid aminotransferase,"eco00270  Cysteine and methionine metabolism, eco00280  Valine, leucine and isoleucine degradation, eco00290  Valine, leucine and isoleucine biosynthesis, eco00770  Pantothenate and CoA biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3771,-2.9464167067732996,5.18377000890199e-13,ilvD,dihydroxyacid dehydratase,"eco00290  Valine, leucine and isoleucine biosynthesis, eco00770  Pantothenate and CoA biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3772,-2.80585208081923,3.87637887631952e-14,ilvA,"l-threonine dehydratase, biosynthetic; also known as threonine deaminase","eco00260  Glycine, serine and threonine metabolism, eco00290  Valine, leucine and isoleucine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01230  Biosynthesis of amino acids"
+b3828,-4.24125064035917,3.8275715967469e-24,metR,methionine biosynthesis regulon transcriptional regulator,
+b3829,-5.72012060108545,9.99662350025588e-24,metE,5-methyltetrahydropteroyltriglutamate-homocysteine S-methyltransferase,"eco00270  Cysteine and methionine metabolism, eco00450  Selenocompound metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01230  Biosynthesis of amino acids"
+b3830,-3.2834019087615496,2.0451272324563797e-37,ysgA,putative carboxymethylenebutenolidase,"eco00361  Chlorocyclohexane and chlorobenzene degradation, eco00364  Fluorobenzoate degradation, eco00623  Toluene degradation, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics"
+b3846,-2.26081364671378,9.66629254631625e-08,fadB,fused 3-hydroxybutyryl-CoA epimerase/delta(3)-cis-delta(2)-trans-enoyl-CoA isomerase/enoyl-CoA hydratase/3-hydroxyacyl-CoA dehydrogenase,"eco00071  Fatty acid degradation, eco00280  Valine, leucine and isoleucine degradation, eco00281  Geraniol degradation, eco00310  Lysine degradation, eco00362  Benzoate degradation, eco00380  Tryptophan metabolism, eco00410  beta-Alanine metabolism, eco00640  Propanoate metabolism, eco00650  Butanoate metabolism, eco00903  Limonene and pinene degradation, eco00930  Caprolactam degradation, eco01040  Biosynthesis of unsaturated fatty acids, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01212  Fatty acid metabolism"
+b3922,-3.6207655043459397,3.7721376124126096e-44,yiiS,UPF0381 family protein,
+b3923,-4.1912011195348295,1.2534133075720798e-50,uspD,stress-induced protein,
+b3926,-3.18440566065856,1.8539964121591797e-17,glpK,glycerol kinase,"eco00561  Glycerolipid metabolism, eco01100  Metabolic pathways"
+b3927,-3.10707246806851,6.20720973309643e-14,glpF,glycerol facilitator,
+b3939,-3.3864359462123503,8.784063455700009e-20,metB,"cystathionine gamma-synthase, PLP-dependent","eco00270  Cysteine and methionine metabolism, eco00450  Selenocompound metabolism, eco00920  Sulfur metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01230  Biosynthesis of amino acids"
+b3940,-3.38554154528817,2.6389224787165397e-23,metL,Bifunctional aspartokinase/homoserine dehydrogenase 2,"eco00260  Glycine, serine and threonine metabolism, eco00261  Monobactam biosynthesis, eco00270  Cysteine and methionine metabolism, eco00300  Lysine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01230  Biosynthesis of amino acids"
+b3941,-5.470819364785019,1.8912757758056398e-22,metF,"5,10-methylenetetrahydrofolate reductase","eco00670  One carbon pool by folate, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments, eco01200  Carbon metabolism"
+b3945,-2.7601689868346204,6.04714062704137e-11,gldA,"glycerol dehydrogenase, NAD+ dependent; 1,2-propanediol:NAD+ oxidoreductase","eco00561  Glycerolipid metabolism, eco00640  Propanoate metabolism, eco01100  Metabolic pathways"
+b3950,-3.32907727587533,1.1696122236342902e-08,frwB,putative enzyme IIB component of PTS,
+b3957,-2.19523771741586,4.26583237497182e-34,argE,acetylornithine deacetylase,"eco00220  Arginine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3958,-3.05804152689335,3.15624219348746e-25,argC,"N-acetyl-gamma-glutamylphosphate reductase, NAD(P)-binding","eco00220  Arginine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3959,-3.0411775470231097,9.776885950467779e-23,argB,acetylglutamate kinase,"eco00220  Arginine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b3960,-2.5459462818274,6.70917968853251e-20,argH,argininosuccinate lyase,"eco00220  Arginine biosynthesis, eco00250  Alanine, aspartate and glutamate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01230  Biosynthesis of amino acids"
+b3995,-2.02706175880681,3.90994654535029e-14,rsd,"stationary phase protein, binds sigma 70 RNA polymerase subunit",
+b4013,-4.87646541169162,6.70917968853251e-20,metA,homoserine O-transsuccinylase,"eco00270  Cysteine and methionine metabolism, eco00920  Sulfur metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics, eco01230  Biosynthesis of amino acids"
+b4014,-2.70378719666892,5.5545368334169695e-18,aceB,malate synthase A,"eco00620  Pyruvate metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01200  Carbon metabolism"
+b4015,-2.8230506416463,1.02788131654991e-15,aceA,isocitrate lyase,"eco00630  Glyoxylate and dicarboxylate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01200  Carbon metabolism"
+b4021,-2.19404538696773,3.38119990912775e-10,pepE,"peptidase E, alpha-aspartyl dipeptidase",
+b4024,-2.30994216096968,9.53993639105676e-27,lysC,lysine-sensitive aspartokinase 3,"eco00260  Glycine, serine and threonine metabolism, eco00261  Monobactam biosynthesis, eco00270  Cysteine and methionine metabolism, eco00300  Lysine biosynthesis, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01210  2-Oxocarboxylic acid metabolism, eco01230  Biosynthesis of amino acids"
+b4032,-3.4778225031063803,8.92892859059079e-11,malG,maltose transporter subunit,eco02010  ABC transporters
+b4033,-2.67418326847436,3.31187716332922e-06,malF,maltose transporter subunit,eco02010  ABC transporters
+b4035,-4.15692529573565,1.3398665201523401e-08,malK,maltose ABC transportor ATPase,eco02010  ABC transporters
+b4036,-4.58421270268438,2.84521730367062e-14,lamB,maltose outer membrane porin (maltoporin),
+b4037,-2.6860715859494597,1.90570074478589e-05,malM,maltose regulon periplasmic protein,
+b4051,-2.43773678315793,7.36796787571256e-46,qorA,"quinone oxidoreductase, NADPH-dependent",
+b4055,-2.34222192546243,1.0233250538374899e-44,aphA,"acid phosphatase/phosphotransferase, class B, non-specific","eco00740  Riboflavin metabolism, eco01100  Metabolic pathways"
+b4068,-2.20452137131173,2.49254399560819e-08,yjcH,DUF485 family inner membrane protein,
+b4069,-3.00206964848606,4.61798975415556e-13,acs,acetyl-CoA synthetase,"eco00010  Glycolysis / Gluconeogenesis, eco00620  Pyruvate metabolism, eco00630  Glyoxylate and dicarboxylate metabolism, eco00640  Propanoate metabolism, eco00680  Methane metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b4072,-2.30816047452333,6.85614168280856e-05,nrfC,"formate-dependent nitrite reductase, 4Fe4S subunit",
+b4119,-4.3865031123234095,9.00705354939707e-33,melA,"alpha-galactosidase, NAD(P)-binding","eco00052  Galactose metabolism, eco00561  Glycerolipid metabolism, eco00600  Sphingolipid metabolism, eco01100  Metabolic pathways"
+b4126,-2.7415807847566,3.2197983752512597e-18,yjdI,putative 4Fe-4S mono-cluster protein,
+b4127,-2.93276967849998,2.64345963076197e-10,yjdJ,GNAT family putative N-acetyltransferase,
+b4132,-4.08783564107015,8.30502223056235e-09,cadB,putative lysine/cadaverine transporter,
+b4144,-2.07948829735419,6.572695531752139e-53,yjeI,DUF4156 family lipoprotein,
+b4149,-3.5285113749567505,7.65556640697817e-16,blc,outer membrane lipoprotein cell division and growth lipocalin,
+b4152,-2.76149345331126,7.29108534311888e-16,frdC,"fumarate reductase (anaerobic), membrane anchor subunit","eco00020  Citrate cycle (TCA cycle), eco00190  Oxidative phosphorylation, eco00620  Pyruvate metabolism, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco02020  Two-component system"
+b4153,-2.58635524972566,4.2028299476297996e-19,frdB,"fumarate reductase (anaerobic), Fe-S subunit","eco00020  Citrate cycle (TCA cycle), eco00190  Oxidative phosphorylation, eco00620  Pyruvate metabolism, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco02020  Two-component system"
+b4154,-2.46742043526468,1.8590604238394397e-18,frdA,anaerobic fumarate reductase catalytic and NAD/flavoprotein subunit,"eco00020  Citrate cycle (TCA cycle), eco00190  Oxidative phosphorylation, eco00620  Pyruvate metabolism, eco00650  Butanoate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco02020  Two-component system"
+b4187,-2.11954676678134,1.35716829774623e-14,aidB,"DNA alkylation damage repair protein; flavin-containing DNA binding protein, weak isovaleryl CoA dehydrogenase",
+b4188,-2.01388896488699,8.02631196053254e-06,yjfN,DUF1471 family periplasmic protein,
+b4189,-2.88277154259201,2.49750734777337e-13,bsmA,bioflm peroxide resistance protein,
+b4219,-2.2576725339417596,6.841493074902428e-41,msrA,methionine sulfoxide reductase A,
+b4227,-3.28610792176076,1.7170387172675298e-14,ytfQ,galactofuranose ABC transporter periplasmic binding protein,
+b4269,-2.26484821626773,1.20936359340171e-12,ahr,"broad specificity NADPH-dependent aldehyde reductase, Zn-containing",
+b4309,-5.538385784826571,7.87227668921547e-24,nanS,9-O-acetyl N-acetylneuraminic acid esterase,
+b4310,-6.426107905430759,5.3609228637233794e-33,nanM,N-acetylneuraminic acid mutarotase,
+b4311,-7.41011596359413,2.3444713875728698e-36,nanC,N-acetylnuraminic acid outer membrane channel protein,
+b4322,-3.5838012387525695,2.39984276089069e-14,uxuA,mannonate hydrolase,"eco00040  Pentose and glucuronate interconversions, eco01100  Metabolic pathways"
+b4330,-4.878307183416269,3.12896326447363e-27,yjiH,nucleoside recognition pore and gate family putative inner membrane transporter,
+b4460,-3.7811064138334705,8.718180189841789e-18,araH,L-arabinose ABC transporter permease,eco02010  ABC transporters
+b4470,-2.08323758056486,6.74253136793876e-08,yhaM,putative L-serine dehydratase alpha chain,
+b4478,-4.9453441626239005,5.58999636251522e-14,dgoD,D-galactonate dehydratase,"eco00052  Galactose metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments"
+b4511,-2.4703341112004598,2.63422126506136e-09,ybdZ,"stimulator of EntF adenylation activity, MbtH-like",
+b4518,-3.8505759345035697,1.1919266984828e-19,ymdF,KGG family protein,
+b4529,-2.70820303434808,1.67456028084225e-30,ydbJ,DUF333 family putative lipoprotein,
+b4544,-2.1914066813431,1.6500350228520398e-06,arnE,undecaprenyl phosphate-alpha-L-ara4N exporter; flippase ArnEF subunit,eco01503  Cationic antimicrobial peptide (CAMP) resistance
+b4554,-2.3458368929213997,9.28600968738138e-16,yibT,uncharacterized protein,
+b4671,-4.80967041786924,4.80144577771163e-10,ykgR,uncharacterized protein,

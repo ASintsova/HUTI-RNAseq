@@ -1,17 +1,20 @@
 [out_dir]
 
-results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis
-figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/differential_expression_analysis
+results = ../../results/differential_expression_analysis
+figures = ../../figures/differential_expression_analysis
+sup = ../../figures/supplement
 
 
 [data]
-core_tpms = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/core_counts_and_tpms.csv
-media_de_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_significant.csv
-all_genes_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_all.csv
-deseq2_norm_counts_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_DSeq2_norm_counts.csv
-pg_urine_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/pg_urine_de_genes_significant.csv
-pg_uti_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/pg_uti_de_genes_significant.csv
-go_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_pathway_analysis_BP.csv
+core_tpms = core_tpms = ../../shared_data/core_counts_and_tpms.csv
+media_de_file = ../../shared_data/media_de_genes_significant.csv
+all_genes_file = ../../shared_data/media_all_genes_edited.csv
+deseq2_norm_counts_file = ../../shared_data/deseq2_normalized_counts.csv
+pg_urine_file = ../../shared_data/pg_urine_de_genes_significant.csv
+pg_uti_file = ../../shared_data/pg_uti_de_genes_significant.csv
+go_file = ../../shared_data/media_pathway_analysis_BP.csv
+down_file = ../../shared_data/DOWNREGULATED_IN_PATIENTS.csv
+up_file = ../../shared_data/UPREGULATED_IN_PATIENTS.csv
 
 
 [strains]

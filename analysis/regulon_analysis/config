@@ -5,11 +5,11 @@ path = /Users/annasintsova/git_repos/HUTI-RNAseq/data/regulondb9.4.db
 [data]
 core_tpms = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/core_counts_and_tpms.csv
 deseq2_counts = /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/deseq2_normalized_counts.csv
+sign_de_file = /Users/annasintsova/git_repos/HUTI-RNAseq/results/differential_expression_analysis/media_de_genes_significant.csv
+
 
 [out_dir]
 regulon_csv =  /Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/Regulon.csv
-repressor_gmt = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/2018-09-03-repressor.gmt
-activator_gmt = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/2018-09-03-activator.gmt
 regulon_gmt = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/regulon.gmt
 results = /Users/annasintsova/git_repos/HUTI-RNAseq/results/regulon_analysis/
 figures = /Users/annasintsova/git_repos/HUTI-RNAseq/figures/regulon_analysis/

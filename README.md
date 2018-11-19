@@ -5,8 +5,8 @@
 
 * `analysis` folder contains a folder for each of the figures:
     - [Figure 1](analysis/virulence_factor_expression)
-    - Figure 2
-    - Figure 3
+    - [Figure 2 and Figure 3](analysis/in-patient-transcription-state)
+    - [Figure 4](analysis/differential_expression_analysis)
 
 
 * General settings for each of the jupyter notebooks can be found in [settings.py](analysis/methods/settings.py)

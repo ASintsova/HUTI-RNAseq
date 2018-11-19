@@ -1,0 +1,151 @@
+Entry,log2FoldChange,padj,Name,Function,Pathways
+b0010,2.6125653359563703,5.73166092333348e-10,satP,succinate-acetate transporter,
+b0013,2.6688660693582498,8.3558034062864e-15,yaaI,UPF0412 family protein,
+b0023,2.17647206406273,1.5359490570148798e-28,rpsT,30S ribosomal subunit protein S20,eco03010  Ribosome
+b0058,2.42847469594846,2.6365240115382298e-20,rluA,"dual specificity 23S rRNA pseudouridine(746), tRNA pseudouridine(32) synthase, SAM-dependent",
+b0059,2.8322964055297404,1.4747934267890497e-53,rapA,"RNA polymerase remodeling/recycling factor ATPase; RNA polymerase-associated, ATP-dependent RNA translocase",
+b0169,2.19061855938866,9.238114893143069e-51,rpsB,30S ribosomal subunit protein S2,eco03010  Ribosome
+b0170,2.36330026901586,1.80146811260403e-39,tsf,translation elongation factor EF-Ts,
+b0171,2.00670891501457,1.55665578156656e-25,pyrH,uridylate kinase,"eco00240  Pyrimidine metabolism, eco01100  Metabolic pathways"
+b0238,2.0120775727852602,2.21196597282328e-13,gpt,xanthine phosphoribosyltransferase; xanthine-guanine phosphoribosyltransferase,"eco00230  Purine metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites"
+b0405,3.14617378057094,2.15096429438473e-26,queA,S-adenosylmethionine:tRNA ribosyltransferase-isomerase,
+b0423,2.27850404908151,1.7346571840588198e-35,thiI,tRNA s(4)U8 sulfurtransferase,"eco00730  Thiamine metabolism, eco01100  Metabolic pathways, eco04122  Sulfur relay system"
+b0477,2.2157792463263797,7.808189069432009e-18,gsk,inosine/guanosine kinase,eco00230  Purine metabolism
+b0635,2.25261349202719,4.34499413393813e-34,mrdA,"penicillin-binding protein 2, transpeptidase involved in peptidoglycan synthesis","eco00550  Peptidoglycan biosynthesis, eco01501  beta-Lactam resistance"
+b0661,2.0679546651249296,3.0103479690258502e-24,miaB,tRNA-i(6)A37 methylthiotransferase,
+b0685,2.35159769292642,1.01169005288406e-21,ybfE,"LexA-regulated protein, CopB family",
+b0797,3.4448002803173,1.4940505638829698e-41,rhlE,ATP-dependent RNA helicase,eco03018  RNA degradation
+b0807,2.06188167924435,5.14769149670896e-11,rlmF,"23S rRNA m(6)A1618 methyltransferase, SAM-dependent",
+b0815,2.17730205662197,9.66083755474982e-19,opgE,OPG biosynthetic transmembrane phosphoethanolamine transferase,
+b0820,2.00444664855651,8.6023212050162e-46,ybiT,ABC-F family putative regulatory ATPase,
+b0835,3.4526556119259397,6.269317359912159e-47,rimO,ribosomal protein S12 methylthiotransferase,
+b0859,2.16237927740674,3.12896326447363e-27,rlmC,"23S rRNA m(5)U747 methyltransferase, SAM-dependent",
+b0905,2.81530095235889,3.0484584773017897e-31,ycaO,ribosomal protein S12 methylthiotransferase accessory factor,
+b0910,2.37927583630177,1.1552113610174398e-52,cmk,cytidylate kinase,"eco00240  Pyrimidine metabolism, eco01100  Metabolic pathways"
+b0911,2.3180822401255297,1.9942229961807396e-39,rpsA,30S ribosomal subunit protein S1,eco03010  Ribosome
+b0945,2.08303613465162,5.2439342866281696e-24,pyrD,"dihydro-orotate oxidase, FMN-linked","eco00240  Pyrimidine metabolism, eco01100  Metabolic pathways"
+b0990,4.54658332338074,2.40174259412436e-27,cspG,"cold shock protein homolog, cold-inducible",
+b1047,2.7595087506131204,5.35097588411004e-23,opgC,OPG biosynthetic transmembrane succinyltransferase,
+b1055,2.13692047601245,8.0599894986998e-22,yceA,putative rhodanese-related sulfurtransferase,
+b1073,2.63853435034691,0.00680729701374077,flgB,flagellar component of cell-proximal portion of basal-body rod,eco02040  Flagellar assembly
+b1074,2.9623769209299398,0.000251098530218646,flgC,flagellar component of cell-proximal portion of basal-body rod,eco02040  Flagellar assembly
+b1075,2.77297418438432,0.00045900623643691505,flgD,flagellar hook assembly protein,eco02040  Flagellar assembly
+b1076,2.75324697252681,0.000212602294055199,flgE,flagellar hook protein,eco02040  Flagellar assembly
+b1078,2.4402417848729,0.0018856231852353398,flgG,flagellar component of cell-distal portion of basal-body rod,eco02040  Flagellar assembly
+b1079,2.28282450766979,0.000756783993267616,flgH,flagellar protein of basal-body outer-membrane L ring,eco02040  Flagellar assembly
+b1081,2.11286823326122,0.000302490150056851,flgJ,flagellar rod assembly protein and murein hydrolase; flagellum-specific muramidase,
+b1086,2.83725124633247,9.140870032362478e-25,rluC,"23S rRNA pseudouridine(955,2504,2580) synthase",
+b1088,2.23638349829766,4.6505239244816595e-38,yceD,DUF177 family protein,
+b1091,2.0409793986235902,8.845307738529248e-38,fabH,3-oxoacyl-[acyl-carrier-protein] synthase III,"eco00061  Fatty acid biosynthesis, eco01100  Metabolic pathways, eco01212  Fatty acid metabolism"
+b1101,4.31083771861722,1.7336086240925e-28,ptsG,fused glucose-specific PTS enzymes: IIB component/IIC component,"eco00010  Glycolysis / Gluconeogenesis, eco00520  Amino sugar and nucleotide sugar metabolism, eco02060  Phosphotransferase system (PTS)"
+b1125,2.0157794104858797,5.299592285487519e-10,potB,spermidine/putrescine ABC transporter permease,eco02010  ABC transporters
+b1131,2.23624620489265,5.50191316332882e-22,purB,adenylosuccinate lyase,"eco00230  Purine metabolism, eco00250  Alanine, aspartate and glutamate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics"
+b1344,2.2873530199910297,1.23486285395107e-32,ttcA,"tRNA s(2)C32 thioltransferase, iron sulfur cluster protein",
+b1605,2.2872850037387003,1.1496739837124697e-23,ydgI,putative arginine/ornithine antiporter transporter,
+b1652,2.15073647040805,5.2284571246923204e-21,rnt,RNase T; exoribonuclease T; structured DNA 3' exonuclease; RNA processing; DNA repair,
+b1676,2.41774772135607,1.1712154395417199e-46,pykF,pyruvate kinase I,"eco00010  Glycolysis / Gluconeogenesis, eco00230  Purine metabolism, eco00620  Pyruvate metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism, eco01230  Biosynthesis of amino acids"
+b1782,2.59865771819785,7.591580315365338e-46,mipA,scaffolding protein for murein synthesizing machinery,
+b1807,2.05130093296397,8.35435120537953e-28,tsaB,tRNA(ANN) t(6)A37 threonylcarbamoyladenosine modification protein; binding partner and protease for TsaD,
+b1821,4.64735011495321,2.24615248549634e-32,mntP,"putative Mn(2+) efflux pump, mntR-regulated",
+b1880,2.2371537318604,0.00122443043291975,flhB,"flagellin export apparatus, substrate specificity protein",eco02040  Flagellar assembly
+b2010,2.33742543216316,1.47905764334173e-08,dacD,D-alanyl-D-alanine carboxypeptidase; penicillin-binding protein 6b,"eco00550  Peptidoglycan biosynthesis, eco01100  Metabolic pathways"
+b2069,3.79443615303594,2.19616332463085e-35,yegD,Hsp70 chaperone family protein,
+b2081,2.78032853924583,1.9656286349432896e-37,yegQ,putative peptidase,
+b2141,3.06783519466425,4.41861778180962e-16,yohJ,UPF0299 family inner membrane protein,
+b2167,3.0948042721340197,1.55811570915232e-26,fruA,fused fructose-specific PTS enzymes: IIBcomponent/IIC components,"eco00051  Fructose and mannose metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments, eco02060  Phosphotransferase system (PTS)"
+b2168,3.5312915154435003,9.92265879712625e-43,fruK,fructose-1-phosphate kinase,eco00051  Fructose and mannose metabolism
+b2169,4.32201952369634,3.0815504121685896e-43,fruB,fused fructose-specific PTS enzymes: IIA component/HPr component,"eco00051  Fructose and mannose metabolism, eco01100  Metabolic pathways, eco01120  Microbial metabolism in diverse environments, eco02060  Phosphotransferase system (PTS)"
+b2174,2.22276285664202,9.476647383591438e-30,lpxT,lipid A 1-diphosphate synthase; undecaprenyl pyrophosphate:lipid A 1-phosphate phosphotransferase,
+b2185,2.41667958896493,1.1082893981308499e-30,rplY,50S ribosomal subunit protein L25,eco03010  Ribosome
+b2250,3.46120194015029,2.9760056678647004e-26,yfaZ,"outer membrane protein, putative porin",
+b2368,2.00424916627318,0.0016870744858881199,emrK,multidrug resistance efflux pump membrane fusion protein,eco02020  Two-component system
+b2378,2.30191383389762,5.774303787578679e-13,lpxP,palmitoleoyl-acyl carrier protein (ACP)-dependent acyltransferase,
+b2508,2.73071666509766,7.8816684010227e-38,guaB,IMP dehydrogenase,"eco00230  Purine metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites"
+b2511,2.0492108184745703,5.176199421691429e-58,der,GTPase; multicopy suppressor of ftsJ,
+b2517,2.7391279404071303,1.3115090839581e-70,rlmN,"dual specificity 23S rRNA m(2)A2503, tRNA m(2)A37 methyltransferase, SAM-dependent",
+b2518,2.5136829583847997,2.5369867745852202e-20,ndk,multifunctional nucleoside diphosphate kinase and apyrimidinic endonuclease and 3'-phosphodiesterase,"eco00230  Purine metabolism, eco00240  Pyrimidine metabolism, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01130  Biosynthesis of antibiotics"
+b2533,3.63338566934372,1.1208393245525497e-75,suhB,inositol monophosphatase,"eco00521  Streptomycin biosynthesis, eco00562  Inositol phosphate metabolism, eco01100  Metabolic pathways"
+b2558,2.55775953785731,4.79559034985816e-26,mltF,"membrane-bound lytic transglycosylase F, murein hydrolase",
+b2559,2.35686380316132,4.37770340978405e-27,tadA,tRNA-specific adenosine deaminase,
+b2562,2.9879955545679,5.20484097563733e-23,yfhL,putative 4Fe-4S cluster-containing protein,
+b2576,2.00379497520176,5.60695228899198e-26,srmB,ATP-dependent RNA helicase,
+b2678,3.53547072975696,5.00587731959331e-09,proW,glycine betaine/proline ABC transporter permease,eco02010  ABC transporters
+b2679,3.20599851920818,5.6122083122333e-08,proX,glycine betaine/proline ABC transporter periplasmic binding protein; cold shock protein,eco02010  ABC transporters
+b2765,2.6347288169993597,1.63274487843374e-24,queD,6-pyruvoyl tetrahydrobiopterin synthase (PTPS),"eco00790  Folate biosynthesis, eco01100  Metabolic pathways"
+b2796,3.08435312395154,1.2006688345771899e-20,sdaC,putative serine transporter,
+b2845,3.2698745259889503,4.04670268674317e-41,yqeG,putative transporter,
+b2945,2.8469809195495897,1.6408732836044e-39,endA,DNA-specific endonuclease I,
+b3071,2.10985180152441,9.91165296612213e-07,yqjI,PadR family putative transcriptional regulator,
+b3084,3.1425751671632405,1.43116334168333e-37,rlmG,"23S rRNA m(2)G1835 methyltransferase, SAM-dependent",
+b3088,2.1568554590972298,9.672476467652678e-15,alx,putative membrane-bound redox modulator,
+b3162,3.37141398612968,4.1043831195712494e-53,deaD,ATP-dependent RNA helicase,eco03018  RNA degradation
+b3165,2.23692902648979,5.415820862095149e-38,rpsO,30S ribosomal subunit protein S15,eco03010  Ribosome
+b3169,2.21987943186855,3.382646698439339e-53,nusA,transcription termination/antitermination L factor,
+b3170,2.22785331033081,7.648519531037518e-51,rimP,ribosome maturation factor for 30S subunits,
+b3183,2.81920823811541,6.969143575564419e-73,obgE,GTPase involved in cell partioning and DNA repair,
+b3184,3.1133730847306604,5.076823155128059e-59,yhbE,EamA family inner membrane putative transporter,
+b3186,2.3078506330120496,1.39758967534512e-45,rplU,50S ribosomal subunit protein L21,eco03010  Ribosome
+b3231,2.30279767200681,1.30774063140496e-40,rplM,50S ribosomal subunit protein L13,eco03010  Ribosome
+b3238,2.3171675716528597,4.90730812855136e-06,yhcN,"cadmium and peroxide resistance protein, stress-induced",
+b3258,2.3773312593414797,9.8199334126917e-19,panF,pantothenate:sodium symporter,
+b3259,2.10967063917309,3.83434841351739e-29,prmA,methyltransferase for 50S ribosomal subunit protein L11,
+b3260,3.7476945452550696,1.1832573803884997e-56,dusB,tRNA-dihydrouridine synthase B,
+b3261,2.84239097970967,1.86904393499964e-26,fis,global DNA-binding transcriptional dual regulator,
+b3262,2.15637513522661,2.97701846828498e-20,yhdJ,"DNA adenine methyltransferase, SAM-dependent",
+b3264,2.7313345924517995,3.84707950840295e-05,acrS,acrAB operon transcriptional repressor,
+b3294,2.08104424726713,1.0242098952836098e-21,rplQ,50S ribosomal subunit protein L17,eco03010  Ribosome
+b3295,2.43243449005642,4.9828813551391694e-42,rpoA,"RNA polymerase, alpha subunit","eco00230  Purine metabolism, eco00240  Pyrimidine metabolism, eco01100  Metabolic pathways, eco03020  RNA polymerase"
+b3296,2.56486911354164,1.4467751746253302e-37,rpsD,30S ribosomal subunit protein S4,eco03010  Ribosome
+b3297,2.52355023484239,2.28563267897019e-46,rpsK,30S ribosomal subunit protein S11,eco03010  Ribosome
+b3298,2.4535180517004997,9.251675912876699e-47,rpsM,30S ribosomal subunit protein S13,eco03010  Ribosome
+b3301,2.07728489539267,7.925750098782309e-16,rplO,50S ribosomal subunit protein L15,eco03010  Ribosome
+b3302,2.18487964315437,3.8039490385578996e-19,rpmD,50S ribosomal subunit protein L30,eco03010  Ribosome
+b3303,2.38013328156475,2.32231448108184e-26,rpsE,30S ribosomal subunit protein S5,eco03010  Ribosome
+b3305,2.5675181799893703,9.5669921994088e-30,rplF,50S ribosomal subunit protein L6,eco03010  Ribosome
+b3306,2.1075197542964097,1.11365787457264e-27,rpsH,30S ribosomal subunit protein S8,eco03010  Ribosome
+b3307,2.4745440719844902,2.44438917261102e-46,rpsN,30S ribosomal subunit protein S14,eco03010  Ribosome
+b3308,2.0706443725965697,1.92237234177251e-31,rplE,50S ribosomal subunit protein L5,eco03010  Ribosome
+b3309,2.79832757071814,1.0372025238317298e-58,rplX,50S ribosomal subunit protein L24,eco03010  Ribosome
+b3310,2.09084197895336,4.764721914727819e-38,rplN,50S ribosomal subunit protein L14,eco03010  Ribosome
+b3311,2.61974739637742,2.76169805972741e-30,rpsQ,30S ribosomal subunit protein S17,eco03010  Ribosome
+b3313,2.49583769514498,1.26068856829028e-21,rplP,50S ribosomal subunit protein L16,eco03010  Ribosome
+b3315,2.53586581990086,4.02968136892525e-25,rplV,50S ribosomal subunit protein L22,eco03010  Ribosome
+b3316,2.8545864463698702,5.94887195944466e-29,rpsS,30S ribosomal subunit protein S19,eco03010  Ribosome
+b3317,2.46752688221221,7.9179021483412e-22,rplB,50S ribosomal subunit protein L2,eco03010  Ribosome
+b3318,2.330298493894,6.214244766083749e-28,rplW,50S ribosomal subunit protein L23,eco03010  Ribosome
+b3319,2.33656440568625,3.357666809697169e-24,rplD,50S ribosomal subunit protein L4,eco03010  Ribosome
+b3320,2.37845695165325,1.30467933930662e-33,rplC,50S ribosomal subunit protein L3,eco03010  Ribosome
+b3321,2.5634753838520696,4.1583994944396496e-36,rpsJ,30S ribosomal subunit protein S10,eco03010  Ribosome
+b3340,2.12487705716243,2.8789496115768397e-28,fusA,"protein chain elongation factor EF-G, GTP-binding",
+b3341,2.29522333476486,1.2557991652110599e-57,rpsG,30S ribosomal subunit protein S7,eco03010  Ribosome
+b3342,2.2901917612391602,2.1668898970319596e-44,rpsL,30S ribosomal subunit protein S12,eco03010  Ribosome
+b3437,4.82631000688353,1.29469301168848e-31,gntK,gluconate kinase 2,"eco00030  Pentose phosphate pathway, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01200  Carbon metabolism"
+b3492,2.29553163326629,7.8482874953702e-19,yhiN,putative oxidoreductase,
+b3539,2.49072845921559,1.06692194076767e-20,yhjV,putative transporter,
+b3547,2.09231423524143,0.0166575166614468,yhjX,"pyruvate-inducible inner membrane protein, putative transporter",
+b3552,4.0790986393455695,3.36196915536498e-24,yiaD,multicopy suppressor of bamB; outer membrane lipoprotein,
+b3556,3.85245326294879,1.43656377890815e-33,cspA,"RNA chaperone and antiterminator, cold-inducible",
+b3589,2.176139055398,1.9532095437200198e-05,yiaY,L-threonine dehydrogenase,"eco00010  Glycolysis / Gluconeogenesis, eco00071  Fatty acid degradation, eco00350  Tyrosine metabolism, eco00625  Chloroalkane and chloroalkene degradation, eco00626  Naphthalene degradation, eco01100  Metabolic pathways, eco01110  Biosynthesis of secondary metabolites, eco01120  Microbial metabolism in diverse environments, eco01130  Biosynthesis of antibiotics, eco01220  Degradation of aromatic compounds"
+b3636,2.0927272488412196,9.672476467652678e-15,rpmG,50S ribosomal subunit protein L33,eco03010  Ribosome
+b3637,2.1553280706263,5.85112836824781e-31,rpmB,50S ribosomal subunit protein L28,eco03010  Ribosome
+b3654,2.9720444324509705,2.65195858830475e-26,xanP,xanthine permease,
+b3700,2.14136229711427,1.3464049112202397e-50,recF,gap repair protein,eco03440  Homologous recombination
+b3704,2.64946459278964,2.7351231520101396e-27,rnpA,protein C5 component of RNase P,
+b3705,2.324848559955,3.97685622882602e-39,yidC,membrane protein insertase,"eco02024  Quorum sensing, eco03060  Protein export, eco03070  Bacterial secretion system"
+b3795,2.5430747245674903,5.5607331628827296e-42,yifK,putative APC family amino acid transporter,
+b3827,2.4597312798012005,2.92846910750502e-21,yigM,putative inner membrane EamA-like transporter,
+b3918,2.12294114889505,4.38384268014937e-28,cdh,CDP-diacylglycerol phosphotidylhydrolase,"eco00564  Glycerophospholipid metabolism, eco01110  Biosynthesis of secondary metabolites"
+b3936,2.4716505421145096,3.4824515452996296e-56,rpmE,50S ribosomal subunit protein L31,eco03010  Ribosome
+b3965,2.0532835542993997,1.35280118700784e-22,trmA,"tRNA m(5)U54 methyltransferase, SAM-dependent; tmRNA m(5)U341 methyltransferase",
+b3984,2.10535582577081,1.50165471838177e-16,rplA,50S ribosomal subunit protein L1,eco03010  Ribosome
+b3985,2.8696642096107103,1.7159511012151398e-38,rplJ,50S ribosomal subunit protein L10,eco03010  Ribosome
+b4050,2.19878091276243,4.67545986109527e-13,pspG,phage shock protein G,
+b4062,2.02610202758503,4.09068196779931e-09,soxS,superoxide response regulon transcriptional activator; autoregulator,
+b4105,2.0383156027410503,0.000717723914255991,phnD,phosphonate ABC transporter periplasmic binding protein,eco02010  ABC transporters
+b4108,2.00538567657308,1.8420674137499997e-32,yjdM,zinc-ribbon family protein,
+b4155,3.38369532561971,1.7540760932204797e-43,epmA,Elongation Factor P Lys34 lysyltransferase,
+b4156,2.47035584629178,3.90826535157772e-20,yjeM,putative transporter,
+b4176,2.42146958948637,4.69728499825169e-37,yjeT,DUF2065 family protein,
+b4202,2.54869190340513,4.26669641018764e-29,rpsR,30S ribosomal subunit protein S18,eco03010  Ribosome
+b4469,2.81966775053408,7.326308899656929e-29,ygiQ,Radical SAM superfamily protein,
+b4476,5.100176511677531,1.0145701727689198e-50,gntU,"gluconate transporter, low affinity GNT 1 system",

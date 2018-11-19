@@ -22,14 +22,18 @@ def parser():
 
 def add_gene_info_to_file(file, genome="eco", tag_column=0, sep=",", filename=""):
     # Read in file as df
-    df = pd.read_csv(file, sep=sep, index_col=tag_column)
+    if type(file) == str:
+        df = pd.read_csv(file, sep=sep, index_col=tag_column)
+    else:
+        df = file
     # Parse out gene ids
     gene_ids = list(df.index)
     # Get gene info from KEGG as df
     gene_set = GeneSet(gene_ids, genome)
     gene_set.get_info_for_each_gene()
     info_df = gene_set.get_info_df()
-    final_df = df.merge(info_df, left_index=True, right_index=True)
+    #final_df = df.merge(info_df, left_index=True, right_index=True)
+    final_df = df.join(info_df, how='left')
     if filename:
         final_df.to_csv(filename)
     return final_df

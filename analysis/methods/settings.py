@@ -19,7 +19,8 @@ def invnorm(x):
     return stats.norm.ppf((x.rank() - 0.5)/x.count())
 
 
-strain_info_file = "/Users/annasintsova/git_repos/HUTI-RNAseq/data/huti_patient_info_short.csv"
+strain_info_file = "../../shared_data/huti_patient_info_short.csv"
+AGL = pd.read_csv("../../shared_data/media_all_genes_edited.csv", index_col=0).Name.values
 
 
 def get_labels(df):

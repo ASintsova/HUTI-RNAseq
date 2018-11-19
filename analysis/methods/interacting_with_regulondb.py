@@ -46,9 +46,9 @@ def get_regulon(db, gene_name_regulator="", tf_id_regulator=""):
     """Returns list of tuples (regulator_name,
     regulated_name, regulated_id, repressed/activated)"""
     conn = sqlite3.connect(db)
-    cur = conn.cursor()
+    cur = conn.cursor()  # use a context manager
     cur.execute("SELECT gene_name_regulator, gene_name_regulated, "
-                "gene_id_regulated, generegulation_function "
+                "gene_id_regulated, generegulation_function, tf_conformation "
                 "FROM GENEREGULATION_TMP "
                 "WHERE gene_name_regulator=? OR tf_id_regulator=?",
                 (gene_name_regulator, tf_id_regulator))
@@ -58,7 +58,7 @@ def get_regulon(db, gene_name_regulator="", tf_id_regulator=""):
     for reg in regulon:
         eck = reg[2]
         bnum = get_bnum(db, object_id=eck)
-        reg_network.append((reg[0], reg[1], bnum, reg[3]))  # Should I make this a dictionary?
+        reg_network.append((reg[0], reg[1], bnum, reg[3], reg[4]))  # Should I make this a dictionary?
     return reg_network
 
 
@@ -69,7 +69,8 @@ def get_all_regulons(db, filename):
         regulon = get_regulon(db, tf_id_regulator=regulator)
         pd_list.append(pd.DataFrame(regulon))
     df = pd.concat(pd_list, ).reset_index(drop=True)
-    df.columns = ["regulator", "regulated_name", "regulated_bnum", "regulator_function"]
+    df.columns = ["regulator", "regulated_name", "regulated_bnum", "regulator_function",
+                  "conformation"]
     df.to_csv(filename)
     return df
 
