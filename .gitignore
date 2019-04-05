@@ -1,6 +1,6 @@
-data/
-Data/
-results/
+analysis
+*test*
+*private*/
 !README.md
 Tools/*
 *.log
@@ -13,3 +13,4 @@ figures
 *fasta
 *.log
 *cache*
+*.pyc
