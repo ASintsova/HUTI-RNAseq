@@ -27,10 +27,10 @@ class Gene(object):
         return "\t".join([self.entry, self.name, self.definition])
 
     def get_aa_seq(self):
-        return ">{}|{}\n{}\n".format(self.entry, self.name, self.aa_seq)
+        return ">{}|{}\n{}\n".format(self.gene_id, self.name, self.aa_seq)
 
     def get_nt_seq(self):
-        return ">{}|{}\n{}\n".format(self.entry, self.name, self.nt_seq)
+        return ">{}|{}\n{}\n".format(self.gene_id, self.name, self.nt_seq)
 
     def __str__(self):
         return "GENE:\n{}\t{}\t{}\nPATHWAYS:\n{}".format(self.entry, self.name,
@@ -105,32 +105,38 @@ class Gene(object):
 
 class GeneSet(object):
 
-    def __init__(self, gene_id_list, genome="eco", out_dir="."):
-        self.genome = genome
-        self.kegg_ids = ["{}:{}".format(genome, gene_id) for gene_id in gene_id_list]
+    def __init__(self, gene_id_list, genome="", out_dir="."):
+        if genome:
+            self.genome = genome
+            self.kegg_ids = ["{}:{}".format(genome, gene_id) for gene_id in gene_id_list]
+        else:
+            self.kegg_ids = gene_id_list
         self.name = ""
         self.gene_set = []
         self.out_dir = out_dir
 
     def get_info_for_each_gene(self):
         for gene_id in self.kegg_ids:
+            print(gene_id)
             fg = Gene(gene_id)
             fg.kegg_get()
             self.gene_set.append(fg)
 
     def write_nt_seq(self):
         today = dt.datetime.today().strftime("%Y_%m_%d")
-        filename = os.path.join(self.out_dir,  "{}_{}_gene_set_nt_seq.fasta".format(today, self.genome))
+        filename = os.path.join(self.out_dir,  "{}_gene_set_nt_seq.fasta".format(today))
         with open(filename, "w") as fo:
             for gene in self.gene_set:
                 fo.write(gene.get_nt_seq())
+        return filename
 
     def write_aa_seq(self):
         today = dt.datetime.today().strftime("%Y_%m_%d")
-        filename = os.path.join(self.out_dir,  "{}_{}_gene_set_nt_seq.fasta".format(today, self.genome))
+        filename = os.path.join(self.out_dir,  "{}_gene_set_nt_seq.fasta".format(today))
         with open(filename, "w") as fo:
             for gene in self.gene_set:
                 fo.write(gene.get_aa_seq())
+        return filename
 
     def get_info_df(self):
         genes = []
@@ -149,11 +155,11 @@ class GeneSet(object):
 
 if __name__ == "__main__":
 
-    gene_list = ["b0356", "b1001"]
-    gs = GeneSet(gene_list)
+    gene_list = ["eco:b0356", "eco:b1001"]
+    gs = GeneSet(gene_list,)
     print(gs.kegg_ids)
     gs.get_info_for_each_gene()
     y = gs.gene_set
     for gene in y:
         print(gene.name)
-    print(gs.get_info_df())
+    gs.write_nt_seq()

@@ -1,15 +1,26 @@
-import subprocess
-import shlex
 import glob
-import shutil
-import pandas as pd
 import os
 import re
+import shlex
+import shutil
+import subprocess
+import sys
+
+import utilities as ut
 
 
-import helpers
+
+"""
+Before running make sure to set correct paths for get_homolouges bin, directory with GenBank files, 
+and Output directory in the config file
 
 
+TODO
+
+- Write documentation
+- Add clean up 
+
+"""
 def run_get_homologs(gh_bin, gbk_dir, I, C, S, t, exclude_paralogs, run_id, clean_up=False, core=True):
 
     # Store current working directory
@@ -102,10 +113,9 @@ def cross_ref_from_core_genome(ogc_dir, output_file):
 
     Note to self: for MG1655 gbk file protein id were deleted so that get_homologues returns
     locus tags instead
-
-    Generates csv file in the same directory as pangenome matrix ending with 'cross_ref.csv'
     """
     strain_cleanup = {"HM1": "HM01", "HM3": "HM03", "HM6": "HM06", "HM7": "HM07"}
+
     faa_files = [os.path.join(ogc_dir, f) for f in os.listdir(ogc_dir) if ".faa" in f]
     print("Number of core genes: {}".format(len(faa_files)))
     core_genome = {}
@@ -116,90 +126,48 @@ def cross_ref_from_core_genome(ogc_dir, output_file):
                 if line.startswith(">"):
                     words = line.split("|")
                     gene_id = words[0].split("ID:")[1].strip()
-                    strain = re.split("[_():;]", words[5])[0].strip()
-                    if strain == "U00096":
+                    strain = words[2].strip()
+                    if strain == "K-12":
                         key = gene_id
                     else:
                         if strain in strain_cleanup.keys():
                             strain = strain_cleanup[strain]
                         clinical_genes.append((strain, gene_id))
             try:
-                assert(len(clinical_genes)) == 14
                 core_genome[key] = sorted(clinical_genes)
             except UnboundLocalError:
                 print("Missing key")
                 continue
+
     with open(output_file, "w") as fo:
-        title = "HM01,HM03,HM06,HM07,HM14,HM17,HM43,HM54,HM56,HM57,HM60,HM66,HM68,HM86"
-        fo.write(",{}\n".format(title))
-        for key, val in core_genome.items():
+        for val in core_genome.values():
             genomes = ",".join([v[0] for v in val])
-            assert genomes == title
+        fo.write(",{}\n".format(genomes))
+        for key, val in core_genome.items():
             genes = [key] + [v[1] for v in val]
             fo.write(",".join(genes) + "\n")
     return core_genome
 
 
-def core_counts_table(cross_ref, count_dir, tpm_dir, output_file):
-    conditions = ["UR", "UTI"]
-
-    df = pd.read_csv(cross_ref, index_col=0)
-
-    for genome in df.columns:
-        print(genome)
-        for cond in conditions:
-            print(cond)
-            count_file = os.path.join(count_dir, "{}_{}_trimmed_sorted_counts".format(genome, cond))
-            tpm_file = os.path.join(tpm_dir, "{}_{}_trimmed_sorted_counts_tpm.csv".format(genome, cond))
-            count_dict = helpers.process_count_file(count_file)
-            tpm_dict = helpers.process_count_file(tpm_file, ",")
-            counts = []
-            tpms = []
-            for prokka in df[genome].values:
-                counts.append(count_dict.get(prokka, "NaN"))
-                tpms.append(tpm_dict.get(prokka, "NaN"))
-            df["{}_{}_count".format(genome, cond)] = counts
-            df["{}_{}_tpm".format(genome, cond)] = tpms
-    df.to_csv(output_file)
-    return df
-
-
-###################################################################################################
-
-
 def run_final_settings():
     config_file = os.path.join((os.path.dirname(os.path.realpath(__file__))), "config")
-    config_dict = helpers.process_config(config_file)
-    gh_bin = config_dict["get_homologs"]["path"]
+    config_dict = ut.process_config(config_file)
+    gh_bin = config_dict["get_homologs"]["bin"]
     gbks = config_dict["get_homologs"]["gbk_dir"]
     gbk_list_file = config_dict["get_homologs"]["gbk_list"]
     print(gbk_list_file)
-    out_dir = config_dict["out_dir"]["path"]
+    out_dir = config_dict["get_homologs"]["out_dir"]
     out_dir = os.path.join(out_dir, "C50_S90_e1_")
     run_get_homologs(gh_bin, gbks, gbk_list_file, 50, 90, 0, True, out_dir)
-
-
-def make_final_ortholog_table():
-
-    ogc = "/Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/C50_S90_e1_/core_genome"
-    out_file = "/Users/annasintsova/git_repos/HUTI-RNAseq/results/methods/orthologs.csv"
-    cross_ref_from_core_genome(ogc, out_file)
-
-
-def get_counts_for_orthologs():
-    config_file = os.path.join((os.path.dirname(os.path.realpath(__file__))), "config")
-    config_dict = helpers.process_config(config_file)
-    cross_ref = config_dict["get_homologs"]["cross_ref"]
-    count_dir = config_dict["out_dir"]["counts"]
-    tpm_dir = config_dict["out_dir"]["tpms"]
-    out_dir = config_dict["out_dir"]["path"]
-    output_file = os.path.join(out_dir, "core_counts_and_tpms.csv")
-    df = core_counts_table(cross_ref, count_dir, tpm_dir, output_file)
-    print(df.head())
-
+    return os.path.join(out_dir, 'core_genome')
 
 if __name__ == "__main__":
 
-    # run_final_settings()
-    # make_final_ortholog_table()
-    get_counts_for_orthologs()
+    ogc = run_final_settings()  # need this to return core_genome_folder
+    ogc = "/Users/annasintsova/git_repose/HUTI-RNAseq/C50_S90_e1_/core_genome"
+    cross_ref_from_core_genome(ogc, sys.argv[1])
+
+
+
+
+
