@@ -1,40 +1,60 @@
 [data]
-bin = /Users/annasintsova/git_repos/HUTI-RNAseq/data
-fasta =
-alignments =
-gff =
-counts =
-final_counts =
+strain_info = data/huti_patient_info_short.csv
+gff_dir = data/gff_files
+counts = data/raw_counts
+virulence_genes = data/VIRULENCE_FACTORS.txt
+virulence_genes_info = data/virulence_factors_info.txt
+virulence_pa_file = test_out_dir/2019-03-29_virulence_orthologs.csv
+virulence_identity = test_out_dir/2019-03-29_identity_coverage.csv
+ortholog_table = data/orthologs.csv
+media_de_file = data/media_de_genes_significant.csv
+all_genes_file = data/media_all_genes_edited.csv
+deseq2_norm_counts_file = data/deseq2_normalized_counts.csv
+pg_urine_file = data/pg_urine_de_genes_significant.csv
+pg_uti_file = data/pg_uti_de_genes_significant.csv
+go_file = data/media_pathway_analysis_BP.csv
+down_file = data/DOWNREGULATED_IN_PATIENTS.csv
+up_file = data/UPREGULATED_IN_PATIENTS.csv
+crp_genes = data/crp_genes.csv
+alingment_stats_file = data/Alingment_stats.csv
+mouse_counts_file = data/mouse_lb_raw_counts.csv
+hm43_alingment_stats_file = data/hm43_alingment_stats.csv
+hm43_growth_file = data/HM43_growth.csv
+final_gsea_analysis = data/final_gsea_analysis.csv
+raw_core_counts = data/raw_core_counts.csv
+
+[strains]
+all = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68 HM57 HM17 HM07 HM60 HM66
+over = HM56 HM14 HM43 HM54 HM86 HM03 HM06 HM01
+under = HM57 HM17 HM07 HM60 HM66 HM68
+b1_strains = HM03 HM07 HM14 HM60
+b2_strains = HM56 HM43 HM54 HM86 HM06 HM68 HM57 HM66 HM17
+
+[get_homologs]
+bin = /Users/annasintsova/tools/get_homologues-macosx-20170807
+#gbk_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gbf_files
+gbk_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/test_gbk
+#gbk_list = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gbf_files/include_gbk.txt
+gbk_list = /Users/annasintsova/git_repos/HUTI-RNAseq/test_gbk/genome_list.txt
+out_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/
+
+[blast]
+bin = /Users/annasintsova/tools/ncbi-blast-2.7.1+/bin/
+out_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/data/test_data/temp
+genome_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/data/genomes/clinical_strains
+db_prefix = /Users/annasintsova/git_repos/HUTI-RNAseq/data/test_data/temp
+virulence_fasta = /Users/annasintsova/git_repos/HUTI-RNAseq/results/virulence_factor_expression/VIRULENCE_FACTORS_nt.fasta
+gff_dir = /Users/annasintsova/git_repos/HUTI-RNAseq/data/annotations/gff_files
 
 
 [RegulonDB]
  bin = /Users/annasintsova/git_repos/HUTI-RNAseq/data/RegulonDB
  geneRegulation = generegulation_tmp.txt
 
-[blast]
-bin = /Users/annasintsova/tools/ncbi-blast-2.7.1+/bin/
-
-[analysis]
-bin = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis
+[genomes]
+all = HM01 HM03 HM06 HM07 HM14 HM17 HM43 HM54 HM56 HM57 HM60 HM66 HM68 HM86
 
 
-[results]
-bin = /Users/annasintsova/git_repos/HUTI-RNAseq/results
 
-[names]
-figure1 = virulence_factor_expression
-figure2 =
-figure3 =
-figure4 =
-
-[analysis]
-bin = /Users/annasintsova/git_repos/HUTI-RNAseq/analysis
-methods = methods
-rnaseq =
-genomes =
-figure1 =
-figure2 =
-figure3 =
-figure4 = resource_reallocation
 
 
