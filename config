@@ -22,6 +22,7 @@ hm43_alingment_stats_file = data/hm43_alingment_stats.csv
 hm43_growth_file = data/HM43_growth.csv
 final_gsea_analysis = data/final_gsea_analysis.csv
 raw_core_counts = data/raw_core_counts.csv
+patient_info_R = data/huti_patient_info_for_DE.csv
 
 [strains]
 all = HM56 HM14 HM43 HM54 HM86 HM01 HM03 HM06 HM68 HM57 HM17 HM07 HM60 HM66

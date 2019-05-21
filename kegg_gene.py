@@ -155,11 +155,12 @@ class GeneSet(object):
 
 if __name__ == "__main__":
 
-    gene_list = ["eco:b0356", "eco:b1001"]
+    gene_list = ["eco:rppH", "eco:b1001"]
     gs = GeneSet(gene_list,)
     print(gs.kegg_ids)
     gs.get_info_for_each_gene()
     y = gs.gene_set
     for gene in y:
+        print(gene.entry)
         print(gene.name)
     gs.write_nt_seq()
